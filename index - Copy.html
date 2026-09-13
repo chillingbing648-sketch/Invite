@@ -1,0 +1,2100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ganesh Chaturthi 2026 — Divine Sanctuary Invitation</title>
+<meta name="description" content="Bappa is coming home. Join the Dubey Family in welcoming Lord Ganesha this Ganesh Chaturthi into our living festive sanctuary.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Yatra+One&family=Tiro+Devanagari+Marathi:ital,wght@0,400;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+<style>
+/* ===========================================================
+   0. TYPOGRAPHY & DESIGN TOKENS
+   =========================================================== */
+@font-face {
+  font-family: 'CS Awesome Demo';
+  src: local('CS Awesome Demo'), local('Awesome Demo'), local('AwesomeDemo');
+  font-display: swap;
+}
+
+:root {
+  /* Sanctuary Palette */
+  --ivory:          #FBF5EA;
+  --cream:          #FFFDF9;
+  --paper:          #F5EAD7;
+  --gold:           #C9963B;
+  --gold-light:     #F2DA9B;
+  --gold-bright:    #FFE8A3;
+  --gold-deep:      #8E6018;
+  --maroon:         #3E0E14;
+  --crimson:        #6B1724;
+  --crimson-2:      #8F2232;
+  --dusk:           #200D16;
+  --brown:          #593922;
+  --brown-deep:     #3B2211;
+
+  /* Botanical Garden Palette */
+  --leaf-deep:      #1C331A;
+  --leaf-mid:       #375730;
+  --leaf-light:     #5F8554;
+  --leaf-accent:    #82A872;
+  --lotus-rose:     #E597AB;
+  --lotus-deep:     #B54B68;
+  --lotus-glow:     #FFF2F5;
+  --saffron:        #E58026;
+  --amber:          #D9701A;
+
+  /* Typography Roles */
+  --font-cinema-display: 'CS Awesome Demo', 'Awesome Demo', 'Cormorant Garamond', Georgia, serif;
+  --font-display-en:     'Cormorant Garamond', Georgia, serif;
+  --font-dev-display:    'Yatra One', 'Tiro Devanagari Marathi', serif;
+  --font-dev-body:       'Tiro Devanagari Marathi', serif;
+  --font-ui:             'Jost', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --ease-cinema: cubic-bezier(.22,.61,.14,1);
+}
+
+/* ===========================================================
+   1. RESET & BASE
+   =========================================================== */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html {
+  scroll-behavior: auto;
+  background: #F5EAD7;
+  overflow-x: hidden;
+}
+body {
+  background: #F5EAD7;
+  color: var(--brown-deep);
+  font-family: var(--font-ui);
+  overflow-x: hidden;
+  overflow-y: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+body.unlocked { overflow-y: auto; }
+img, svg { display: block; max-width: 100%; }
+
+/* Typography utility classes */
+.cinema-title {
+  font-family: var(--font-cinema-display);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+.dev-display {
+  font-family: var(--font-dev-display);
+  letter-spacing: 0.02em;
+}
+.dev-body {
+  font-family: var(--font-dev-body);
+}
+
+a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
+  outline: 2px solid var(--gold-light);
+  outline-offset: 3px;
+}
+
+/* ===========================================================
+   2. WORLD ATMOSPHERE (Continuous Divine Illumination)
+   =========================================================== */
+#world-atmosphere {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+.atmo-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+#atmo-sky {
+  background: linear-gradient(180deg,
+    #FCF6EC 0%,
+    #FAF0DE 30%,
+    #F6E6CA 65%,
+    #EED8B5 100%);
+}
+#atmo-glow {
+  background: radial-gradient(ellipse 75% 55% at 50% 32%,
+    rgba(242, 218, 155, 0.5) 0%,
+    rgba(230, 185, 100, 0.22) 42%,
+    transparent 72%);
+  opacity: 0.7;
+}
+#atmo-vignette {
+  background: radial-gradient(ellipse 90% 80% at 50% 50%,
+    transparent 45%,
+    rgba(70, 35, 15, 0.08) 78%,
+    rgba(40, 18, 10, 0.16) 100%);
+}
+#atmo-dusk {
+  background:
+    radial-gradient(ellipse 85% 65% at 50% 35%,
+      rgba(143, 34, 50, 0.22), transparent 70%),
+    linear-gradient(180deg, rgba(32, 13, 22, 0) 0%, rgba(32, 13, 22, 0.88) 100%);
+  opacity: 0;
+}
+
+/* ===========================================================
+   3. HERO WORLD BACKDROP: LIVING GANPATI ARTWORK ANCHOR
+   =========================================================== */
+#hero-world-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  will-change: transform, opacity;
+}
+
+.hero-art-wrapper {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Original artwork preserved exactly as Visual Source of Truth */
+.hero-art-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center 38%;
+  filter: drop-shadow(0 14px 40px rgba(70, 35, 15, 0.16));
+  will-change: transform;
+  transform-origin: 50% 40%;
+}
+
+/* Divine Breathing Aura directly centered behind Ganpati's halo */
+.hero-divine-aura {
+  position: absolute;
+  top: 38%;
+  left: 50%;
+  width: min(58vw, 440px);
+  height: min(58vw, 440px);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(circle,
+    rgba(255, 235, 170, 0.65) 0%,
+    rgba(242, 218, 155, 0.35) 40%,
+    rgba(201, 150, 59, 0.15) 60%,
+    transparent 74%);
+  filter: blur(28px);
+  mix-blend-mode: screen;
+  pointer-events: none;
+  animation: divine-breath 6s ease-in-out infinite alternate;
+}
+@keyframes divine-breath {
+  0%   { opacity: 0.6; transform: translate(-50%, -50%) scale(0.96); }
+  100% { opacity: 0.95; transform: translate(-50%, -50%) scale(1.12); }
+}
+
+/* Hanging Lantern Candlelight Flickers matching the artwork lanterns */
+.lantern-flicker-left, .lantern-flicker-right {
+  position: absolute;
+  width: 85px;
+  height: 130px;
+  border-radius: 50%;
+  background: radial-gradient(circle,
+    rgba(255, 222, 140, 0.65) 0%,
+    rgba(242, 185, 80, 0.25) 50%,
+    transparent 70%);
+  filter: blur(14px);
+  mix-blend-mode: screen;
+  pointer-events: none;
+  animation: lantern-flicker 4s ease-in-out infinite alternate;
+}
+.lantern-flicker-left  { top: 12%; left: 7.5%; animation-delay: 0s; }
+.lantern-flicker-right { top: 12%; right: 7.5%; animation-delay: 1.4s; }
+
+@keyframes lantern-flicker {
+  0%   { opacity: 0.45; transform: scale(0.92); }
+  35%  { opacity: 0.85; transform: scale(1.08); }
+  70%  { opacity: 0.55; transform: scale(0.98); }
+  100% { opacity: 0.92; transform: scale(1.05); }
+}
+
+/* God Rays / Volumetric Temple Radiance */
+.god-rays {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 130vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 5;
+  opacity: 0.35;
+  background:
+    conic-gradient(from 0deg at 50% 34%,
+      transparent 0deg,
+      rgba(242, 218, 155, 0.08) 8deg,
+      transparent 15deg,
+      transparent 28deg,
+      rgba(242, 218, 155, 0.06) 36deg,
+      transparent 45deg,
+      transparent 66deg,
+      rgba(242, 218, 155, 0.08) 74deg,
+      transparent 82deg,
+      transparent 110deg,
+      rgba(242, 218, 155, 0.06) 118deg,
+      transparent 126deg,
+      transparent 162deg,
+      rgba(242, 218, 155, 0.08) 170deg,
+      transparent 178deg,
+      transparent 200deg,
+      rgba(242, 218, 155, 0.06) 208deg,
+      transparent 216deg,
+      transparent 252deg,
+      rgba(242, 218, 155, 0.08) 260deg,
+      transparent 268deg,
+      transparent 300deg,
+      rgba(242, 218, 155, 0.06) 308deg,
+      transparent 316deg,
+      transparent 360deg
+    );
+  filter: blur(10px);
+  mix-blend-mode: screen;
+}
+
+/* ===========================================================
+   4. FLOWER & BOTANICAL ARCHITECTURE (Conflict-Free 4-Tier System)
+   ===========================================================
+   Tier 1: Parent Layer (.g-plant)      -> Left/Right/Bottom coordinates & depth Z.
+   Tier 2: Wind Wrapper (.g-wind-wrap)  -> CSS keyframe wind sway ONLY.
+   Tier 3: Growth Layer (.g-stem, .g-lifter) -> Scroll-driven biological ascent.
+   Tier 4: Bloom & Petal Layers         -> Petal tiers & core bloom scaling ONLY.
+   =========================================================== */
+
+.garden-layer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100vh;
+  pointer-events: none;
+  will-change: transform;
+}
+#garden-far  { z-index: 2; }
+#garden-mid  { z-index: 3; }
+#garden-near { z-index: 6; }
+
+/* Tier 1: Static Placement & Depth */
+.g-plant {
+  position: absolute;
+  bottom: 0;
+  pointer-events: none;
+  opacity: 0;
+  will-change: transform, opacity;
+}
+#garden-far .g-plant {
+  filter: drop-shadow(0 4px 14px rgba(45, 25, 12, 0.12)) blur(1px);
+  opacity: 0;
+}
+#garden-mid .g-plant {
+  filter: drop-shadow(0 6px 20px rgba(50, 25, 15, 0.18));
+}
+#garden-near .g-plant {
+  filter: drop-shadow(0 14px 32px rgba(35, 15, 20, 0.28));
+}
+
+/* Tier 2: Dedicated Continuous Wind Wrapper */
+.g-wind-wrap {
+  width: 100%;
+  height: 100%;
+  transform-origin: bottom center;
+  will-change: transform;
+}
+.wind-sway-1 {
+  animation: wind-motion-1 7s ease-in-out infinite alternate;
+}
+.wind-sway-2 {
+  animation: wind-motion-2 8.5s ease-in-out infinite alternate;
+}
+.wind-sway-3 {
+  animation: wind-motion-3 6s ease-in-out infinite alternate;
+}
+.wind-sway-pad {
+  animation: wind-motion-pad 7.5s ease-in-out infinite alternate;
+}
+
+@keyframes wind-motion-1 {
+  0%   { transform: rotate(0deg) skewX(0deg); }
+  45%  { transform: rotate(1.8deg) skewX(0.7deg); }
+  75%  { transform: rotate(-1.2deg) skewX(-0.5deg); }
+  100% { transform: rotate(0deg) skewX(0deg); }
+}
+
+@keyframes wind-motion-2 {
+  0%   { transform: rotate(0deg) skewX(0deg); }
+  35%  { transform: rotate(-2.2deg) skewX(-0.8deg); }
+  70%  { transform: rotate(1.4deg) skewX(0.6deg); }
+  100% { transform: rotate(0deg) skewX(0deg); }
+}
+
+@keyframes wind-motion-3 {
+  0%   { transform: rotate(0.4deg); }
+  50%  { transform: rotate(-1.6deg); }
+  100% { transform: rotate(0.4deg); }
+}
+
+@keyframes wind-motion-pad {
+  0%   { transform: translateY(0) scaleY(1); }
+  50%  { transform: translateY(-3px) scaleY(1.02) rotate(0.6deg); }
+  100% { transform: translateY(0) scaleY(1); }
+}
+
+/* Tier 4 Secondary Subtle Head Nod on Mature Bloom */
+.g-head-nod {
+  animation: flower-nod 5s ease-in-out infinite alternate;
+  transform-origin: center center;
+}
+@keyframes flower-nod {
+  0%   { transform: rotate(0deg); }
+  50%  { transform: rotate(1.4deg); }
+  100% { transform: rotate(-1deg); }
+}
+
+/* ===========================================================
+   5. CEREMONIAL VELVET CURTAIN ENTRANCE
+   =========================================================== */
+#curtain-scene {
+  position: fixed;
+  inset: 0;
+  z-index: 500;
+  overflow: hidden;
+  cursor: pointer;
+  background: var(--maroon);
+}
+.curtain-half {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 51%;
+  background:
+    radial-gradient(ellipse at 35% 50%, rgba(255, 225, 150, 0.12), transparent 65%),
+    repeating-linear-gradient(90deg,
+      rgba(0, 0, 0, 0.35) 0px,
+      rgba(0, 0, 0, 0.08) 16px,
+      rgba(255, 205, 130, 0.12) 28px,
+      rgba(0, 0, 0, 0.32) 44px),
+    linear-gradient(180deg, var(--crimson-2) 0%, var(--maroon) 50%, #20080B 100%);
+  box-shadow: inset 0 0 140px rgba(0, 0, 0, 0.65);
+  will-change: transform;
+}
+.curtain-left  { left: 0; transform-origin: left center; }
+.curtain-right { right: 0; transform-origin: right center; }
+
+.curtain-half::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 14px;
+  background: linear-gradient(180deg,
+    var(--gold-light) 0%,
+    var(--gold) 40%,
+    var(--gold-deep) 80%,
+    var(--gold) 100%);
+  box-shadow: 0 0 20px rgba(220, 180, 90, 0.6);
+}
+.curtain-left::before  { right: 0; }
+.curtain-right::before { left: 0; }
+
+.curtain-seam-glow {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 240px;
+  margin-left: -120px;
+  background: radial-gradient(ellipse at center,
+    rgba(255, 225, 150, 0.7),
+    rgba(255, 225, 150, 0) 72%);
+  filter: blur(8px);
+  pointer-events: none;
+  z-index: 2;
+  mix-blend-mode: screen;
+}
+.curtain-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 16px;
+  z-index: 5;
+  pointer-events: none;
+  padding: 0 24px;
+}
+.curtain-content .line-om {
+  font-family: var(--font-dev-display);
+  color: var(--gold-light);
+  font-size: clamp(22px, 3.8vw, 32px);
+  letter-spacing: 0.05em;
+  text-shadow: 0 0 25px rgba(255, 220, 150, 0.6);
+}
+.curtain-content .line-main {
+  font-family: var(--font-dev-display);
+  color: var(--ivory);
+  font-size: clamp(32px, 6.5vw, 56px);
+  text-shadow: 0 0 35px rgba(255, 220, 150, 0.4);
+}
+.curtain-content .line-sub {
+  font-family: var(--font-dev-body);
+  color: var(--gold-light);
+  font-size: clamp(17px, 2.8vw, 24px);
+  max-width: 36ch;
+}
+.curtain-content .line-en {
+  font-family: var(--font-cinema-display);
+  font-style: italic;
+  color: rgba(251, 245, 234, 0.88);
+  font-size: clamp(16px, 2.2vw, 20px);
+  max-width: 34ch;
+  line-height: 1.6;
+}
+.tap-hint {
+  margin-top: 24px;
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  color: var(--gold-bright);
+  opacity: 0.9;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.tap-hint::before, .tap-hint::after {
+  content: '✦';
+  font-size: 10px;
+  color: var(--gold);
+}
+
+.curtain-dust {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+}
+.dust-particle {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 235, 175, 0.95), rgba(255, 235, 175, 0) 70%);
+  opacity: 0;
+}
+@keyframes dust-rise {
+  0%   { transform: translateY(0) translateX(0); opacity: 0; }
+  20%  { opacity: 0.8; }
+  80%  { opacity: 0.5; }
+  100% { transform: translateY(-160px) translateX(var(--drift, 12px)); opacity: 0; }
+}
+
+/* ===========================================================
+   6. PARTICLE CANVAS (Lotus Petals & Golden Pollen)
+   =========================================================== */
+#ambient-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 7;
+  pointer-events: none;
+}
+
+/* ===========================================================
+   7. MAIN SCROLLABLE WORLD & EDITORIAL SECTIONS
+   =========================================================== */
+#world {
+  position: relative;
+  z-index: 4;
+}
+.scene {
+  position: relative;
+  padding: 140px 0;
+  overflow: visible;
+}
+.scene-inner {
+  position: relative;
+  z-index: 3;
+}
+.container {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+/* Sanctuary Frosted Glass Content Containers */
+.content-glass {
+  background: rgba(253, 248, 240, 0.82);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 24px;
+  padding: 56px 44px;
+  border: 1px solid rgba(201, 150, 59, 0.28);
+  box-shadow:
+    0 24px 60px -15px rgba(59, 34, 17, 0.14),
+    0 0 0 1px rgba(255, 255, 255, 0.7) inset;
+  transition: transform 0.3s var(--ease-cinema);
+}
+
+/* ===========================================================
+   8. HERO / DIVINE AWAKENING (0–15% SCROLL)
+   =========================================================== */
+#scene-hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  text-align: center;
+  padding: 0 0 85px;
+}
+.hero-content-wrapper {
+  background: radial-gradient(ellipse at center,
+    rgba(253, 248, 240, 0.9) 0%,
+    rgba(253, 248, 240, 0.55) 55%,
+    transparent 85%);
+  padding: 36px 48px;
+  border-radius: 28px;
+  max-width: 680px;
+}
+.hero-kicker {
+  color: var(--gold-deep);
+  font-size: clamp(19px, 2.6vw, 24px);
+  margin-bottom: 8px;
+  opacity: 0;
+  text-shadow: 0 0 20px rgba(201, 150, 59, 0.3);
+}
+.hero-title {
+  font-family: var(--font-cinema-display);
+  font-size: clamp(42px, 8vw, 76px);
+  line-height: 1.06;
+  color: var(--brown-deep);
+  margin: 6px 0 14px;
+  opacity: 0;
+}
+.hero-title em {
+  font-style: italic;
+  color: var(--crimson);
+}
+.hero-devanagari {
+  color: var(--crimson);
+  font-size: clamp(26px, 4.4vw, 40px);
+  margin-top: 6px;
+  opacity: 0;
+}
+.hero-scroll-prompt {
+  margin-top: 28px;
+  font-size: 11.5px;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  color: var(--gold-deep);
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.hero-scroll-prompt::after {
+  content: '↓';
+  font-size: 15px;
+  animation: prompt-arrow 2s ease-in-out infinite;
+}
+@keyframes prompt-arrow {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(5px); }
+}
+
+/* ===========================================================
+   9. CELEBRATION SCENE (15–30% SCROLL)
+   =========================================================== */
+#scene-celebration {
+  text-align: center;
+  padding: 170px 0 180px;
+}
+.celebration-title {
+  font-size: clamp(32px, 5.2vw, 50px);
+  max-width: 16ch;
+  margin: 0 auto 16px;
+  color: var(--brown-deep);
+  line-height: 1.18;
+}
+.celebration-copy {
+  font-family: var(--font-ui);
+  font-weight: 300;
+  color: var(--brown);
+  max-width: 48ch;
+  margin: 0 auto;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+/* ===========================================================
+   10. INVITATION CARD (30–65% SCROLL)
+   =========================================================== */
+#scene-invitation {
+  padding: 150px 0 170px;
+  display: flex;
+  justify-content: center;
+}
+.card {
+  position: relative;
+  width: min(90vw, 590px);
+  padding: 68px 46px 60px;
+  background:
+    radial-gradient(ellipse 130% 65% at 50% 0%, rgba(255, 255, 255, 0.8), transparent 65%),
+    rgba(253, 248, 240, 0.94);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1.5px solid rgba(201, 150, 59, 0.4);
+  text-align: center;
+  box-shadow:
+    0 35px 80px -25px rgba(62, 14, 20, 0.28),
+    0 0 0 1px rgba(255, 235, 175, 0.5) inset;
+  border-radius: 12px;
+}
+
+/* Authentic Indian Temple Corner Filigree */
+.card-corner {
+  position: absolute;
+  width: 58px;
+  height: 58px;
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'><path d='M2,2 L36,2 C22,2 18,12 18,22 C18,28 12,34 2,36 Z' fill='%23C9963B' opacity='0.2'/><path d='M2,2 C34,2 34,2 34,34 M2,2 C2,34 2,34 34,34' fill='none' stroke='%23C9963B' stroke-width='2.2'/><circle cx='4' cy='4' r='3.5' fill='%23C9963B'/><circle cx='34' cy='34' r='2' fill='%23C9963B'/></svg>") no-repeat center/contain;
+  pointer-events: none;
+}
+.corner-tl { top: 16px; left: 16px; }
+.corner-tr { top: 16px; right: 16px; transform: scaleX(-1); }
+.corner-bl { bottom: 16px; left: 16px; transform: scaleY(-1); }
+.corner-br { bottom: 16px; right: 16px; transform: scale(-1,-1); }
+
+.card-preface {
+  font-family: var(--font-display-en);
+  font-style: italic;
+  color: var(--brown);
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+.card-preface + .card-preface { margin-bottom: 22px; }
+
+.card-devanagari-top {
+  color: var(--crimson);
+  font-size: clamp(20px, 3.2vw, 24px);
+  margin-bottom: 18px;
+}
+.card-title {
+  font-family: var(--font-cinema-display);
+  font-size: clamp(32px, 5.5vw, 48px);
+  letter-spacing: 0.03em;
+  color: var(--brown-deep);
+  margin-bottom: 18px;
+}
+.card-divider {
+  width: 72px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  margin: 0 auto 20px;
+}
+.card-family {
+  font-family: var(--font-cinema-display);
+  font-style: italic;
+  color: var(--crimson);
+  font-size: clamp(20px, 2.8vw, 25px);
+  margin-bottom: 24px;
+}
+.card-blessing {
+  font-family: var(--font-ui);
+  font-weight: 300;
+  color: var(--brown);
+  font-size: 15px;
+  line-height: 1.85;
+  max-width: 44ch;
+  margin: 22px auto 0;
+}
+
+/* ===========================================================
+   11. EVENT DETAILS (65–85% SCROLL)
+   =========================================================== */
+#scene-details {
+  padding: 140px 0;
+}
+.details-title {
+  font-family: var(--font-cinema-display);
+  text-align: center;
+  font-size: clamp(30px, 4.4vw, 42px);
+  margin-bottom: 60px;
+  color: var(--brown-deep);
+}
+.details-list {
+  max-width: 480px;
+  margin: 0 auto;
+  border-left: 1.5px solid rgba(201, 150, 59, 0.4);
+}
+.detail-row {
+  position: relative;
+  padding: 8px 0 38px 36px;
+}
+.detail-row::before {
+  content: '';
+  position: absolute;
+  left: -6px;
+  top: 8px;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow:
+    0 0 0 4px var(--ivory),
+    0 0 12px rgba(201, 150, 59, 0.7);
+}
+.detail-row .k {
+  font-family: var(--font-ui);
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  color: var(--gold-deep);
+  margin-bottom: 4px;
+}
+.detail-row .v {
+  font-family: var(--font-cinema-display);
+  font-size: 23px;
+  color: var(--brown-deep);
+}
+.detail-row:last-child { padding-bottom: 0; }
+
+/* ===========================================================
+   12. LOCATION SCENE
+   =========================================================== */
+#scene-location {
+  padding: 140px 0;
+  text-align: center;
+}
+.location-title {
+  font-family: var(--font-cinema-display);
+  font-size: clamp(30px, 5vw, 46px);
+  margin-bottom: 16px;
+  color: var(--brown-deep);
+}
+.location-copy {
+  color: var(--brown);
+  font-weight: 300;
+  max-width: 44ch;
+  margin: 0 auto 36px;
+  line-height: 1.75;
+  font-size: 16px;
+}
+.location-card {
+  max-width: 440px;
+  margin: 0 auto;
+  border: 1px solid rgba(201, 150, 59, 0.35);
+  padding: 32px 28px;
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 16px;
+  box-shadow: 0 15px 35px -10px rgba(59, 34, 17, 0.1);
+}
+.location-card .venue {
+  font-family: var(--font-cinema-display);
+  font-size: 24px;
+  color: var(--brown-deep);
+  margin-bottom: 8px;
+}
+.location-card .address {
+  color: var(--brown);
+  font-size: 15px;
+  line-height: 1.65;
+  font-weight: 300;
+  margin-bottom: 24px;
+}
+.directions-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-ui);
+  font-size: 13.5px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--cream);
+  background: var(--crimson);
+  padding: 14px 26px;
+  border: none;
+  text-decoration: none;
+  border-radius: 6px;
+  box-shadow: 0 8px 20px -6px rgba(107, 23, 36, 0.4);
+  transition: background 0.25s var(--ease-cinema), transform 0.25s var(--ease-cinema);
+}
+.directions-btn:hover {
+  background: var(--maroon);
+  transform: translateY(-2px);
+}
+
+/* ===========================================================
+   13. MODAK MOMENT (SACRED PRASAD)
+   =========================================================== */
+#scene-modak {
+  padding: 150px 0 160px;
+  text-align: center;
+}
+.modak-wrap {
+  width: 140px;
+  margin: 0 auto 28px;
+  filter: drop-shadow(0 20px 35px rgba(91, 58, 32, 0.28));
+}
+@keyframes modak-levitate {
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  50%      { transform: translateY(-16px) rotate(2deg); }
+}
+.modak-wrap svg { animation: modak-levitate 6.5s ease-in-out infinite; }
+.modak-line {
+  font-size: clamp(24px, 3.8vw, 34px);
+  max-width: 24ch;
+  margin: 0 auto;
+  color: var(--brown-deep);
+}
+
+/* ===========================================================
+   14. FINAL BLESSING (85–100% SCROLL)
+   =========================================================== */
+#scene-final {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 130px 0;
+  position: relative;
+}
+.final-art-badge {
+  width: min(72vw, 300px);
+  height: min(72vw, 300px);
+  margin: 0 auto 32px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow:
+    0 0 55px rgba(242, 218, 155, 0.55),
+    0 0 100px rgba(201, 150, 59, 0.35);
+  border: 2.5px solid rgba(242, 218, 155, 0.65);
+  animation: final-badge-glow 5s ease-in-out infinite alternate;
+}
+.final-art-badge img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 38%;
+  transform: scale(1.22);
+}
+@keyframes final-badge-glow {
+  0%   { box-shadow: 0 0 35px rgba(242, 218, 155, 0.4), 0 0 70px rgba(201, 150, 59, 0.2); }
+  100% { box-shadow: 0 0 65px rgba(242, 218, 155, 0.8), 0 0 120px rgba(201, 150, 59, 0.5); }
+}
+.final-main {
+  font-size: clamp(34px, 6.8vw, 58px);
+  color: var(--gold-bright);
+  text-shadow: 0 0 35px rgba(242, 218, 155, 0.5);
+  margin-bottom: 16px;
+}
+.final-sub {
+  font-family: var(--font-cinema-display);
+  font-style: italic;
+  color: rgba(251, 245, 234, 0.9);
+  font-size: clamp(16px, 2.2vw, 20px);
+}
+
+/* ===========================================================
+   15. REDUCED MOTION SUPPORT
+   =========================================================== */
+@media (prefers-reduced-motion: reduce) {
+  .modak-wrap svg, .final-art-badge { animation: none !important; }
+  .hero-divine-aura, .lantern-flicker-left, .lantern-flicker-right { animation: none !important; }
+  .g-wind-wrap, .g-head-nod { animation: none !important; }
+  * { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+  #ambient-canvas { display: none; }
+  .god-rays { display: none; }
+}
+
+/* ===========================================================
+   16. RESPONSIVE OPTIMIZATIONS
+   =========================================================== */
+@media (max-width: 768px) {
+  .hero-art-img {
+    object-position: center 34%;
+    transform: scale(1.16);
+  }
+  .hero-divine-aura {
+    top: 34%;
+    width: 74vw;
+    height: 74vw;
+  }
+  .lantern-flicker-left  { top: 9%; left: 3%; width: 65px; height: 100px; }
+  .lantern-flicker-right { top: 9%; right: 3%; width: 65px; height: 100px; }
+  .scene { padding: 100px 0; }
+  #scene-hero { padding: 0 0 65px; }
+  .hero-content-wrapper { padding: 26px 20px; }
+  .card { padding: 56px 24px 46px; }
+  .content-glass { padding: 36px 22px; }
+  .details-list { margin-left: 8px; }
+}
+</style>
+</head>
+<body>
+
+<!-- =========================================================
+     ATMOSPHERE (Continuous Divine Illumination)
+     ========================================================= -->
+<div id="world-atmosphere" aria-hidden="true">
+  <div class="atmo-layer" id="atmo-sky"></div>
+  <div class="atmo-layer" id="atmo-glow"></div>
+  <div class="atmo-layer" id="atmo-vignette"></div>
+  <div class="atmo-layer" id="atmo-dusk"></div>
+</div>
+
+<!-- =========================================================
+     HERO WORLD BACKDROP: LIVING GANPATI ARTWORK ANCHOR
+     ========================================================= -->
+<div id="hero-world-backdrop" aria-hidden="true">
+  <div class="hero-art-wrapper" id="hero-art-wrapper">
+    <!-- Divine Breathing Aura behind Ganpati's halo -->
+    <div class="hero-divine-aura" id="hero-divine-aura"></div>
+
+    <!-- Hanging Lanterns candlelight dynamic flickers -->
+    <div class="lantern-flicker-left" id="lantern-left"></div>
+    <div class="lantern-flicker-right" id="lantern-right"></div>
+
+    <!-- Original Ganpati Artwork Image preserved exactly -->
+    <img src="ganpati_hero.png" alt="Lord Ganesha with Lotus Flowers and Lanterns" class="hero-art-img" id="hero-art-img">
+  </div>
+</div>
+
+<!-- =========================================================
+     PROCEDURAL BOTANICAL GARDEN LAYERS (PARALLAX + BIOLOGICAL GROWTH)
+     ========================================================= -->
+<div id="garden-far" class="garden-layer" aria-hidden="true"></div>
+<div id="garden-mid" class="garden-layer" aria-hidden="true"></div>
+
+<!-- =========================================================
+     GOD RAYS
+     ========================================================= -->
+<div class="god-rays" id="god-rays" aria-hidden="true"></div>
+
+<!-- =========================================================
+     MAIN WORLD (Scrollable Content Journey)
+     ========================================================= -->
+<main id="world">
+
+  <!-- SCENE 1: HERO / DIVINE AWAKENING (0–15%) -->
+  <section id="scene-hero" class="scene" aria-label="Bappa arrives">
+    <div class="container scene-inner">
+      <div class="hero-content-wrapper">
+        <div class="hero-kicker dev-display" id="hero-kicker">॥ श्री गणेशाय नमः ॥</div>
+        <h1 class="hero-title" id="hero-title">Bappa is coming<br><em>home.</em></h1>
+        <div class="hero-devanagari dev-display" id="hero-devanagari">गणपती बाप्पा मोरया!</div>
+        <div class="hero-scroll-prompt" id="hero-scroll-prompt">SCROLL TO ENTER SANCTUARY</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCENE 2: CELEBRATION JOURNEY (15–30%) -->
+  <section id="scene-celebration" class="scene" aria-label="A celebration of devotion">
+    <div class="container scene-inner">
+      <div class="content-glass">
+        <h2 class="celebration-title cinema-title">A celebration of devotion, joy &amp; togetherness.</h2>
+        <p class="celebration-copy">Ten days of music, colour and prayer — modaks shared, lamps lit, and a home filled with the sound of the dhol. This year, we would love for you to be part of it.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCENE 3: INVITATION CARD (30–65%) -->
+  <section id="scene-invitation" class="scene" aria-label="Invitation">
+    <div class="card" id="invitation-card">
+      <span class="card-corner corner-tl"></span>
+      <span class="card-corner corner-tr"></span>
+      <span class="card-corner corner-bl"></span>
+      <span class="card-corner corner-br"></span>
+
+      <p class="card-preface">With the blessings of Lord Ganesha</p>
+      <p class="card-preface">we warmly invite you to celebrate</p>
+      <div class="card-devanagari-top dev-display">गणपती बाप्पा मोरया</div>
+      <h2 class="card-title">Ganesh Chaturthi</h2>
+      <div class="card-divider"></div>
+      <p class="card-family">The Dubey Family</p>
+      <p class="card-blessing">We pray that Lord Ganesha blesses you with joy, prosperity, and the sweetness of modaks. Please honour us with your presence as we welcome Bappa home.</p>
+    </div>
+  </section>
+
+  <!-- SCENE 4: EVENT DETAILS (65–85%) -->
+  <section id="scene-details" class="scene" aria-label="Event details">
+    <div class="container">
+      <div class="content-glass">
+        <h2 class="details-title">Join us</h2>
+        <div class="details-list" id="details-list">
+          <div class="detail-row">
+            <div class="k">CELEBRATION</div>
+            <div class="v">Ganesh Chaturthi 2026</div>
+          </div>
+          <div class="detail-row">
+            <div class="k">DATE</div>
+            <div class="v">Friday, 28th August 2026</div>
+          </div>
+          <div class="detail-row">
+            <div class="k">STHAPANA</div>
+            <div class="v">Morning Muhurat · 10:30 AM</div>
+          </div>
+          <div class="detail-row">
+            <div class="k">AARTI</div>
+            <div class="v">Evening · 7:00 PM daily</div>
+          </div>
+          <div class="detail-row">
+            <div class="k">VISARJAN</div>
+            <div class="v">Sunday, 6th September 2026</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCENE 5: LOCATION -->
+  <section id="scene-location" class="scene" aria-label="Location">
+    <div class="container">
+      <div class="content-glass">
+        <h2 class="location-title">Come celebrate with us.</h2>
+        <p class="location-copy">We can't wait to welcome you home for Bappa's darshan, aarti and prasad.</p>
+        <div class="location-card">
+          <div class="venue">Dubey Residence</div>
+          <div class="address">123, Ganesh Nagar<br>Near Shiv Mandir, Sector 5<br>City, State — 400001</div>
+          <a class="directions-btn" href="https://maps.google.com" target="_blank" rel="noopener">Get directions →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCENE 6: MODAK MOMENT (SACRED PRASAD) -->
+  <section id="scene-modak" class="scene" aria-label="A festive blessing">
+    <div class="modak-wrap">
+      <svg viewBox="0 0 120 130" xmlns="http://www.w3.org/2000/svg" role="img"
+           aria-label="An illustration of a sacred modak sweet">
+        <defs>
+          <linearGradient id="modakGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#FCF3DE"/>
+            <stop offset="60%" stop-color="#F2DA9B"/>
+            <stop offset="100%" stop-color="#C9963B"/>
+          </linearGradient>
+          <radialGradient id="modakGlow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#FFE8A3" stop-opacity="0.6"/>
+            <stop offset="100%" stop-color="#C9963B" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <circle cx="60" cy="75" r="45" fill="url(#modakGlow)"/>
+        <path d="M60,124 C24,124 12,96 18,74 C23,55 40,44 60,20
+                 C80,44 97,55 102,74 C108,96 96,124 60,124 Z"
+              fill="url(#modakGrad)" stroke="#8E6018" stroke-width="2"/>
+        <path d="M60,20 C55,30 55,38 60,46 C65,38 65,30 60,20 Z" fill="#8E6018"/>
+        <path d="M32,78 C32,60 44,50 60,50 C76,50 88,60 88,78"
+              fill="none" stroke="#8E6018" stroke-width="1.6" opacity=".55"/>
+        <path d="M46,84 C46,68 52,58 60,58 C68,58 74,68 74,84"
+              fill="none" stroke="#8E6018" stroke-width="1.4" opacity=".4"/>
+      </svg>
+    </div>
+    <h2 class="modak-line dev-display">मोदकांचा गोडवा, बाप्पाचा आशीर्वाद</h2>
+  </section>
+
+  <!-- SCENE 7: FINAL BLESSING (85–100%) -->
+  <section id="scene-final" class="scene" aria-label="Closing blessing">
+    <div>
+      <div class="final-art-badge">
+        <img src="ganpati_hero.png" alt="Lord Ganesha Sacred Darshan">
+      </div>
+      <div class="final-main dev-display">गणपती बाप्पा मोरया!</div>
+      <div class="final-sub">Until Bappa returns again…</div>
+    </div>
+  </section>
+
+</main>
+
+<!-- =========================================================
+     FOREGROUND GARDEN LAYER (CINEMATIC DEPTH OF FIELD)
+     ========================================================= -->
+<div id="garden-near" class="garden-layer" aria-hidden="true"></div>
+
+<!-- =========================================================
+     AMBIENT PARTICLES (CANVAS 2D)
+     ========================================================= -->
+<canvas id="ambient-canvas" aria-hidden="true"></canvas>
+
+<!-- =========================================================
+     CEREMONIAL VELVET CURTAIN ENTRANCE
+     ========================================================= -->
+<div id="curtain-scene" role="button" tabindex="0"
+     aria-label="Tap, click, or scroll to open the ceremonial curtain">
+  <div class="curtain-half curtain-left" id="curtain-left"></div>
+  <div class="curtain-half curtain-right" id="curtain-right"></div>
+  <div class="curtain-seam-glow" id="seam-glow"></div>
+  <div class="curtain-dust" id="curtain-dust"></div>
+  <div class="curtain-content" id="curtain-intro">
+    <div class="line-om dev-display">॥ श्री गणेशाय नमः ॥</div>
+    <div class="line-main dev-display">गणपती बाप्पा मोरया!</div>
+    <div class="line-sub dev-body">गणेश चतुर्थीच्या हार्दिक शुभेच्छा!</div>
+    <div class="line-en">May Lord Ganesha bless your home with happiness, prosperity, peace and new beginnings.</div>
+    <div class="tap-hint">TAP ANYWHERE TO ENTER SANCTUARY</div>
+  </div>
+</div>
+
+<!-- =========================================================
+     MAIN BOTANICAL & SCROLL ENGINE
+     ========================================================= -->
+<script>
+(function() {
+  'use strict';
+
+  const isMobile = window.innerWidth < 768;
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const CFG = {
+    maxParticles: isMobile ? 50 : 105,
+    parallaxFar:  85,
+    parallaxMid:  50,
+    parallaxNear: 22,
+  };
+
+  const clamp = (v, lo, hi) => Math.min(Math.max(v, lo), hi);
+  const lerp  = (a, b, t) => a + (b - a) * t;
+  const rand  = (lo, hi) => Math.random() * (hi - lo) + lo;
+  const pick  = arr => arr[Math.floor(Math.random() * arr.length)];
+
+  // =============================================================
+  // BOTANICAL GARDEN MODULE (Conflict-Free 4-Tier Architecture)
+  // =============================================================
+  const Garden = {
+    elements: [],
+
+    init() {
+      this.populate('garden-far',  this.farSpecs());
+      this.populate('garden-mid',  this.midSpecs());
+      this.populate('garden-near', this.nearSpecs());
+    },
+
+    populate(layerId, specs) {
+      const layer = document.getElementById(layerId);
+      if (!layer) return;
+
+      specs.forEach(spec => {
+        const item = this.createPlantElement(spec);
+        layer.appendChild(item.dom);
+        this.elements.push(item);
+      });
+    },
+
+    farSpecs() {
+      return [
+        { type: 'tree', side: 'left',  pos: '1%',  h: 230, growStart: 0.04, growEnd: 0.28 },
+        { type: 'bud',  side: 'left',  pos: '7%',  h: 180, growStart: 0.16, growEnd: 0.42 },
+        { type: 'bush', side: 'left',  pos: '12%', h: 95,  growStart: 0.06, growEnd: 0.30 },
+
+        { type: 'tree', side: 'right', pos: '1%',  h: 240, growStart: 0.04, growEnd: 0.28 },
+        { type: 'bud',  side: 'right', pos: '7%',  h: 190, growStart: 0.17, growEnd: 0.43 },
+        { type: 'bush', side: 'right', pos: '12%', h: 100, growStart: 0.07, growEnd: 0.31 },
+      ];
+    },
+
+    midSpecs() {
+      return [
+        // Left Flank (Harmonizing with Ganpati Artwork's left flank)
+        { type: 'pad',   side: 'left', pos: '1%',  h: 120, growStart: 0.05, growEnd: 0.26 },
+        { type: 'stem',  side: 'left', pos: '4%',  h: 210, growStart: 0.12, growEnd: 0.38 },
+        { type: 'lotus', side: 'left', pos: '7%',  h: 220, growStart: 0.28, growEnd: 0.65 },
+        { type: 'bud',   side: 'left', pos: '13%', h: 175, growStart: 0.20, growEnd: 0.48 },
+        { type: 'pad',   side: 'left', pos: '17%', h: 90,  growStart: 0.10, growEnd: 0.32 },
+
+        // Right Flank (Harmonizing with Ganpati Artwork's right flank)
+        { type: 'pad',   side: 'right', pos: '1%',  h: 125, growStart: 0.05, growEnd: 0.26 },
+        { type: 'stem',  side: 'right', pos: '4%',  h: 215, growStart: 0.13, growEnd: 0.39 },
+        { type: 'lotus', side: 'right', pos: '7%',  h: 225, growStart: 0.29, growEnd: 0.66 },
+        { type: 'bud',   side: 'right', pos: '13%', h: 180, growStart: 0.21, growEnd: 0.49 },
+        { type: 'pad',   side: 'right', pos: '17%', h: 95,  growStart: 0.11, growEnd: 0.33 },
+
+        // Sanctuary Bottom Flank Extensions (Clear of Ganpati's central throne!)
+        { type: 'pad',   side: 'left',  pos: '26%', h: 65,  growStart: 0.38, growEnd: 0.62 },
+        { type: 'pad',   side: 'right', pos: '26%', h: 65,  growStart: 0.39, growEnd: 0.63 },
+      ];
+    },
+
+    nearSpecs() {
+      return [
+        // Cinematic foreground depth-of-field elements in corners
+        { type: 'pad',   side: 'left',  pos: '-2%', h: 170, growStart: 0.22, growEnd: 0.50, blur: 1.5 },
+        { type: 'lotus', side: 'left',  pos: '2%',  h: 260, growStart: 0.42, growEnd: 0.78, blur: 0.8 },
+        { type: 'pad',   side: 'right', pos: '-2%', h: 175, growStart: 0.23, growEnd: 0.52, blur: 1.5 },
+        { type: 'lotus', side: 'right', pos: '2%',  h: 265, growStart: 0.43, growEnd: 0.79, blur: 0.8 },
+      ];
+    },
+
+    createPlantElement(spec) {
+      // Tier 1: Parent position layer
+      const dom = document.createElement('div');
+      dom.className = `g-plant g-${spec.type}`;
+
+      if (spec.side === 'left') {
+        dom.style.left = spec.pos;
+      } else {
+        dom.style.right = spec.pos;
+      }
+
+      const w = spec.type === 'pad'   ? spec.h * 1.55 :
+                spec.type === 'lotus' ? spec.h * 1.25 :
+                spec.type === 'tree'  ? spec.h * 0.75 :
+                spec.type === 'bush'  ? spec.h * 1.4  :
+                spec.type === 'bud'   ? 75 : 60;
+
+      dom.style.width  = w + 'px';
+      dom.style.height = spec.h + 'px';
+      if (spec.blur) dom.style.filter = `blur(${spec.blur}px)`;
+
+      // Tier 2: Dedicated Wind Wrapper
+      const windWrap = document.createElement('div');
+      const windClass = spec.type === 'pad' ? 'wind-sway-pad' : pick(['wind-sway-1', 'wind-sway-2', 'wind-sway-3']);
+      windWrap.className = `g-wind-wrap ${windClass}`;
+      windWrap.style.animationDelay = rand(-3, 0) + 's';
+      windWrap.style.animationDuration = rand(6, 9) + 's';
+
+      // Tier 3 & 4: Biological SVG
+      const uid = 'bio_' + Math.floor(Math.random() * 1000000);
+      windWrap.innerHTML = this.buildSvg(spec, w, spec.h, uid);
+      dom.appendChild(windWrap);
+
+      return {
+        dom: dom,
+        spec: spec,
+        w: w,
+        h: spec.h,
+        uid: uid,
+        growStart: spec.growStart,
+        growEnd:   spec.growEnd,
+      };
+    },
+
+    buildSvg(spec, w, h, uid) {
+      const cx = w / 2;
+
+      switch (spec.type) {
+        case 'lotus': {
+          const stemEndY = h * 0.40;
+          const curveX = cx + (spec.side === 'left' ? 10 : -10);
+
+          return `<svg viewBox="0 0 ${w} ${h}" width="${w}" height="${h}" style="overflow:visible;">
+            <defs>
+              <linearGradient id="${uid}_stem" x1="0" y1="1" x2="0" y2="0">
+                <stop offset="0%" stop-color="#1C331A"/>
+                <stop offset="60%" stop-color="#375730"/>
+                <stop offset="100%" stop-color="#618556"/>
+              </linearGradient>
+              <radialGradient id="${uid}_pOuter" cx="50%" cy="85%" r="75%">
+                <stop offset="0%" stop-color="#FFF5F7"/>
+                <stop offset="50%" stop-color="#E597AB"/>
+                <stop offset="90%" stop-color="#B54B68"/>
+                <stop offset="100%" stop-color="#8C2C45"/>
+              </radialGradient>
+              <radialGradient id="${uid}_pMid" cx="50%" cy="80%" r="70%">
+                <stop offset="0%" stop-color="#FFFFFF"/>
+                <stop offset="55%" stop-color="#FCDCE5"/>
+                <stop offset="90%" stop-color="#E597AB"/>
+                <stop offset="100%" stop-color="#A63854"/>
+              </radialGradient>
+              <radialGradient id="${uid}_core" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#FFF3C4"/>
+                <stop offset="60%" stop-color="#F2DA9B"/>
+                <stop offset="90%" stop-color="#C9963B"/>
+                <stop offset="100%" stop-color="#8E6018"/>
+              </radialGradient>
+            </defs>
+
+            <!-- Tier 3: Stem Path (Controlled by strokeDashoffset) -->
+            <path class="g-stem" d="M${cx},${h} Q${curveX},${h*0.72} ${cx},${stemEndY}"
+                  fill="none" stroke="url(#${uid}_stem)" stroke-width="4.5" stroke-linecap="round"/>
+
+            <!-- Stem Leaflet Left -->
+            <g class="g-leaf g-leaf-1" style="transform-origin: ${cx-3}px ${h*0.72}px;">
+              <path d="M${cx-2},${h*0.72} C${cx-24},${h*0.68} ${cx-36},${h*0.58} ${cx-40},${h*0.52} C${cx-32},${h*0.58} ${cx-18},${h*0.66} ${cx-2},${h*0.72} Z"
+                    fill="#2E4B28" stroke="rgba(242,218,155,0.4)" stroke-width="0.8"/>
+            </g>
+            <!-- Stem Leaflet Right -->
+            <g class="g-leaf g-leaf-2" style="transform-origin: ${cx+3}px ${h*0.58}px;">
+              <path d="M${cx+2},${h*0.58} C${cx+26},${h*0.54} ${cx+38},${h*0.44} ${cx+42},${h*0.38} C${cx+34},${h*0.44} ${cx+18},${h*0.52} ${cx+2},${h*0.58} Z"
+                    fill="#3B5A33" stroke="rgba(242,218,155,0.4)" stroke-width="0.8"/>
+            </g>
+
+            <!-- Tier 3: Flower Lifter (Translates upward with stem apex) -->
+            <g class="g-lifter" style="transform: translateY(0px);">
+              <!-- Subtle independent head nod -->
+              <g class="g-head-nod">
+                <!-- Protective Calyx -->
+                <g class="g-calyx" style="transform-origin: ${cx}px ${stemEndY}px;">
+                  <path d="M${cx},${stemEndY} C${cx-16},${stemEndY+2} ${cx-24},${stemEndY-8} ${cx-20},${stemEndY-16} C${cx-12},${stemEndY-8} ${cx-4},${stemEndY-2} ${cx},${stemEndY} Z" fill="#2E4B28"/>
+                  <path d="M${cx},${stemEndY} C${cx+16},${stemEndY+2} ${cx+24},${stemEndY-8} ${cx+20},${stemEndY-16} C${cx+12},${stemEndY-8} ${cx+4},${stemEndY-2} ${cx},${stemEndY} Z" fill="#2E4B28"/>
+                </g>
+
+                <!-- Bud Phase Shield -->
+                <g class="g-bud-shield" style="transform-origin: ${cx}px ${stemEndY}px;">
+                  <path d="M${cx},${stemEndY} C${cx-16},${stemEndY-12} ${cx-12},${stemEndY-45} ${cx},${stemEndY-58} C${cx+12},${stemEndY-45} ${cx+16},${stemEndY-12} ${cx},${stemEndY} Z"
+                        fill="url(#${uid}_pOuter)"/>
+                </g>
+
+                <!-- Tier 4: Bloom Outer Petals -->
+                <g class="g-bloom-outer" style="transform-origin: ${cx}px ${stemEndY}px;">
+                  <path d="M${cx},${stemEndY} C${cx-38},${stemEndY-8} ${cx-65},${stemEndY-28} ${cx-70},${stemEndY-48} C${cx-50},${stemEndY-44} ${cx-24},${stemEndY-25} ${cx},${stemEndY} Z" fill="url(#${uid}_pOuter)"/>
+                  <path d="M${cx},${stemEndY} C${cx+38},${stemEndY-8} ${cx+65},${stemEndY-28} ${cx+70},${stemEndY-48} C${cx+50},${stemEndY-44} ${cx+24},${stemEndY-25} ${cx},${stemEndY} Z" fill="url(#${uid}_pOuter)"/>
+                  <path d="M${cx},${stemEndY} C${cx-48},${stemEndY+6} ${cx-75},${stemEndY-8} ${cx-82},${stemEndY-24} C${cx-58},${stemEndY-16} ${cx-26},${stemEndY-6} ${cx},${stemEndY} Z" fill="url(#${uid}_pOuter)"/>
+                  <path d="M${cx},${stemEndY} C${cx+48},${stemEndY+6} ${cx+75},${stemEndY-8} ${cx+82},${stemEndY-24} C${cx+58},${stemEndY-16} ${cx+26},${stemEndY-6} ${cx},${stemEndY} Z" fill="url(#${uid}_pOuter)"/>
+                </g>
+
+                <!-- Tier 4: Bloom Mid Petals -->
+                <g class="g-bloom-mid" style="transform-origin: ${cx}px ${stemEndY}px;">
+                  <path d="M${cx},${stemEndY} C${cx-28},${stemEndY-16} ${cx-46},${stemEndY-48} ${cx-44},${stemEndY-72} C${cx-25},${stemEndY-58} ${cx-12},${stemEndY-30} ${cx},${stemEndY} Z" fill="url(#${uid}_pMid)"/>
+                  <path d="M${cx},${stemEndY} C${cx+28},${stemEndY-16} ${cx+46},${stemEndY-48} ${cx+44},${stemEndY-72} C${cx+25},${stemEndY-58} ${cx+12},${stemEndY-30} ${cx},${stemEndY} Z" fill="url(#${uid}_pMid)"/>
+                  <path d="M${cx},${stemEndY} C${cx-18},${stemEndY-34} ${cx-18},${stemEndY-68} ${cx},${stemEndY-88} C${cx+18},${stemEndY-68} ${cx+18},${stemEndY-34} ${cx},${stemEndY} Z" fill="url(#${uid}_pOuter)"/>
+                </g>
+
+                <!-- Tier 4: Bloom Inner Petals -->
+                <g class="g-bloom-inner" style="transform-origin: ${cx}px ${stemEndY}px;">
+                  <path d="M${cx},${stemEndY} C${cx-20},${stemEndY-16} ${cx-24},${stemEndY-46} ${cx-16},${stemEndY-66} C${cx-8},${stemEndY-48} ${cx-4},${stemEndY-26} ${cx},${stemEndY} Z" fill="url(#${uid}_pMid)"/>
+                  <path d="M${cx},${stemEndY} C${cx+20},${stemEndY-16} ${cx+24},${stemEndY-46} ${cx+16},${stemEndY-66} C${cx+8},${stemEndY-48} ${cx+4},${stemEndY-26} ${cx},${stemEndY} Z" fill="url(#${uid}_pMid)"/>
+                  <path d="M${cx},${stemEndY+4} C${cx-14},${stemEndY-10} ${cx-12},${stemEndY-38} ${cx},${stemEndY-54} C${cx+12},${stemEndY-38} ${cx+14},${stemEndY-10} ${cx},${stemEndY+4} Z" fill="url(#${uid}_pMid)"/>
+                </g>
+
+                <!-- Sacred Pistil Core -->
+                <g class="g-bloom-core" style="transform-origin: ${cx}px ${stemEndY-18}px;">
+                  <ellipse cx="${cx}" cy="${stemEndY-18}" rx="14" ry="9" fill="url(#${uid}_core)"/>
+                  <circle cx="${cx-8}" cy="${stemEndY-22}" r="1.8" fill="#FFF8E0"/>
+                  <circle cx="${cx}"   cy="${stemEndY-24}" r="2.0" fill="#FFF8E0"/>
+                  <circle cx="${cx+8}" cy="${stemEndY-22}" r="1.8" fill="#FFF8E0"/>
+                  <circle cx="${cx-5}" cy="${stemEndY-16}" r="1.6" fill="#8E6018"/>
+                  <circle cx="${cx+5}" cy="${stemEndY-16}" r="1.6" fill="#8E6018"/>
+                </g>
+              </g>
+            </g>
+          </svg>`;
+        }
+
+        case 'pad': {
+          const cy = h * 0.55;
+          return `<svg viewBox="0 0 ${w} ${h}" width="${w}" height="${h}" style="overflow:visible;">
+            <defs>
+              <radialGradient id="${uid}_pad" cx="50%" cy="45%" r="52%">
+                <stop offset="0%" stop-color="#466E3C"/>
+                <stop offset="68%" stop-color="#223E1E"/>
+                <stop offset="95%" stop-color="#142612"/>
+                <stop offset="100%" stop-color="#C9963B"/>
+              </radialGradient>
+            </defs>
+            <g class="g-pad-shape" style="transform-origin: ${cx}px ${cy}px;">
+              <path d="M${cx},${cy}
+                       C${cx*0.3},${cy*0.95} 0,${cy*0.45} ${cx*0.12},${cy*0.15}
+                       C${cx*0.28},0 ${cx*0.72},0 ${cx*0.88},${cy*0.15}
+                       C${w},${cy*0.45} ${w*0.88},${cy*0.95} ${cx},${cy} Z"
+                    fill="url(#${uid}_pad)" stroke="rgba(242,218,155,0.4)" stroke-width="1.2"/>
+              <!-- Delicate Golden Veining -->
+              <g stroke="rgba(242,218,155,0.22)" stroke-width="1.2" fill="none">
+                <path d="M${cx},${cy*0.6} Q${cx*0.4},${cy*0.4} ${cx*0.25},${cy*0.25}"/>
+                <path d="M${cx},${cy*0.6} Q${cx*0.6},${cy*0.25} ${cx*0.5},${cy*0.08}"/>
+                <path d="M${cx},${cy*0.6} Q${cx*1.4},${cy*0.25} ${cx*1.5},${cy*0.08}"/>
+                <path d="M${cx},${cy*0.6} Q${cx*1.6},${cy*0.4} ${w*0.85},${cy*0.25}"/>
+              </g>
+              <!-- Pearl dew droplet -->
+              <circle cx="${cx+4}" cy="${cy*0.6-2}" r="3.2" fill="rgba(255,255,255,0.5)" stroke="rgba(255,255,255,0.75)" stroke-width="0.8"/>
+            </g>
+          </svg>`;
+        }
+
+        case 'bud': {
+          const stemEndY = h * 0.42;
+          return `<svg viewBox="0 0 ${w} ${h}" width="${w}" height="${h}" style="overflow:visible;">
+            <defs>
+              <linearGradient id="${uid}_bstem" x1="0" y1="1" x2="0" y2="0">
+                <stop offset="0%" stop-color="#1C331A"/>
+                <stop offset="100%" stop-color="#5F8554"/>
+              </linearGradient>
+              <radialGradient id="${uid}_bpetal" cx="45%" cy="75%" r="70%">
+                <stop offset="0%" stop-color="#FFF6F8"/>
+                <stop offset="50%" stop-color="#E597AB"/>
+                <stop offset="90%" stop-color="#B54B68"/>
+                <stop offset="100%" stop-color="#6E1B31"/>
+              </radialGradient>
+            </defs>
+            <path class="g-stem" d="M${cx},${h} Q${cx-6},${h*0.7} ${cx},${stemEndY}"
+                  fill="none" stroke="url(#${uid}_bstem)" stroke-width="3.5" stroke-linecap="round"/>
+            <g class="g-lifter" style="transform: translateY(0px);">
+              <g class="g-bud-head" style="transform-origin: ${cx}px ${stemEndY}px;">
+                <path d="M${cx},${stemEndY} C${cx-16},${stemEndY-10} ${cx-14},${stemEndY-40} ${cx},${stemEndY-54} C${cx-5},${stemEndY-35} ${cx-4},${stemEndY-12} ${cx},${stemEndY} Z" fill="#2E4B28"/>
+                <path d="M${cx},${stemEndY} C${cx-14},${stemEndY-12} ${cx-12},${stemEndY-44} ${cx},${stemEndY-60} C${cx+12},${stemEndY-44} ${cx+14},${stemEndY-12} ${cx},${stemEndY} Z" fill="url(#${uid}_bpetal)"/>
+                <path d="M${cx},${stemEndY} C${cx+16},${stemEndY-10} ${cx+14},${stemEndY-40} ${cx},${stemEndY-54} C${cx+5},${stemEndY-35} ${cx+4},${stemEndY-12} ${cx},${stemEndY} Z" fill="#3B5A33"/>
+              </g>
+            </g>
+          </svg>`;
+        }
+
+        case 'stem': {
+          return `<svg viewBox="0 0 ${w} ${h}" width="${w}" height="${h}" style="overflow:visible;">
+            <defs>
+              <linearGradient id="${uid}_st" x1="0" y1="1" x2="0" y2="0">
+                <stop offset="0%" stop-color="#1C331A"/>
+                <stop offset="100%" stop-color="#5F8554"/>
+              </linearGradient>
+            </defs>
+            <path class="g-stem" d="M${cx},${h} Q${cx+8},${h*0.6} ${cx-3},${h*0.25} T${cx},0"
+                  fill="none" stroke="url(#${uid}_st)" stroke-width="3.6" stroke-linecap="round"/>
+            <g class="g-leaf g-leaf-1" style="transform-origin: ${cx+3}px ${h*0.55}px;">
+              <path d="M${cx+3},${h*0.55} Q${cx-22},${h*0.48} ${cx-32},${h*0.38} Q${cx-16},${h*0.44} ${cx+3},${h*0.55} Z" fill="#2E4B28"/>
+            </g>
+            <g class="g-leaf g-leaf-2" style="transform-origin: ${cx-2}px ${h*0.38}px;">
+              <path d="M${cx-2},${h*0.38} Q${cx+22},${h*0.32} ${cx+30},${h*0.22} Q${cx+16},${h*0.28} ${cx-2},${h*0.38} Z" fill="#3B5A33"/>
+            </g>
+          </svg>`;
+        }
+
+        case 'tree': {
+          return `<svg viewBox="0 0 ${w} ${h}" width="${w}" height="${h}" style="overflow:visible;">
+            <rect x="${cx-3}" y="${h*0.35}" width="6" height="${h*0.65}" rx="3" fill="#3B2211" opacity="0.6"/>
+            <g class="g-canopy" style="transform-origin: ${cx}px ${h*0.35}px;">
+              <ellipse cx="${cx}" cy="${h*0.32}" rx="${w*0.45}" ry="${h*0.32}" fill="#2E4B28" opacity="0.45"/>
+              <ellipse cx="${cx-w*0.08}" cy="${h*0.24}" rx="${w*0.32}" ry="${h*0.24}" fill="#3E6135" opacity="0.4"/>
+            </g>
+          </svg>`;
+        }
+
+        case 'bush': {
+          return `<svg viewBox="0 0 ${w} ${h}" width="${w}" height="${h}" style="overflow:visible;">
+            <g class="g-canopy" style="transform-origin: ${cx}px bottom;">
+              <ellipse cx="${w*0.36}" cy="${h*0.62}" rx="${w*0.34}" ry="${h*0.36}" fill="#2E4B28" opacity="0.42"/>
+              <ellipse cx="${w*0.64}" cy="${h*0.54}" rx="${w*0.36}" ry="${h*0.42}" fill="#3A5C33" opacity="0.38"/>
+            </g>
+          </svg>`;
+        }
+
+        default:
+          return '';
+      }
+    },
+
+    update(progress) {
+      this.elements.forEach(item => {
+        const dom = item.dom;
+        const p = clamp((progress - item.growStart) / (item.growEnd - item.growStart), 0, 1);
+        const eased = p < 1 ? 1 - Math.pow(1 - p, 3) : 1; // Smooth cubic ease out
+
+        // If not awakened yet, keep hidden
+        if (eased <= 0.005) {
+          dom.style.opacity = '0';
+          return;
+        }
+        dom.style.opacity = '1';
+
+        // Stage 1: Stem Growth (Drawing along path)
+        const stem = dom.querySelector('.g-stem');
+        if (stem) {
+          if (!stem._totalLen) {
+            try { stem._totalLen = stem.getTotalLength(); } catch(e) { stem._totalLen = item.h * 0.7; }
+            stem.style.strokeDasharray = stem._totalLen;
+          }
+          const stemProgress = clamp(eased / 0.6, 0, 1);
+          stem.style.strokeDashoffset = (1 - stemProgress) * stem._totalLen;
+        }
+
+        // Stage 2: Foliage / Leaves unfolding along the stem
+        const leaves = dom.querySelectorAll('.g-leaf');
+        if (leaves.length > 0) {
+          const leafP = clamp((eased - 0.25) / 0.5, 0, 1);
+          leaves.forEach((lf, idx) => {
+            const delayP = clamp(leafP - idx * 0.15, 0, 1);
+            const lfScale = 1 - Math.pow(1 - delayP, 2.5);
+            lf.style.transform = `scale(${lfScale})`;
+            lf.style.opacity = delayP > 0.04 ? '1' : '0';
+          });
+        }
+
+        // Stage 3: Lifter translation (flower head rises synchronously as stem grows)
+        const lifter = dom.querySelector('.g-lifter');
+        if (lifter) {
+          const liftP = clamp(eased / 0.6, 0, 1);
+          const startOffset = item.h * 0.55; // start lower near ground
+          const currentY = (1 - liftP) * startOffset;
+          lifter.style.transform = `translateY(${currentY}px)`;
+          lifter.style.opacity = liftP > 0.1 ? '1' : '0';
+        }
+
+        // Stage 4: Flower Bloom (Bud -> Petals Unfolding)
+        const outerTier = dom.querySelector('.g-bloom-outer');
+        const midTier   = dom.querySelector('.g-bloom-mid');
+        const innerTier = dom.querySelector('.g-bloom-inner');
+        const core      = dom.querySelector('.g-bloom-core');
+        const budShield = dom.querySelector('.g-bud-shield');
+
+        if (outerTier) {
+          // Bloom unfolds between 55% and 100% of the plant's growth timeline
+          const bloomP = clamp((eased - 0.5) / 0.5, 0, 1);
+
+          // Bud shield shrinks as petals expand
+          if (budShield) {
+            budShield.style.opacity = String(1 - bloomP * 0.95);
+            budShield.style.transform = `scale(${1 - bloomP * 0.25})`;
+          }
+
+          // Outer petals fan wide
+          const outP = clamp(bloomP / 0.75, 0, 1);
+          outerTier.style.transform = `scale(${0.25 + outP * 0.75})`;
+          outerTier.style.opacity = outP > 0.08 ? '1' : '0';
+
+          // Mid petals arch up and out
+          if (midTier) {
+            const midP = clamp((bloomP - 0.15) / 0.75, 0, 1);
+            midTier.style.transform = `scale(${0.2 + midP * 0.8})`;
+            midTier.style.opacity = midP > 0.08 ? '1' : '0';
+          }
+
+          // Inner petals reveal the golden core
+          if (innerTier) {
+            const inP = clamp((bloomP - 0.3) / 0.7, 0, 1);
+            innerTier.style.transform = `scale(${0.15 + inP * 0.85})`;
+            innerTier.style.opacity = inP > 0.08 ? '1' : '0';
+          }
+
+          if (core) {
+            const coreP = clamp((bloomP - 0.35) / 0.65, 0, 1);
+            core.style.transform = `scale(${coreP})`;
+            core.style.opacity = coreP > 0.1 ? '1' : '0';
+          }
+        }
+
+        // Standalone Bud Head
+        const budHead = dom.querySelector('.g-bud-head');
+        if (budHead) {
+          const budP = clamp((eased - 0.2) / 0.7, 0, 1);
+          budHead.style.transform = `scale(${0.3 + budP * 0.7})`;
+          budHead.style.opacity = budP > 0.05 ? '1' : '0';
+        }
+
+        // Water Lily Pads Expanding
+        const padShape = dom.querySelector('.g-pad-shape');
+        if (padShape) {
+          padShape.style.transform = `scale(${eased})`;
+        }
+
+        // Canopy expanding for trees and bushes
+        const canopy = dom.querySelector('.g-canopy');
+        if (canopy) {
+          canopy.style.transform = `scale(${eased})`;
+        }
+      });
+    }
+  };
+
+  // =============================================================
+  // PARTICLE SYSTEM (Canvas 2D: Sacred Pink Lotus Petals & Golden Pollen)
+  // =============================================================
+  const Particles = {
+    canvas: null,
+    ctx: null,
+    particles: [],
+    worldProgress: 0,
+    rafId: null,
+    w: 0,
+    h: 0,
+
+    init() {
+      this.canvas = document.getElementById('ambient-canvas');
+      if (!this.canvas) return;
+      this.ctx = this.canvas.getContext('2d');
+      this.resize();
+      window.addEventListener('resize', () => this.resize());
+    },
+
+    resize() {
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      this.w = window.innerWidth;
+      this.h = window.innerHeight;
+      this.canvas.width  = this.w * dpr;
+      this.canvas.height = this.h * dpr;
+      this.canvas.style.width  = this.w + 'px';
+      this.canvas.style.height = this.h + 'px';
+      this.ctx.scale(dpr, dpr);
+    },
+
+    start() {
+      const renderFrame = () => {
+        this.update();
+        this.render();
+        this.rafId = requestAnimationFrame(renderFrame);
+      };
+      renderFrame();
+    },
+
+    stop() {
+      if (this.rafId) cancelAnimationFrame(this.rafId);
+    },
+
+    spawn(type) {
+      const p = {
+        x: rand(0, this.w),
+        y: type === 'petal' ? rand(-50, -10) : rand(0, this.h),
+        vx: 0, vy: 0,
+        life: 0, maxLife: 1,
+        type: type,
+        size: 1, opacity: 0,
+        rotation: rand(0, 360),
+        rotSpeed: rand(-0.8, 0.8),
+      };
+
+      switch (type) {
+        case 'dust':
+          p.size = rand(1.2, 2.6);
+          p.maxLife = rand(7, 14);
+          p.vx = rand(-0.15, 0.15);
+          p.vy = rand(-0.35, -0.08);
+          p.color = pick(['rgba(255,235,175,', 'rgba(242,218,155,', 'rgba(255,225,140,']);
+          break;
+        case 'pollen':
+          p.size = rand(2.2, 4.4);
+          p.maxLife = rand(8, 16);
+          p.vx = rand(-0.25, 0.25);
+          p.vy = rand(0.12, 0.4);
+          p.color = 'rgba(242,185,80,';
+          break;
+        case 'petal':
+          // Authentic rose-pink and delicate blush lotus petals matching artwork
+          p.size = rand(9, 18);
+          p.maxLife = rand(12, 24);
+          p.vx = rand(-0.5, 0.5);
+          p.vy = rand(0.35, 0.75);
+          p.color = pick([
+            'rgba(229,151,171,', 'rgba(255,242,245,', 'rgba(181,75,104,', 'rgba(229,128,38,'
+          ]);
+          p.swayAmp = rand(1.2, 2.2);
+          p.swayFreq = rand(0.35, 0.75);
+          break;
+      }
+      return p;
+    },
+
+    update() {
+      const p = this.worldProgress;
+      const dustRate   = 0.08;
+      const pollenRate = 0.04 + p * 0.05;
+      const petalRate  = 0.03 + p * 0.06;
+
+      if (this.particles.length < CFG.maxParticles) {
+        if (Math.random() < dustRate)   this.particles.push(this.spawn('dust'));
+        if (Math.random() < pollenRate) this.particles.push(this.spawn('pollen'));
+        if (Math.random() < petalRate)  this.particles.push(this.spawn('petal'));
+      }
+
+      const dt = 1 / 60;
+      for (let i = this.particles.length - 1; i >= 0; i--) {
+        const pt = this.particles[i];
+        pt.life += dt;
+        const ratio = pt.life / pt.maxLife;
+
+        if (ratio >= 1) {
+          this.particles.splice(i, 1);
+          continue;
+        }
+
+        // Fade in and out
+        if (ratio < 0.15) {
+          pt.opacity = (ratio / 0.15) * 0.8;
+        } else if (ratio > 0.82) {
+          pt.opacity = ((1 - ratio) / 0.18) * 0.8;
+        } else {
+          pt.opacity = 0.8;
+        }
+
+        pt.x += pt.vx;
+        pt.y += pt.vy;
+        pt.rotation += pt.rotSpeed;
+
+        if (pt.type === 'petal') {
+          pt.x += Math.sin(pt.life * pt.swayFreq) * pt.swayAmp * 0.5;
+        }
+        pt.x += Math.sin(pt.life * 0.2 + pt.y * 0.004) * 0.15;
+
+        if (pt.x < -30) pt.x = this.w + 30;
+        if (pt.x > this.w + 30) pt.x = -30;
+        if (pt.y > this.h + 50 || pt.y < -60) {
+          this.particles.splice(i, 1);
+        }
+      }
+    },
+
+    render() {
+      const ctx = this.ctx;
+      ctx.clearRect(0, 0, this.w, this.h);
+
+      this.particles.forEach(p => {
+        ctx.save();
+        ctx.globalAlpha = p.opacity;
+        ctx.translate(p.x, p.y);
+        ctx.rotate(p.rotation * Math.PI / 180);
+
+        if (p.type === 'petal') {
+          // Delicate organic lotus petal teardrop
+          ctx.fillStyle = p.color + p.opacity + ')';
+          ctx.beginPath();
+          ctx.ellipse(0, 0, p.size * 0.42, p.size, 0, 0, Math.PI * 2);
+          ctx.fill();
+        } else {
+          const grad = ctx.createRadialGradient(0, 0, 0, 0, 0, p.size);
+          grad.addColorStop(0, p.color + p.opacity + ')');
+          grad.addColorStop(1, p.color + '0)');
+          ctx.fillStyle = grad;
+          ctx.beginPath();
+          ctx.arc(0, 0, p.size, 0, Math.PI * 2);
+          ctx.fill();
+        }
+        ctx.restore();
+      });
+    }
+  };
+
+  // =============================================================
+  // ATMOSPHERE MODULE
+  // =============================================================
+  const Atmosphere = {
+    sky:  null,
+    glow: null,
+    dusk: null,
+    rays: null,
+
+    init() {
+      this.sky  = document.getElementById('atmo-sky');
+      this.glow = document.getElementById('atmo-glow');
+      this.dusk = document.getElementById('atmo-dusk');
+      this.rays = document.getElementById('god-rays');
+    },
+
+    update(progress) {
+      const p = progress;
+
+      // Glow peaks around middle of sanctuary (0.4 - 0.75)
+      const glowOpacity = p < 0.2 ? 0.65 :
+                          p < 0.7 ? lerp(0.65, 0.95, (p - 0.2) / 0.5) :
+                          lerp(0.95, 0.45, (p - 0.7) / 0.3);
+      if (this.glow) this.glow.style.opacity = glowOpacity;
+
+      // Dusk gently blends towards final blessing
+      const duskOpacity = p > 0.72 ? (p - 0.72) / 0.28 : 0;
+      if (this.dusk) this.dusk.style.opacity = duskOpacity;
+
+      // God rays catch the divine crown
+      if (this.rays) {
+        const rayOpacity = p < 0.2 ? 0.35 :
+                           p < 0.7 ? 0.58 :
+                           lerp(0.58, 0.2, (p - 0.7) / 0.3);
+        this.rays.style.opacity = rayOpacity;
+      }
+    }
+  };
+
+  // =============================================================
+  // CEREMONIAL CURTAIN MODULE
+  // =============================================================
+  const Curtain = {
+    opened: false,
+
+    init() {
+      const scene = document.getElementById('curtain-scene');
+      if (!scene) return;
+
+      const dustContainer = document.getElementById('curtain-dust');
+      if (dustContainer) {
+        for (let i = 0; i < 22; i++) {
+          const d = document.createElement('div');
+          d.className = 'dust-particle';
+          d.style.cssText = `
+            left: ${rand(10, 90)}%;
+            bottom: ${rand(5, 40)}%;
+            width: ${rand(3, 7)}px;
+            height: ${rand(3, 7)}px;
+            --drift: ${rand(-20, 20)}px;
+            animation: dust-rise ${rand(4, 8)}s ease-out ${rand(0, 3)}s infinite;
+          `;
+          dustContainer.appendChild(d);
+        }
+      }
+
+      const openTrigger = () => this.open();
+      scene.addEventListener('click', openTrigger);
+      scene.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openTrigger(); }
+      });
+
+      // Also auto-open smoothly if user attempts to scroll or swipe
+      window.addEventListener('wheel', openTrigger, { once: true, passive: true });
+      window.addEventListener('touchmove', openTrigger, { once: true, passive: true });
+    },
+
+    open() {
+      if (this.opened) return;
+      this.opened = true;
+
+      const scene     = document.getElementById('curtain-scene');
+      const left      = document.getElementById('curtain-left');
+      const right     = document.getElementById('curtain-right');
+      const intro     = document.getElementById('curtain-intro');
+      const seamGlow  = document.getElementById('seam-glow');
+
+      const tl = gsap.timeline({
+        onComplete: () => {
+          document.body.classList.add('unlocked');
+          scene.style.display = 'none';
+          ScrollEngine.init();
+          Particles.start();
+        }
+      });
+
+      tl.to(intro, { opacity: 0, duration: 0.45, ease: 'power2.in' }, 0);
+      tl.to(seamGlow, { opacity: 1, scaleX: 2.2, duration: 0.65, ease: 'power2.out' }, 0.2);
+
+      tl.to(left,  { xPercent: -100, duration: 2, ease: 'power4.inOut' }, 0.5);
+      tl.to(right, { xPercent: 100,  duration: 2, ease: 'power4.inOut' }, 0.5);
+      tl.to(scene, { opacity: 0, duration: 0.8, ease: 'power2.out' }, 1.7);
+
+      // Hero content reveals gently over living artwork
+      tl.to('#hero-kicker',        { opacity: 1, y: 0, duration: 1, ease: 'power2.out' }, 1.7);
+      tl.to('#hero-title',         { opacity: 1, y: 0, duration: 1, ease: 'power2.out' }, 2.0);
+      tl.to('#hero-devanagari',    { opacity: 1, y: 0, duration: 1, ease: 'power2.out' }, 2.3);
+      tl.to('#hero-scroll-prompt', { opacity: 0.9, y: 0, duration: 1, ease: 'power2.out' }, 2.6);
+    }
+  };
+
+  // =============================================================
+  // MASTER SCROLL ENGINE (Continuous Sanctuary Evolution)
+  // =============================================================
+  const ScrollEngine = {
+    init() {
+      gsap.registerPlugin(ScrollTrigger);
+
+      const world = document.getElementById('world');
+      if (!world) return;
+
+      const heroArtImg   = document.getElementById('hero-art-img');
+      const heroAura     = document.getElementById('hero-divine-aura');
+      const heroBackdrop = document.getElementById('hero-world-backdrop');
+
+      // Master Scroll Progress Listener
+      ScrollTrigger.create({
+        trigger: world,
+        start: 'top top',
+        end: 'bottom bottom',
+        scrub: 0.5,
+        onUpdate: (self) => {
+          const p = self.progress;
+
+          // Evolve Garden & Atmosphere continuously
+          Garden.update(p);
+          Atmosphere.update(p);
+          Particles.worldProgress = p;
+          this.updateParallax(p);
+
+          // Subtle, dignified camera push into Lord Ganesha (from 1.0 to 1.14 scale)
+          if (heroArtImg) {
+            const baseScale = isMobile ? 1.16 : 1.0;
+            const targetScale = baseScale + p * 0.14;
+            const driftY = -p * 55; // gentle perspective drift
+            heroArtImg.style.transform = `scale(${targetScale}) translateY(${driftY}px)`;
+          }
+
+          if (heroAura) {
+            const auraScale = 1 + p * 0.24;
+            heroAura.style.transform = `translate(-50%, -50%) scale(${auraScale})`;
+          }
+
+          if (heroBackdrop) {
+            const opacity = p > 0.88 ? lerp(1, 0.45, (p - 0.88) / 0.12) : 1;
+            heroBackdrop.style.opacity = opacity;
+          }
+        }
+      });
+
+      this.setupContentReveals();
+      ScrollTrigger.refresh();
+    },
+
+    updateParallax(progress) {
+      const gardenFar  = document.getElementById('garden-far');
+      const gardenMid  = document.getElementById('garden-mid');
+      const gardenNear = document.getElementById('garden-near');
+
+      if (gardenFar)  gardenFar.style.transform  = `translateY(${-progress * CFG.parallaxFar}px)`;
+      if (gardenMid)  gardenMid.style.transform  = `translateY(${-progress * CFG.parallaxMid}px)`;
+      if (gardenNear) gardenNear.style.transform  = `translateY(${-progress * CFG.parallaxNear}px)`;
+    },
+
+    setupContentReveals() {
+      // Hero content fades as you journey into sanctuary
+      gsap.to('.hero-content-wrapper', {
+        opacity: 0, y: -45,
+        scrollTrigger: {
+          trigger: '#scene-hero',
+          start: 'top top',
+          end: 'bottom 60%',
+          scrub: 1,
+        }
+      });
+
+      // Celebration
+      gsap.from('#scene-celebration .content-glass', {
+        opacity: 0, y: 65,
+        scrollTrigger: {
+          trigger: '#scene-celebration',
+          start: 'top 82%',
+          end: 'top 42%',
+          scrub: 1,
+        }
+      });
+
+      // Invitation card
+      gsap.from('#invitation-card', {
+        opacity: 0, y: 80, scale: 0.96,
+        scrollTrigger: {
+          trigger: '#scene-invitation',
+          start: 'top 78%',
+          end: 'top 38%',
+          scrub: 1,
+        }
+      });
+
+      // Details
+      gsap.from('#scene-details .content-glass', {
+        opacity: 0, y: 60,
+        scrollTrigger: {
+          trigger: '#scene-details',
+          start: 'top 82%',
+          end: 'top 46%',
+          scrub: 1,
+        }
+      });
+
+      // Detail rows staggered
+      gsap.from('#scene-details .detail-row', {
+        opacity: 0, x: -30,
+        stagger: 0.08,
+        scrollTrigger: {
+          trigger: '#details-list',
+          start: 'top 75%',
+          end: 'top 40%',
+          scrub: 1,
+        }
+      });
+
+      // Location
+      gsap.from('#scene-location .content-glass', {
+        opacity: 0, y: 60,
+        scrollTrigger: {
+          trigger: '#scene-location',
+          start: 'top 80%',
+          end: 'top 45%',
+          scrub: 1,
+        }
+      });
+
+      // Modak
+      gsap.from('.modak-wrap', {
+        opacity: 0, y: 40, scale: 0.8,
+        scrollTrigger: {
+          trigger: '#scene-modak',
+          start: 'top 80%',
+          end: 'top 50%',
+          scrub: 1,
+        }
+      });
+      gsap.from('.modak-line', {
+        opacity: 0, y: 30,
+        scrollTrigger: {
+          trigger: '#scene-modak',
+          start: 'top 72%',
+          end: 'top 42%',
+          scrub: 1,
+        }
+      });
+
+      // Final scene
+      gsap.from('#scene-final .final-art-badge', {
+        opacity: 0, scale: 0.72,
+        scrollTrigger: {
+          trigger: '#scene-final',
+          start: 'top 80%',
+          end: 'top 50%',
+          scrub: 1,
+        }
+      });
+      gsap.from('#scene-final .final-main', {
+        opacity: 0, y: 30,
+        scrollTrigger: {
+          trigger: '#scene-final',
+          start: 'top 65%',
+          end: 'top 35%',
+          scrub: 1,
+        }
+      });
+      gsap.from('#scene-final .final-sub', {
+        opacity: 0,
+        scrollTrigger: {
+          trigger: '#scene-final',
+          start: 'top 55%',
+          end: 'top 30%',
+          scrub: 1,
+        }
+      });
+    }
+  };
+
+  // =============================================================
+  // REDUCED MOTION FALLBACK
+  // =============================================================
+  function initReducedMotion() {
+    document.body.classList.add('unlocked');
+    const curtain = document.getElementById('curtain-scene');
+    if (curtain) curtain.style.display = 'none';
+
+    gsap.set(['#hero-kicker', '#hero-title', '#hero-devanagari', '#hero-scroll-prompt'], {
+      opacity: 1, scale: 1, y: 0
+    });
+    gsap.set(['.content-glass', '#invitation-card', '.detail-row', '.modak-wrap', '.modak-line', '#scene-final .final-art-badge', '#scene-final .final-main', '#scene-final .final-sub'], {
+      opacity: 1, scale: 1, x: 0, y: 0
+    });
+
+    Garden.init();
+    Garden.update(0.85);
+    Atmosphere.init();
+    Atmosphere.update(0.5);
+  }
+
+  // =============================================================
+  // INITIALIZATION
+  // =============================================================
+  document.addEventListener('DOMContentLoaded', () => {
+    Atmosphere.init();
+    Garden.init();
+    Particles.init();
+
+    gsap.set(['#hero-kicker', '#hero-title', '#hero-devanagari', '#hero-scroll-prompt'], { y: 22 });
+
+    if (reducedMotion) {
+      initReducedMotion();
+      return;
+    }
+
+    Curtain.init();
+  });
+
+})();
+</script>
+</body>
+</html>
