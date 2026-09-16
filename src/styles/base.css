@@ -1,0 +1,202 @@
+/* ===========================================================
+   0. DESIGN TOKENS & SYSTEM FOUNDATION
+   =========================================================== */
+:root {
+  /* Royal Temple & Festive Garden Palette */
+  --ivory:          #FCF8F0;
+  --cream:          #FFFDF9;
+  --paper:          #F7EFE1;
+  --gold:           #C9963B;
+  --gold-light:     #F3DC9E;
+  --gold-bright:    #FFE9A6;
+  --gold-deep:      #8E6018;
+  --maroon:         #380A10;
+  --crimson:        #6B1724;
+  --crimson-2:      #8E1E2F;
+  --dusk:           #1A0810;
+  --brown:          #593922;
+  --brown-deep:     #341B0E;
+
+  /* Lush Botanical Palette */
+  --leaf-deep:      #162B14;
+  --leaf-mid:       #2F4F28;
+  --leaf-light:     #527946;
+  --lotus-rose:     #E89BB0;
+  --lotus-deep:     #B24664;
+  --saffron:        #E67C22;
+  --amber:          #D96E14;
+
+  /* Typography Roles */
+  --font-cinema-display: 'Cinzel', 'Cormorant Garamond', Georgia, serif;
+  --font-display-en:     'Cormorant Garamond', Georgia, serif;
+  --font-dev-display:    'Yatra One', 'Tiro Devanagari Marathi', serif;
+  --font-dev-body:       'Tiro Devanagari Marathi', serif;
+  --font-ui:             'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --ease-cinema:  cubic-bezier(0.25, 1, 0.35, 1);
+  --ease-curtain: cubic-bezier(0.65, 0, 0.25, 1);
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: auto;
+  background: var(--paper);
+  overflow-x: hidden;
+  width: 100%;
+  scrollbar-gutter: stable;
+}
+
+body {
+  background: var(--paper);
+  color: var(--brown-deep);
+  font-family: var(--font-ui);
+  overflow-x: hidden;
+  overflow-y: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+  position: relative;
+  width: 100%;
+}
+
+body.unlocked {
+  overflow-y: auto;
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+  user-select: none;
+}
+
+/* Typography utility classes */
+.cinema-title {
+  font-family: var(--font-cinema-display);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+.dev-display {
+  font-family: var(--font-dev-display);
+  letter-spacing: 0.02em;
+  line-height: 1.35;
+  text-rendering: optimizeLegibility;
+}
+.dev-body {
+  font-family: var(--font-dev-body);
+  line-height: 1.55;
+  text-rendering: optimizeLegibility;
+}
+
+a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
+
+/* ===========================================================
+   1. WORLD ATMOSPHERE (Continuous Lighting Progression)
+   =========================================================== */
+#world-atmosphere {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  transform: translateZ(0);
+}
+.atmo-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+#atmo-sky {
+  background: linear-gradient(180deg,
+    #FDF8EE 0%,
+    #FAF0DE 28%,
+    #F6E5C8 60%,
+    #EDD6B3 100%);
+}
+#atmo-glow {
+  background: radial-gradient(ellipse 80% 55% at 50% 30%,
+    rgba(243, 220, 158, 0.55) 0%,
+    rgba(230, 185, 100, 0.22) 45%,
+    transparent 75%);
+  opacity: 0.75;
+  transition: opacity 0.5s ease-out;
+}
+#atmo-vignette {
+  background: radial-gradient(ellipse 95% 85% at 50% 50%,
+    transparent 50%,
+    rgba(60, 30, 12, 0.08) 80%,
+    rgba(40, 15, 8, 0.18) 100%);
+}
+#atmo-dusk {
+  background:
+    radial-gradient(ellipse 85% 65% at 50% 35%,
+      rgba(142, 30, 47, 0.28), transparent 72%),
+    linear-gradient(180deg, rgba(26, 8, 16, 0) 0%, rgba(26, 8, 16, 0.92) 100%);
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+}
+
+
+/* ===========================================================
+   5. PARTICLE CANVAS (Lotus Petals & Golden Pollen)
+   =========================================================== */
+#ambient-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 7;
+  pointer-events: none;
+  transform: translateZ(0);
+}
+
+
+/* ===========================================================
+   6. MAIN SCROLLABLE WORLD & SECTIONS
+   =========================================================== */
+#world {
+  position: relative;
+  z-index: 10;
+}
+.scene {
+  position: relative;
+  padding: 150px 0;
+  overflow: visible;
+}
+.scene-inner {
+  position: relative;
+  z-index: 3;
+}
+.container {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+/* Refined Frosted Glass Cards with Golden Filigree */
+.content-glass {
+  background: rgba(254, 251, 246, 0.92);
+  backdrop-filter: blur(24px) saturate(160%);
+  -webkit-backdrop-filter: blur(24px) saturate(160%);
+  border-radius: 28px;
+  padding: 58px 46px;
+  border: 1.5px solid rgba(201, 150, 59, 0.38);
+  box-shadow:
+    0 25px 65px -15px rgba(55, 25, 12, 0.16),
+    0 0 0 1px rgba(255, 255, 255, 0.85) inset,
+    0 0 25px rgba(243, 220, 158, 0.12) inset;
+  transition: transform 0.35s var(--ease-cinema), box-shadow 0.35s var(--ease-cinema);
+  transform: translateZ(0);
+  will-change: transform, opacity;
+}
+.content-glass:hover {
+  box-shadow:
+    0 32px 75px -15px rgba(55, 25, 12, 0.2),
+    0 0 0 1px rgba(255, 255, 255, 0.95) inset,
+    0 0 30px rgba(243, 220, 158, 0.18) inset;
+}

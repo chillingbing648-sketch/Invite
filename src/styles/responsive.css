@@ -1,0 +1,69 @@
+/* ===========================================================
+   14. REDUCED MOTION SUPPORT
+   =========================================================== */
+@media (prefers-reduced-motion: reduce) {
+  .modak-wrap svg, .final-art-badge { animation: none !important; }
+  .hero-divine-aura, .hero-aura-rays, .lantern-flicker-left, .lantern-flicker-right { animation: none !important; }
+  .hero-art-float, .g-wind-wrap, .g-head-nod, .diya-flicker-flame, .ceremonial-seal { animation: none !important; }
+  * { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+  #ambient-canvas { display: none; }
+  .god-rays { display: none; }
+}
+
+
+/* ===========================================================
+   15. RESPONSIVE OPTIMIZATIONS (Mobile & Tablet)
+   =========================================================== */
+@media (max-width: 768px) {
+  .hero-art-img {
+    object-position: center 28%;
+    transform: scale(1.18);
+  }
+  .hero-divine-aura {
+    top: 28%;
+    width: 78vw;
+    height: 78vw;
+  }
+  .hero-aura-rays {
+    top: 28%;
+    width: 85vw;
+    height: 85vw;
+  }
+  .lantern-flicker-left  { top: 7%; left: 3%; width: 70px; height: 110px; }
+  .lantern-flicker-right { top: 7%; right: 3%; width: 70px; height: 110px; }
+  .scene { padding: 90px 0; }
+  #scene-hero { padding: 0 0 50px; }
+  .hero-content-wrapper { padding: 24px 18px; }
+  .card {
+    padding: 50px 20px 42px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+  .content-glass {
+    padding: 34px 20px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+  .details-card { padding: 38px 16px 34px; }
+  .details-timeline { max-width: 100%; }
+  .timeline-spine { left: 14px; top: 16px; bottom: 18px; }
+  .detail-marker { width: 30px; margin-top: 13px; }
+  .timeline-node { width: 13px; height: 13px; }
+  .detail-content { padding: 13px 14px; border-radius: 12px; }
+  .detail-meta { gap: 4px; margin-bottom: 3px; }
+  .detail-badge { font-size: 10px; }
+  .detail-tag { font-size: 10.5px; padding: 1px 7px; }
+  .detail-value { font-size: 16.5px; }
+  .detail-sub { font-size: 12.5px; }
+  .invite-actions { margin-top: 26px; flex-direction: column; width: 100%; }
+  .btn-action { width: 100%; justify-content: center; min-height: 48px; }
+  .curtain-enter-btn { min-height: 48px; }
+  .calendar-dialog { padding: 30px 20px; }
+  .calendar-opt-btn { min-height: 48px; }
+  .container { padding: 0 16px; }
+
+  /* On narrow mobile screens, minimize side foliage to keep focus purely on Bappa & text */
+  #garden-far { display: none; }
+  #garden-near { display: none; }
+  .g-diya { display: none; }
+}
