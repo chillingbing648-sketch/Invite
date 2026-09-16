@@ -292,15 +292,15 @@ import { clamp, rand } from '../core/config.js';
     update(progress) {
       // Reset finalization flags when scroll direction changes
       // This ensures Garden re-renders when scrolling backward after reaching full bloom
-      if (this._finalizedMax && progress < 0.30) {
+      if (this._finalizedMax && progress < 0.28) {
         this._finalizedMax = false;
       }
-      if (this._finalizedMin && progress > 0.005) {
+      if (this._finalizedMin && progress > 0.002) {
         this._finalizedMin = false;
       }
 
       // Early-exit only if truly finalized AND no direction reversal
-      if (progress > 0.32 && this._finalizedMax) return;
+      if (progress > 0.28 && this._finalizedMax) return;
       if (progress <= 0 && this._finalizedMin) return;
 
       let allMax = true;
@@ -308,7 +308,8 @@ import { clamp, rand } from '../core/config.js';
 
       this.elements.forEach(item => {
         const p = clamp((progress - item.growStart) / (item.growEnd - item.growStart), 0, 1);
-        const eased = p < 1 ? 1 - Math.pow(1 - p, 3) : 1;
+        // Smooth biological Hermite S-curve (gentle emergence, organic expansion, soft settlement)
+        const eased = p < 1 ? p * p * (3 - 2 * p) : 1;
 
         if (eased < 1) allMax = false;
         if (eased > 0) allMin = false;

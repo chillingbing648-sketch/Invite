@@ -132,8 +132,8 @@
 }
 
 @keyframes divine-breath {
-  0%   { opacity: 0.65; transform: translate(-50%, -50%) scale(0.95); }
-  100% { opacity: 0.98; transform: translate(-50%, -50%) scale(1.10); }
+  0%   { opacity: 0.62; filter: blur(22px); }
+  100% { opacity: 0.95; filter: blur(28px); }
 }
 
 /* Hanging Lantern Candlelight Flickers */
@@ -202,7 +202,6 @@
     );
   filter: blur(12px);
   mix-blend-mode: screen;
-  transition: opacity 0.5s ease;
 }
 
 
@@ -614,12 +613,15 @@
     0 0 0 1px rgba(255, 240, 190, 0.6) inset,
     0 0 20px rgba(243, 220, 158, 0.15) inset;
   border-radius: 16px;
-  transition: transform 0.4s var(--ease-cinema);
+  transition: box-shadow 0.4s var(--ease-cinema);
   transform: translateZ(0);
   will-change: transform, opacity;
 }
 .card:hover {
-  transform: translateY(-4px);
+  box-shadow:
+    0 40px 95px -20px rgba(56, 10, 16, 0.35),
+    0 0 0 1px rgba(255, 240, 190, 0.75) inset,
+    0 0 25px rgba(243, 220, 158, 0.22) inset;
 }
 
 /* Temple Corner Filigree */
@@ -811,7 +813,6 @@
   align-items: flex-start;
   position: relative;
   margin-bottom: 20px;
-  transition: transform 0.25s var(--ease-cinema);
   transform: translateZ(0);
   will-change: transform, opacity;
 }
@@ -857,10 +858,8 @@
 }
 
 /* Hover Feedback */
-.detail-row:hover {
-  transform: translateX(4px);
-}
 .detail-row:hover .detail-content {
+  transform: translateX(4px);
   background: rgba(255, 255, 255, 0.92);
   border-color: rgba(201, 150, 59, 0.48);
   box-shadow: 0 10px 25px -6px rgba(56, 10, 16, 0.12);

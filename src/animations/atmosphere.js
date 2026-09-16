@@ -27,14 +27,14 @@ export const Atmosphere = {
     const glowOpacity = p < 0.2 ? 0.7 :
                         p < 0.7 ? lerp(0.7, 0.95, (p - 0.2) / 0.5) :
                         lerp(0.95, 0.45, (p - 0.7) / 0.3);
-    if (Math.abs(glowOpacity - this._lastGlow) > 0.005) {
-      if (this.glow) this.glow.style.opacity = glowOpacity;
+    if (Math.abs(glowOpacity - this._lastGlow) > 0.001) {
+      if (this.glow) this.glow.style.opacity = glowOpacity.toFixed(3);
       this._lastGlow = glowOpacity;
     }
 
     const duskOpacity = p > 0.72 ? (p - 0.72) / 0.28 : 0;
-    if (Math.abs(duskOpacity - this._lastDusk) > 0.005) {
-      if (this.dusk) this.dusk.style.opacity = duskOpacity;
+    if (Math.abs(duskOpacity - this._lastDusk) > 0.001) {
+      if (this.dusk) this.dusk.style.opacity = duskOpacity.toFixed(3);
       this._lastDusk = duskOpacity;
     }
 
@@ -42,8 +42,8 @@ export const Atmosphere = {
       const rayOpacity = p < 0.2 ? 0.35 :
                          p < 0.7 ? 0.60 :
                          lerp(0.60, 0.2, (p - 0.7) / 0.3);
-      if (Math.abs(rayOpacity - this._lastRays) > 0.005) {
-        this.rays.style.opacity = rayOpacity;
+      if (Math.abs(rayOpacity - this._lastRays) > 0.001) {
+        this.rays.style.opacity = rayOpacity.toFixed(3);
         this._lastRays = rayOpacity;
       }
     }

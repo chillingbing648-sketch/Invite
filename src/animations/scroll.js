@@ -52,27 +52,39 @@ export const ScrollEngine = {
       }
     });
 
-    // Master Scroll Progress Listener synchronized on ScrollTrigger ticker
-    const masterST = ScrollTrigger.create({
-      trigger: world,
-      start: 'top top',
-      end: 'bottom bottom',
-      onUpdate: (self) => {
-        this.renderFrame(self.progress);
+    // Master Continuous Scrub Tween (0.75s damping) perfectly synchronized with content reveals
+    const progressProxy = { val: 0 };
+    const masterTween = gsap.to(progressProxy, {
+      val: 1,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: world,
+        start: 'top top',
+        end: 'bottom bottom',
+        scrub: 0.75,
+        invalidateOnRefresh: true,
+      },
+      onUpdate: () => {
+        this.renderFrame(progressProxy.val);
       }
     });
-    this.triggers.push(masterST);
+    if (masterTween.scrollTrigger) {
+      this.triggers.push(masterTween.scrollTrigger);
+    }
 
     const revealTriggers = setupContentReveals();
     this.triggers.push(...revealTriggers);
     ScrollTrigger.refresh();
+
+    // Render initial frame to ensure pristine resting state
+    this.renderFrame(0);
   },
 
   renderFrame(p) {
     if (p < 0 || Math.abs(p - this.lastAppliedProgress) < 0.0003) return;
     this.lastAppliedProgress = p;
 
-    // 1. Garden growth — Garden.update() has its own finalization guards for efficiency
+    // 1. Garden botanical growth sequence
     Garden.update(p);
 
     // 2. Progressive atmosphere lighting
@@ -86,8 +98,9 @@ export const ScrollEngine = {
   },
 
   applyTransforms(p) {
-    // Foliage visibility and GPU workload management
-    const gardenOpacity = p < 0.16 ? 1 : clamp(1 - (p - 0.16) / 0.14, 0, 1);
+    // Keep botanical sanctuary in full vibrant bloom through Hero (0 -> 0.15) and Celebration (0.15 -> 0.38)
+    // Then gently and cinematically fade into the deeper sacred invitation card (0.38 -> 0.56)
+    const gardenOpacity = p < 0.38 ? 1 : clamp(1 - (p - 0.38) / 0.18, 0, 1);
     const isFoliageVisible = gardenOpacity > 0.005;
 
     const setGardenLayer = (layer, translateY) => {
@@ -101,7 +114,7 @@ export const ScrollEngine = {
           layer.style.display = 'block';
         }
         layer.style.opacity = gardenOpacity;
-        layer.style.transform = `translate3d(0, ${translateY}px, 0)`;
+        layer.style.transform = `translate3d(0, ${translateY.toFixed(2)}px, 0)`;
       }
     };
 
@@ -114,22 +127,23 @@ export const ScrollEngine = {
       const baseScale = isMobile ? 1.18 : 1.0;
       const targetScale = baseScale + p * 0.12;
       const driftY = -p * 45;
-      this.heroArtImg.style.transform = `translate3d(0, ${driftY}px, 0) scale(${targetScale})`;
+      this.heroArtImg.style.transform = `translate3d(0, ${driftY.toFixed(2)}px, 0) scale(${targetScale.toFixed(4)})`;
     }
 
     if (this.heroAura) {
       const auraScale = 1 + p * 0.22;
-      this.heroAura.style.transform = `translate3d(-50%, -50%, 0) scale(${auraScale})`;
+      this.heroAura.style.transform = `translate3d(-50%, -50%, 0) scale(${auraScale.toFixed(4)})`;
     }
 
     if (this.heroBackdrop) {
       const opacity = p > 0.85 ? lerp(1, 0.4, (p - 0.85) / 0.15) : 1;
-      this.heroBackdrop.style.opacity = opacity;
+      this.heroBackdrop.style.opacity = opacity.toFixed(3);
     }
   },
 
   destroy() {
     this.triggers.forEach(t => t && t.kill && t.kill());
     this.triggers = [];
+    this.lastAppliedProgress = -1;
   }
 };
