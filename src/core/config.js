@@ -3,6 +3,7 @@
  * Architecture: main -> core/config -> components -> animation systems
  */
 
+export const getIsMobile = () => typeof window !== 'undefined' && window.innerWidth < 768;
 export const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
 export const reducedMotion = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 

@@ -76,6 +76,18 @@ export const ScrollEngine = {
     this.triggers.push(...revealTriggers);
     ScrollTrigger.refresh();
 
+    // Responsive orientation & viewport resize handling
+    this._onResize = () => {
+      clearTimeout(this._resizeTimer);
+      this._resizeTimer = setTimeout(() => {
+        ScrollTrigger.refresh();
+      }, 150);
+    };
+    window.addEventListener('resize', this._onResize, { passive: true });
+    window.addEventListener('orientationchange', () => {
+      setTimeout(() => ScrollTrigger.refresh(), 250);
+    }, { passive: true });
+
     // Render initial frame to ensure pristine resting state
     this.renderFrame(0);
   },
@@ -124,7 +136,8 @@ export const ScrollEngine = {
 
     // Smooth camera zoom into Lord Ganesha (1.0 to 1.12 scale)
     if (this.heroArtImg) {
-      const baseScale = isMobile ? 1.18 : 1.0;
+      const isMob = typeof window !== 'undefined' && window.innerWidth < 768;
+      const baseScale = isMob ? 1.18 : 1.0;
       const targetScale = baseScale + p * 0.12;
       const driftY = -p * 45;
       this.heroArtImg.style.transform = `translate3d(0, ${driftY.toFixed(2)}px, 0) scale(${targetScale.toFixed(4)})`;
@@ -142,6 +155,9 @@ export const ScrollEngine = {
   },
 
   destroy() {
+    if (this._onResize) {
+      window.removeEventListener('resize', this._onResize);
+    }
     this.triggers.forEach(t => t && t.kill && t.kill());
     this.triggers = [];
     this.lastAppliedProgress = -1;
