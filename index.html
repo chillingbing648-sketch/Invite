@@ -6,83 +6,95 @@
 <title>Ganesh Chaturthi 2026 — Festive Celebration Invitation</title>
 <meta name="description" content="Bappa is coming home. Join the Dubey Family in welcoming Lord Ganesha this Ganesh Chaturthi.">
 
-<!-- Sacred & Editorial Typography -->
+<!-- Sacred, Editorial & Contemporary Typography -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Yatra+One&family=Tiro+Devanagari+Marathi:ital,wght@0,400;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Yatra+One&family=Tiro+Devanagari+Marathi:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
 <style>
 /* ===========================================================
-   0. TYPOGRAPHY & DESIGN TOKENS
+   0. DESIGN TOKENS & SYSTEM FOUNDATION
    =========================================================== */
-@font-face {
-  font-family: 'CS Awesome Demo';
-  src: local('CS Awesome Demo'), local('Awesome Demo'), local('AwesomeDemo');
-  font-display: swap;
-}
-
 :root {
-  /* Festive Garden Palette */
-  --ivory:          #FBF5EA;
+  /* Royal Temple & Festive Garden Palette */
+  --ivory:          #FCF8F0;
   --cream:          #FFFDF9;
-  --paper:          #F5EAD7;
+  --paper:          #F7EFE1;
   --gold:           #C9963B;
-  --gold-light:     #F2DA9B;
-  --gold-bright:    #FFE8A3;
+  --gold-light:     #F3DC9E;
+  --gold-bright:    #FFE9A6;
   --gold-deep:      #8E6018;
-  --maroon:         #3E0E14;
+  --maroon:         #380A10;
   --crimson:        #6B1724;
-  --crimson-2:      #8F2232;
-  --dusk:           #200D16;
+  --crimson-2:      #8E1E2F;
+  --dusk:           #1A0810;
   --brown:          #593922;
-  --brown-deep:     #3B2211;
+  --brown-deep:     #341B0E;
 
-  /* Botanical Garden Palette */
-  --leaf-deep:      #1C331A;
-  --leaf-mid:       #375730;
-  --leaf-light:     #5F8554;
-  --lotus-rose:     #E597AB;
-  --lotus-deep:     #B54B68;
-  --lotus-glow:     #FFF2F5;
-  --saffron:        #E58026;
-  --amber:          #D9701A;
+  /* Lush Botanical Palette */
+  --leaf-deep:      #162B14;
+  --leaf-mid:       #2F4F28;
+  --leaf-light:     #527946;
+  --lotus-rose:     #E89BB0;
+  --lotus-deep:     #B24664;
+  --saffron:        #E67C22;
+  --amber:          #D96E14;
 
   /* Typography Roles */
-  --font-cinema-display: 'CS Awesome Demo', 'Awesome Demo', 'Cormorant Garamond', Georgia, serif;
+  --font-cinema-display: 'Cinzel', 'Cormorant Garamond', Georgia, serif;
   --font-display-en:     'Cormorant Garamond', Georgia, serif;
   --font-dev-display:    'Yatra One', 'Tiro Devanagari Marathi', serif;
   --font-dev-body:       'Tiro Devanagari Marathi', serif;
-  --font-ui:             'Jost', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-ui:             'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
 
-  --ease-cinema: cubic-bezier(.22,.61,.14,1);
+  --ease-cinema:  cubic-bezier(0.25, 1, 0.35, 1);
+  --ease-curtain: cubic-bezier(0.65, 0, 0.25, 1);
 }
 
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 html {
   scroll-behavior: auto;
-  background: #F5EAD7;
+  background: var(--paper);
   overflow-x: hidden;
+  width: 100%;
 }
+
 body {
-  background: #F5EAD7;
+  background: var(--paper);
   color: var(--brown-deep);
   font-family: var(--font-ui);
   overflow-x: hidden;
   overflow-y: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+  position: relative;
+  width: 100%;
 }
-body.unlocked { overflow-y: auto; }
-img, svg { display: block; max-width: 100%; }
+
+body.unlocked {
+  overflow-y: auto;
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+  user-select: none;
+}
 
 /* Typography utility classes */
 .cinema-title {
   font-family: var(--font-cinema-display);
-  font-weight: 500;
-  letter-spacing: 0.02em;
+  font-weight: 600;
+  letter-spacing: 0.03em;
 }
 .dev-display {
   font-family: var(--font-dev-display);
@@ -93,7 +105,7 @@ img, svg { display: block; max-width: 100%; }
 }
 
 a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
-  outline: 2px solid var(--gold-light);
+  outline: 2px solid var(--gold);
   outline-offset: 3px;
 }
 
@@ -105,6 +117,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
   inset: 0;
   z-index: 0;
   pointer-events: none;
+  transform: translateZ(0);
 }
 .atmo-layer {
   position: absolute;
@@ -113,30 +126,32 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
 }
 #atmo-sky {
   background: linear-gradient(180deg,
-    #FCF6EC 0%,
-    #FAF0DE 30%,
-    #F6E6CA 65%,
-    #EED8B5 100%);
+    #FDF8EE 0%,
+    #FAF0DE 28%,
+    #F6E5C8 60%,
+    #EDD6B3 100%);
 }
 #atmo-glow {
-  background: radial-gradient(ellipse 75% 55% at 50% 32%,
-    rgba(242, 218, 155, 0.5) 0%,
-    rgba(230, 185, 100, 0.22) 42%,
-    transparent 72%);
-  opacity: 0.7;
+  background: radial-gradient(ellipse 80% 55% at 50% 30%,
+    rgba(243, 220, 158, 0.55) 0%,
+    rgba(230, 185, 100, 0.22) 45%,
+    transparent 75%);
+  opacity: 0.75;
+  transition: opacity 0.5s ease-out;
 }
 #atmo-vignette {
-  background: radial-gradient(ellipse 90% 80% at 50% 50%,
-    transparent 45%,
-    rgba(70, 35, 15, 0.08) 78%,
-    rgba(40, 18, 10, 0.16) 100%);
+  background: radial-gradient(ellipse 95% 85% at 50% 50%,
+    transparent 50%,
+    rgba(60, 30, 12, 0.08) 80%,
+    rgba(40, 15, 8, 0.18) 100%);
 }
 #atmo-dusk {
   background:
     radial-gradient(ellipse 85% 65% at 50% 35%,
-      rgba(143, 34, 50, 0.24), transparent 70%),
-    linear-gradient(180deg, rgba(32, 13, 22, 0) 0%, rgba(32, 13, 22, 0.9) 100%);
+      rgba(142, 30, 47, 0.28), transparent 72%),
+    linear-gradient(180deg, rgba(26, 8, 16, 0) 0%, rgba(26, 8, 16, 0.92) 100%);
   opacity: 0;
+  transition: opacity 0.5s ease-out;
 }
 
 /* ===========================================================
@@ -152,6 +167,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
   justify-content: center;
   overflow: hidden;
   will-change: transform, opacity;
+  transform: translateZ(0);
 }
 
 .hero-art-wrapper {
@@ -163,64 +179,142 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
   justify-content: center;
 }
 
+/* Floating animation container for serene divine presence */
+.hero-art-float {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: divine-float 7s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+@keyframes divine-float {
+  0%   { transform: translateY(0px) rotate(0deg); }
+  50%  { transform: translateY(-5px) rotate(0.1deg); }
+  100% { transform: translateY(2px) rotate(-0.1deg); }
+}
+
 /* Original artwork preserved exactly as Visual Source of Truth */
 .hero-art-img {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  object-position: center 38%;
-  filter: drop-shadow(0 14px 40px rgba(70, 35, 15, 0.16));
+  object-position: center 36%;
+  filter: drop-shadow(0 16px 45px rgba(65, 30, 12, 0.22));
   will-change: transform;
-  transform-origin: 50% 40%;
+  transform-origin: 50% 38%;
 }
 
-/* Divine Breathing Aura directly centered behind Ganpati's halo */
+/* Grounding shadow plane for sanctuary elements */
+.sanctuary-ground {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 180px;
+  background: linear-gradient(180deg, transparent 0%, rgba(55, 25, 12, 0.08) 60%, rgba(35, 15, 8, 0.22) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Divine Halo & Radiant Aura behind Ganpati's crown */
 .hero-divine-aura {
   position: absolute;
-  top: 38%;
+  top: 36%;
   left: 50%;
-  width: min(58vw, 440px);
-  height: min(58vw, 440px);
+  width: min(65vw, 480px);
+  height: min(65vw, 480px);
   transform: translate(-50%, -50%);
   border-radius: 50%;
   background: radial-gradient(circle,
-    rgba(255, 235, 170, 0.65) 0%,
-    rgba(242, 218, 155, 0.35) 40%,
-    rgba(201, 150, 59, 0.15) 60%,
+    rgba(255, 240, 185, 0.72) 0%,
+    rgba(243, 220, 158, 0.42) 36%,
+    rgba(201, 150, 59, 0.18) 60%,
     transparent 74%);
-  filter: blur(28px);
+  filter: blur(24px);
   mix-blend-mode: screen;
   pointer-events: none;
-  animation: divine-breath 6s ease-in-out infinite alternate;
+  animation: divine-breath 5.5s ease-in-out infinite alternate;
 }
+
+/* Subtle rotating sacred aura rays */
+.hero-aura-rays {
+  position: absolute;
+  top: 36%;
+  left: 50%;
+  width: min(75vw, 540px);
+  height: min(75vw, 540px);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: conic-gradient(from 0deg,
+    transparent 0deg,
+    rgba(243, 220, 158, 0.12) 15deg,
+    transparent 30deg,
+    transparent 45deg,
+    rgba(243, 220, 158, 0.12) 60deg,
+    transparent 75deg,
+    transparent 90deg,
+    rgba(243, 220, 158, 0.12) 105deg,
+    transparent 120deg,
+    transparent 135deg,
+    rgba(243, 220, 158, 0.12) 150deg,
+    transparent 165deg,
+    transparent 180deg,
+    rgba(243, 220, 158, 0.12) 195deg,
+    transparent 210deg,
+    transparent 225deg,
+    rgba(243, 220, 158, 0.12) 240deg,
+    transparent 255deg,
+    transparent 270deg,
+    rgba(243, 220, 158, 0.12) 285deg,
+    transparent 300deg,
+    transparent 315deg,
+    rgba(243, 220, 158, 0.12) 330deg,
+    transparent 345deg,
+    transparent 360deg);
+  filter: blur(14px);
+  mix-blend-mode: screen;
+  opacity: 0.6;
+  pointer-events: none;
+  animation: ray-spin 60s linear infinite;
+}
+
+@keyframes ray-spin {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to   { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
 @keyframes divine-breath {
-  0%   { opacity: 0.6; transform: translate(-50%, -50%) scale(0.96); }
-  100% { opacity: 0.95; transform: translate(-50%, -50%) scale(1.12); }
+  0%   { opacity: 0.65; transform: translate(-50%, -50%) scale(0.95); }
+  100% { opacity: 0.98; transform: translate(-50%, -50%) scale(1.10); }
 }
 
 /* Hanging Lantern Candlelight Flickers */
 .lantern-flicker-left, .lantern-flicker-right {
   position: absolute;
-  width: 85px;
-  height: 130px;
+  width: 90px;
+  height: 140px;
   border-radius: 50%;
   background: radial-gradient(circle,
-    rgba(255, 222, 140, 0.65) 0%,
-    rgba(242, 185, 80, 0.25) 50%,
+    rgba(255, 225, 145, 0.72) 0%,
+    rgba(243, 190, 85, 0.32) 48%,
     transparent 70%);
   filter: blur(14px);
   mix-blend-mode: screen;
   pointer-events: none;
-  animation: lantern-flicker 4s ease-in-out infinite alternate;
+  animation: lantern-flicker 3.8s ease-in-out infinite alternate;
 }
-.lantern-flicker-left  { top: 12%; left: 7.5%; animation-delay: 0s; }
-.lantern-flicker-right { top: 12%; right: 7.5%; animation-delay: 1.4s; }
+.lantern-flicker-left  { top: 11%; left: 7%; animation-delay: 0s; }
+.lantern-flicker-right { top: 11%; right: 7%; animation-delay: 1.6s; }
 
 @keyframes lantern-flicker {
   0%   { opacity: 0.45; transform: scale(0.92); }
-  35%  { opacity: 0.85; transform: scale(1.08); }
-  70%  { opacity: 0.55; transform: scale(0.98); }
-  100% { opacity: 0.92; transform: scale(1.05); }
+  35%  { opacity: 0.88; transform: scale(1.08); }
+  68%  { opacity: 0.58; transform: scale(0.98); }
+  100% { opacity: 0.95; transform: scale(1.06); }
 }
 
 /* God Rays / Volumetric Radiance */
@@ -237,44 +331,39 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
   background:
     conic-gradient(from 0deg at 50% 34%,
       transparent 0deg,
-      rgba(242, 218, 155, 0.08) 8deg,
+      rgba(243, 220, 158, 0.08) 8deg,
       transparent 15deg,
       transparent 28deg,
-      rgba(242, 218, 155, 0.06) 36deg,
+      rgba(243, 220, 158, 0.06) 36deg,
       transparent 45deg,
       transparent 66deg,
-      rgba(242, 218, 155, 0.08) 74deg,
+      rgba(243, 220, 158, 0.08) 74deg,
       transparent 82deg,
       transparent 110deg,
-      rgba(242, 218, 155, 0.06) 118deg,
+      rgba(243, 220, 158, 0.06) 118deg,
       transparent 126deg,
       transparent 162deg,
-      rgba(242, 218, 155, 0.08) 170deg,
+      rgba(243, 220, 158, 0.08) 170deg,
       transparent 178deg,
       transparent 200deg,
-      rgba(242, 218, 155, 0.06) 208deg,
+      rgba(243, 220, 158, 0.06) 208deg,
       transparent 216deg,
       transparent 252deg,
-      rgba(242, 218, 155, 0.08) 260deg,
+      rgba(243, 220, 158, 0.08) 260deg,
       transparent 268deg,
       transparent 300deg,
-      rgba(242, 218, 155, 0.06) 308deg,
+      rgba(243, 220, 158, 0.06) 308deg,
       transparent 316deg,
       transparent 360deg
     );
-  filter: blur(10px);
+  filter: blur(12px);
   mix-blend-mode: screen;
+  transition: opacity 0.5s ease;
 }
 
 /* ===========================================================
-   3. FLOWER & BOTANICAL ARCHITECTURE (Conflict-Free 4-Tier System)
-   ===========================================================
-   Tier 1: Parent Layer (.g-plant)      -> Left/Right/Bottom coordinates & depth Z.
-   Tier 2: Wind Wrapper (.g-wind-wrap)  -> CSS keyframe wind sway ONLY.
-   Tier 3: Growth Layer (.g-stem, .g-lifter) -> Scroll-driven biological ascent.
-   Tier 4: Bloom & Petal Layers         -> Petal tiers & core bloom scaling ONLY.
+   3. BOTANICAL GARDEN (Grounded Sanctuary Depth System)
    =========================================================== */
-
 .garden-layer {
   position: fixed;
   left: 0;
@@ -282,91 +371,66 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
   bottom: 0;
   height: 100vh;
   pointer-events: none;
-  will-change: transform;
+  will-change: transform, opacity;
+  transform: translateZ(0);
 }
 #garden-far  { z-index: 2; }
 #garden-mid  { z-index: 3; }
 #garden-near { z-index: 6; }
 
-/* Tier 1: Static Placement & Depth */
+/* Plant Wrapper: placed strictly along margins, grounded at bottom */
 .g-plant {
   position: absolute;
   bottom: 0;
   pointer-events: none;
   opacity: 0;
   will-change: transform, opacity;
+  transform: translateZ(0);
 }
-#garden-far .g-plant {
-  filter: drop-shadow(0 4px 14px rgba(45, 25, 12, 0.12)) blur(1px);
-  opacity: 0;
-}
-#garden-mid .g-plant {
-  filter: drop-shadow(0 6px 20px rgba(50, 25, 15, 0.18));
-}
-#garden-near .g-plant {
-  filter: drop-shadow(0 14px 32px rgba(35, 15, 20, 0.28));
-}
+#garden-far .g-plant  { opacity: 0.92; }
+#garden-mid .g-plant  { opacity: 1; }
+#garden-near .g-plant { opacity: 0.95; }
 
-/* Tier 2: Dedicated Continuous Wind Wrapper */
+/* Subtle, Natural Wind Motion */
 .g-wind-wrap {
   width: 100%;
   height: 100%;
   transform-origin: bottom center;
   will-change: transform;
 }
-.wind-sway-1 {
-  animation: wind-motion-1 7s ease-in-out infinite alternate;
-}
-.wind-sway-2 {
-  animation: wind-motion-2 8.5s ease-in-out infinite alternate;
-}
-.wind-sway-3 {
-  animation: wind-motion-3 6s ease-in-out infinite alternate;
-}
-.wind-sway-pad {
-  animation: wind-motion-pad 7.5s ease-in-out infinite alternate;
-}
+.wind-sway-1 { animation: wind-motion-1 7.4s ease-in-out infinite alternate; }
+.wind-sway-2 { animation: wind-motion-2 8.8s ease-in-out infinite alternate; }
+.wind-sway-pad { animation: wind-motion-pad 7.6s ease-in-out infinite alternate; }
 
 @keyframes wind-motion-1 {
-  0%   { transform: rotate(0deg) skewX(0deg); }
-  45%  { transform: rotate(1.8deg) skewX(0.7deg); }
-  75%  { transform: rotate(-1.2deg) skewX(-0.5deg); }
-  100% { transform: rotate(0deg) skewX(0deg); }
+  0%   { transform: rotate(0deg); }
+  50%  { transform: rotate(1.2deg) skewX(0.4deg); }
+  100% { transform: rotate(-0.8deg); }
 }
 
 @keyframes wind-motion-2 {
-  0%   { transform: rotate(0deg) skewX(0deg); }
-  35%  { transform: rotate(-2.2deg) skewX(-0.8deg); }
-  70%  { transform: rotate(1.4deg) skewX(0.6deg); }
-  100% { transform: rotate(0deg) skewX(0deg); }
-}
-
-@keyframes wind-motion-3 {
-  0%   { transform: rotate(0.4deg); }
-  50%  { transform: rotate(-1.6deg); }
-  100% { transform: rotate(0.4deg); }
+  0%   { transform: rotate(0deg); }
+  50%  { transform: rotate(-1.4deg) skewX(-0.5deg); }
+  100% { transform: rotate(0.9deg); }
 }
 
 @keyframes wind-motion-pad {
-  0%   { transform: translateY(0) scaleY(1); }
-  50%  { transform: translateY(-3px) scaleY(1.02) rotate(0.6deg); }
-  100% { transform: translateY(0) scaleY(1); }
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-2px) rotate(0.4deg); }
+  100% { transform: translateY(0); }
 }
 
-/* Tier 4 Secondary Subtle Head Nod on Mature Bloom */
 .g-head-nod {
-  animation: flower-nod 5s ease-in-out infinite alternate;
+  animation: flower-nod 5.4s ease-in-out infinite alternate;
   transform-origin: center center;
 }
 @keyframes flower-nod {
   0%   { transform: rotate(0deg); }
-  50%  { transform: rotate(1.4deg); }
-  100% { transform: rotate(-1deg); }
+  50%  { transform: rotate(1.2deg); }
+  100% { transform: rotate(-0.9deg); }
 }
 
-/* ===========================================================
-   4. DIYA ANIMATION & FESTIVE LIGHTING
-   =========================================================== */
+/* Diya Lighting */
 .diya-ambient-glow {
   transform-origin: center center;
   mix-blend-mode: screen;
@@ -378,72 +442,84 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
 }
 @keyframes diya-flame-motion {
   0%   { transform: scale(1) rotate(-1deg); }
-  25%  { transform: scale(1.06, 0.94) rotate(1.5deg); }
-  60%  { transform: scale(0.96, 1.05) rotate(-1.8deg); }
-  100% { transform: scale(1.04, 0.98) rotate(0.8deg); }
+  25%  { transform: scale(1.05, 0.95) rotate(1.2deg); }
+  60%  { transform: scale(0.97, 1.04) rotate(-1.4deg); }
+  100% { transform: scale(1.03, 0.98) rotate(0.6deg); }
 }
 
 /* ===========================================================
-   5. CEREMONIAL VELVET CURTAIN ENTRANCE
+   4. CEREMONIAL VELVET CURTAIN ENTRANCE
    =========================================================== */
 #curtain-scene {
   position: fixed;
   inset: 0;
   z-index: 500;
   overflow: hidden;
-  cursor: pointer;
   background: var(--maroon);
+  user-select: none;
+  cursor: pointer;
 }
+
 .curtain-half {
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 51%;
+  width: 52%;
   background:
-    radial-gradient(ellipse at 35% 50%, rgba(255, 225, 150, 0.12), transparent 65%),
+    radial-gradient(ellipse at 40% 50%, rgba(255, 230, 160, 0.15), transparent 70%),
     repeating-linear-gradient(90deg,
-      rgba(0, 0, 0, 0.35) 0px,
-      rgba(0, 0, 0, 0.08) 16px,
-      rgba(255, 205, 130, 0.12) 28px,
-      rgba(0, 0, 0, 0.32) 44px),
-    linear-gradient(180deg, var(--crimson-2) 0%, var(--maroon) 50%, #20080B 100%);
-  box-shadow: inset 0 0 140px rgba(0, 0, 0, 0.65);
+      rgba(0, 0, 0, 0.42) 0px,
+      rgba(0, 0, 0, 0.12) 18px,
+      rgba(255, 215, 140, 0.14) 30px,
+      rgba(0, 0, 0, 0.38) 46px),
+    linear-gradient(180deg, #7A1927 0%, #450D15 50%, #1F070A 100%);
+  box-shadow: inset 0 0 160px rgba(0, 0, 0, 0.75);
   will-change: transform;
+  transform: translateZ(0);
 }
 .curtain-left  { left: 0; transform-origin: left center; }
 .curtain-right { right: 0; transform-origin: right center; }
 
+/* Ornate Indian Zardozi / Gold Trim along curtain meeting edge */
 .curtain-half::before {
   content: '';
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 14px;
-  background: linear-gradient(180deg,
-    var(--gold-light) 0%,
-    var(--gold) 40%,
-    var(--gold-deep) 80%,
-    var(--gold) 100%);
-  box-shadow: 0 0 20px rgba(220, 180, 90, 0.6);
+  width: 22px;
+  background:
+    repeating-linear-gradient(0deg,
+      var(--gold-bright) 0px,
+      var(--gold) 6px,
+      var(--gold-deep) 12px,
+      var(--gold) 18px),
+    linear-gradient(90deg, var(--gold-deep), var(--gold-light), var(--gold-deep));
+  box-shadow: 0 0 24px rgba(220, 180, 90, 0.7);
+  z-index: 3;
 }
 .curtain-left::before  { right: 0; }
 .curtain-right::before { left: 0; }
 
+/* Brilliant Light Shaft piercing the parting curtain */
 .curtain-seam-glow {
   position: absolute;
   top: 0;
   bottom: 0;
   left: 50%;
-  width: 240px;
-  margin-left: -120px;
+  width: 280px;
+  margin-left: -140px;
   background: radial-gradient(ellipse at center,
-    rgba(255, 225, 150, 0.7),
+    rgba(255, 240, 185, 0.85) 0%,
+    rgba(243, 220, 158, 0.45) 45%,
     rgba(255, 225, 150, 0) 72%);
-  filter: blur(8px);
+  filter: blur(10px);
   pointer-events: none;
-  z-index: 2;
+  z-index: 4;
   mix-blend-mode: screen;
+  opacity: 0.65;
 }
+
+/* Curtain Content & Ceremonial Seal */
 .curtain-content {
   position: absolute;
   inset: 0;
@@ -453,22 +529,55 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
   justify-content: center;
   text-align: center;
   gap: 16px;
-  z-index: 5;
-  pointer-events: none;
+  z-index: 10;
   padding: 0 24px;
 }
+
+/* Central Ceremonial Sacred Seal */
+.ceremonial-seal {
+  position: relative;
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #5A121C 0%, #30080E 80%);
+  border: 2px solid var(--gold-light);
+  box-shadow:
+    0 0 30px rgba(201, 150, 59, 0.6),
+    0 0 60px rgba(243, 220, 158, 0.3),
+    inset 0 0 15px rgba(243, 220, 158, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-bottom: 8px;
+  transition: transform 0.4s var(--ease-cinema), box-shadow 0.4s var(--ease-cinema);
+  animation: seal-pulse 3s ease-in-out infinite alternate;
+}
+.ceremonial-seal:hover {
+  transform: scale(1.08);
+  box-shadow:
+    0 0 45px rgba(201, 150, 59, 0.85),
+    0 0 80px rgba(243, 220, 158, 0.5),
+    inset 0 0 20px rgba(243, 220, 158, 0.6);
+}
+@keyframes seal-pulse {
+  0%   { transform: scale(1);   box-shadow: 0 0 25px rgba(201, 150, 59, 0.5); }
+  100% { transform: scale(1.04); box-shadow: 0 0 45px rgba(243, 220, 158, 0.75); }
+}
+
 .curtain-content .line-om {
   font-family: var(--font-dev-display);
   color: var(--gold-light);
-  font-size: clamp(22px, 3.8vw, 32px);
-  letter-spacing: 0.05em;
-  text-shadow: 0 0 25px rgba(255, 220, 150, 0.6);
+  font-size: clamp(20px, 3.5vw, 30px);
+  letter-spacing: 0.06em;
+  text-shadow: 0 0 25px rgba(255, 220, 150, 0.65);
 }
 .curtain-content .line-main {
   font-family: var(--font-dev-display);
   color: var(--ivory);
-  font-size: clamp(32px, 6.5vw, 56px);
-  text-shadow: 0 0 35px rgba(255, 220, 150, 0.4);
+  font-size: clamp(34px, 6.5vw, 58px);
+  text-shadow: 0 0 40px rgba(255, 220, 150, 0.5);
+  line-height: 1.15;
 }
 .curtain-content .line-sub {
   font-family: var(--font-dev-body);
@@ -477,29 +586,36 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
   max-width: 36ch;
 }
 .curtain-content .line-en {
-  font-family: var(--font-cinema-display);
+  font-family: var(--font-display-en);
   font-style: italic;
-  color: rgba(251, 245, 234, 0.88);
-  font-size: clamp(16px, 2.2vw, 20px);
+  color: rgba(252, 248, 240, 0.92);
+  font-size: clamp(16px, 2.2vw, 21px);
   max-width: 34ch;
   line-height: 1.6;
 }
-.tap-hint {
-  margin-top: 24px;
-  font-family: var(--font-ui);
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.28em;
-  color: var(--gold-bright);
-  opacity: 0.9;
-  display: flex;
+
+.curtain-enter-btn {
+  margin-top: 18px;
+  display: inline-flex;
   align-items: center;
   gap: 12px;
+  background: linear-gradient(135deg, rgba(201, 150, 59, 0.3) 0%, rgba(142, 96, 24, 0.5) 100%);
+  border: 1px solid var(--gold-light);
+  color: var(--gold-bright);
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  padding: 13px 28px;
+  border-radius: 40px;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  transition: all 0.3s var(--ease-cinema);
 }
-.tap-hint::before, .tap-hint::after {
-  content: '✦';
-  font-size: 10px;
-  color: var(--gold);
+.curtain-enter-btn:hover {
+  background: linear-gradient(135deg, rgba(201, 150, 59, 0.5) 0%, rgba(142, 96, 24, 0.7) 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(201, 150, 59, 0.4);
 }
 
 .curtain-dust {
@@ -516,31 +632,32 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
 }
 @keyframes dust-rise {
   0%   { transform: translateY(0) translateX(0); opacity: 0; }
-  20%  { opacity: 0.8; }
+  20%  { opacity: 0.85; }
   80%  { opacity: 0.5; }
   100% { transform: translateY(-160px) translateX(var(--drift, 12px)); opacity: 0; }
 }
 
 /* ===========================================================
-   6. PARTICLE CANVAS (Lotus Petals & Golden Pollen)
+   5. PARTICLE CANVAS (Lotus Petals & Golden Pollen)
    =========================================================== */
 #ambient-canvas {
   position: fixed;
   inset: 0;
   z-index: 7;
   pointer-events: none;
+  transform: translateZ(0);
 }
 
 /* ===========================================================
-   7. MAIN SCROLLABLE WORLD & EDITORIAL SECTIONS
+   6. MAIN SCROLLABLE WORLD & SECTIONS
    =========================================================== */
 #world {
   position: relative;
-  z-index: 4;
+  z-index: 10;
 }
 .scene {
   position: relative;
-  padding: 140px 0;
+  padding: 150px 0;
   overflow: visible;
 }
 .scene-inner {
@@ -548,27 +665,36 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
   z-index: 3;
 }
 .container {
-  max-width: 760px;
+  max-width: 780px;
   margin: 0 auto;
   padding: 0 32px;
 }
 
-/* Content Frosted Glass Containers */
+/* Refined Frosted Glass Cards with Golden Filigree */
 .content-glass {
-  background: rgba(253, 248, 240, 0.84);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-radius: 24px;
-  padding: 56px 44px;
-  border: 1px solid rgba(201, 150, 59, 0.28);
+  background: rgba(254, 251, 246, 0.92);
+  backdrop-filter: blur(24px) saturate(160%);
+  -webkit-backdrop-filter: blur(24px) saturate(160%);
+  border-radius: 28px;
+  padding: 58px 46px;
+  border: 1.5px solid rgba(201, 150, 59, 0.38);
   box-shadow:
-    0 24px 60px -15px rgba(59, 34, 17, 0.14),
-    0 0 0 1px rgba(255, 255, 255, 0.7) inset;
-  transition: transform 0.3s var(--ease-cinema);
+    0 25px 65px -15px rgba(55, 25, 12, 0.16),
+    0 0 0 1px rgba(255, 255, 255, 0.85) inset,
+    0 0 25px rgba(243, 220, 158, 0.12) inset;
+  transition: transform 0.35s var(--ease-cinema), box-shadow 0.35s var(--ease-cinema);
+  transform: translateZ(0);
+  will-change: transform, opacity;
+}
+.content-glass:hover {
+  box-shadow:
+    0 32px 75px -15px rgba(55, 25, 12, 0.2),
+    0 0 0 1px rgba(255, 255, 255, 0.95) inset,
+    0 0 30px rgba(243, 220, 158, 0.18) inset;
 }
 
 /* ===========================================================
-   8. HERO / DIVINE AWAKENING (0–15% SCROLL)
+   7. HERO / DIVINE AWAKENING (0–15% SCROLL)
    =========================================================== */
 #scene-hero {
   min-height: 100vh;
@@ -576,46 +702,47 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
   align-items: flex-end;
   justify-content: center;
   text-align: center;
-  padding: 0 0 85px;
+  padding: 0 0 75px;
 }
 .hero-content-wrapper {
   background: radial-gradient(ellipse at center,
-    rgba(253, 248, 240, 0.9) 0%,
-    rgba(253, 248, 240, 0.55) 55%,
+    rgba(254, 251, 246, 0.95) 0%,
+    rgba(254, 251, 246, 0.7) 55%,
     transparent 85%);
-  padding: 36px 48px;
-  border-radius: 28px;
+  padding: 38px 48px;
+  border-radius: 32px;
   max-width: 680px;
 }
 .hero-kicker {
   color: var(--gold-deep);
-  font-size: clamp(19px, 2.6vw, 24px);
+  font-size: clamp(19px, 2.6vw, 25px);
   margin-bottom: 8px;
   opacity: 0;
   text-shadow: 0 0 20px rgba(201, 150, 59, 0.3);
 }
 .hero-title {
   font-family: var(--font-cinema-display);
-  font-size: clamp(42px, 8vw, 76px);
-  line-height: 1.06;
+  font-size: clamp(40px, 7.5vw, 72px);
+  line-height: 1.08;
   color: var(--brown-deep);
-  margin: 6px 0 14px;
+  margin: 6px 0 12px;
   opacity: 0;
 }
 .hero-title em {
   font-style: italic;
   color: var(--crimson);
+  font-family: var(--font-display-en);
 }
 .hero-devanagari {
   color: var(--crimson);
-  font-size: clamp(26px, 4.4vw, 40px);
+  font-size: clamp(26px, 4.2vw, 38px);
   margin-top: 6px;
   opacity: 0;
 }
 .hero-scroll-prompt {
-  margin-top: 28px;
-  font-size: 11.5px;
-  font-weight: 500;
+  margin-top: 26px;
+  font-size: 11px;
+  font-weight: 600;
   letter-spacing: 0.28em;
   color: var(--gold-deep);
   opacity: 0;
@@ -626,8 +753,8 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
 }
 .hero-scroll-prompt::after {
   content: '↓';
-  font-size: 15px;
-  animation: prompt-arrow 2s ease-in-out infinite;
+  font-size: 14px;
+  animation: prompt-arrow 2.2s ease-in-out infinite;
 }
 @keyframes prompt-arrow {
   0%, 100% { transform: translateY(0); }
@@ -635,60 +762,67 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
 }
 
 /* ===========================================================
-   9. CELEBRATION SCENE (15–30% SCROLL)
+   8. CELEBRATION SCENE (15–30% SCROLL)
    =========================================================== */
 #scene-celebration {
   text-align: center;
-  padding: 170px 0 180px;
+  padding: 125px 0 95px;
 }
 .celebration-title {
-  font-size: clamp(32px, 5.2vw, 50px);
-  max-width: 16ch;
+  font-size: clamp(30px, 4.8vw, 46px);
+  max-width: 18ch;
   margin: 0 auto 16px;
   color: var(--brown-deep);
-  line-height: 1.18;
+  line-height: 1.22;
 }
 .celebration-copy {
   font-family: var(--font-ui);
-  font-weight: 300;
+  font-weight: 400;
   color: var(--brown);
   max-width: 48ch;
   margin: 0 auto;
-  font-size: 17px;
-  line-height: 1.8;
+  font-size: 16.5px;
+  line-height: 1.85;
 }
 
 /* ===========================================================
-   10. INVITATION CARD (30–65% SCROLL)
+   9. INVITATION CARD (30–65% SCROLL)
    =========================================================== */
 #scene-invitation {
-  padding: 150px 0 170px;
+  padding: 95px 0 60px;
   display: flex;
   justify-content: center;
 }
 .card {
   position: relative;
-  width: min(90vw, 590px);
-  padding: 68px 46px 60px;
+  width: min(90vw, 600px);
+  padding: 72px 50px 64px;
   background:
-    radial-gradient(ellipse 130% 65% at 50% 0%, rgba(255, 255, 255, 0.8), transparent 65%),
-    rgba(253, 248, 240, 0.95);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  border: 1.5px solid rgba(201, 150, 59, 0.4);
+    radial-gradient(ellipse 130% 65% at 50% 0%, rgba(255, 255, 255, 0.88), transparent 65%),
+    rgba(254, 251, 246, 0.98);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1.5px solid rgba(201, 150, 59, 0.45);
   text-align: center;
   box-shadow:
-    0 35px 80px -25px rgba(62, 14, 20, 0.28),
-    0 0 0 1px rgba(255, 235, 175, 0.5) inset;
-  border-radius: 12px;
+    0 35px 85px -25px rgba(56, 10, 16, 0.28),
+    0 0 0 1px rgba(255, 240, 190, 0.6) inset,
+    0 0 20px rgba(243, 220, 158, 0.15) inset;
+  border-radius: 16px;
+  transition: transform 0.4s var(--ease-cinema);
+  transform: translateZ(0);
+  will-change: transform, opacity;
+}
+.card:hover {
+  transform: translateY(-4px);
 }
 
 /* Temple Corner Filigree */
 .card-corner {
   position: absolute;
-  width: 58px;
-  height: 58px;
-  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'><path d='M2,2 L36,2 C22,2 18,12 18,22 C18,28 12,34 2,36 Z' fill='%23C9963B' opacity='0.2'/><path d='M2,2 C34,2 34,2 34,34 M2,2 C2,34 2,34 34,34' fill='none' stroke='%23C9963B' stroke-width='2.2'/><circle cx='4' cy='4' r='3.5' fill='%23C9963B'/><circle cx='34' cy='34' r='2' fill='%23C9963B'/></svg>") no-repeat center/contain;
+  width: 62px;
+  height: 62px;
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'><path d='M2,2 L36,2 C22,2 18,12 18,22 C18,28 12,34 2,36 Z' fill='%23C9963B' opacity='0.22'/><path d='M2,2 C34,2 34,2 34,34 M2,2 C2,34 2,34 34,34' fill='none' stroke='%23C9963B' stroke-width='2.2'/><circle cx='4' cy='4' r='3.5' fill='%23C9963B'/><circle cx='34' cy='34' r='2' fill='%23C9963B'/></svg>") no-repeat center/contain;
   pointer-events: none;
 }
 .corner-tl { top: 16px; left: 16px; }
@@ -700,104 +834,302 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
   font-family: var(--font-display-en);
   font-style: italic;
   color: var(--brown);
-  font-size: 16px;
+  font-size: 16.5px;
   margin-bottom: 4px;
 }
-.card-preface + .card-preface { margin-bottom: 22px; }
+.card-preface + .card-preface { margin-bottom: 20px; }
 
 .card-devanagari-top {
   color: var(--crimson);
-  font-size: clamp(20px, 3.2vw, 24px);
-  margin-bottom: 18px;
+  font-size: clamp(20px, 3.2vw, 26px);
+  margin-bottom: 16px;
 }
 .card-title {
   font-family: var(--font-cinema-display);
-  font-size: clamp(32px, 5.5vw, 48px);
-  letter-spacing: 0.03em;
+  font-size: clamp(32px, 5.2vw, 46px);
+  letter-spacing: 0.04em;
   color: var(--brown-deep);
   margin-bottom: 18px;
 }
 .card-divider {
-  width: 72px;
-  height: 1px;
+  width: 80px;
+  height: 2px;
   background: linear-gradient(90deg, transparent, var(--gold), transparent);
-  margin: 0 auto 20px;
+  margin: 0 auto 22px;
 }
 .card-family {
   font-family: var(--font-cinema-display);
   font-style: italic;
   color: var(--crimson);
-  font-size: clamp(20px, 2.8vw, 25px);
-  margin-bottom: 24px;
+  font-size: clamp(20px, 2.8vw, 26px);
+  margin-bottom: 22px;
 }
 .card-blessing {
   font-family: var(--font-ui);
-  font-weight: 300;
+  font-weight: 400;
   color: var(--brown);
   font-size: 15px;
   line-height: 1.85;
   max-width: 44ch;
-  margin: 22px auto 0;
+  margin: 20px auto 0;
 }
 
 /* ===========================================================
-   11. EVENT DETAILS (65–85% SCROLL)
+   10. SACRED TRANSITION BRIDGE & EVENT DETAILS (JOIN US)
    =========================================================== */
+.scene-transition-bridge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 34px;
+  pointer-events: none;
+}
+.bridge-line {
+  width: 1.5px;
+  height: 38px;
+  background: linear-gradient(180deg, transparent, rgba(201, 150, 59, 0.7), transparent);
+}
+.bridge-gem {
+  color: var(--gold);
+  font-size: 13px;
+  margin: 3px 0;
+  opacity: 0.9;
+  text-shadow: 0 0 10px rgba(201, 150, 59, 0.6);
+  animation: bridge-gem-breathe 3.5s ease-in-out infinite alternate;
+}
+@keyframes bridge-gem-breathe {
+  0%   { opacity: 0.6; transform: scale(0.9); }
+  100% { opacity: 1;   transform: scale(1.15); filter: drop-shadow(0 0 6px rgba(201, 150, 59, 0.8)); }
+}
+
 #scene-details {
-  padding: 140px 0;
+  padding: 50px 0 75px;
+}
+.details-card {
+  position: relative;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 54px 44px 48px;
+}
+.details-header {
+  text-align: center;
+  margin-bottom: 36px;
+}
+.details-kicker {
+  color: var(--crimson);
+  font-size: clamp(16px, 2.4vw, 20px);
+  margin-bottom: 6px;
+  letter-spacing: 0.06em;
 }
 .details-title {
   font-family: var(--font-cinema-display);
   text-align: center;
   font-size: clamp(30px, 4.4vw, 42px);
-  margin-bottom: 50px;
+  letter-spacing: 0.03em;
   color: var(--brown-deep);
+  margin-bottom: 12px;
 }
-.details-list {
-  max-width: 480px;
-  margin: 0 auto;
-  border-left: 1.5px solid rgba(201, 150, 59, 0.4);
+.details-divider {
+  width: 80px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  margin: 0 auto 10px;
 }
-.detail-row {
+.details-subtitle {
+  font-family: var(--font-ui);
+  font-size: 12.5px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  opacity: 0.88;
+}
+
+/* Luxury Connected Timeline */
+.details-timeline {
   position: relative;
-  padding: 8px 0 38px 36px;
+  max-width: 550px;
+  margin: 0 auto;
 }
-.detail-row::before {
-  content: '';
+.timeline-spine {
   position: absolute;
-  left: -6px;
-  top: 8px;
-  width: 11px;
-  height: 11px;
-  border-radius: 50%;
-  background: var(--gold);
-  box-shadow:
-    0 0 0 4px var(--ivory),
-    0 0 12px rgba(201, 150, 59, 0.7);
+  left: 19px;
+  top: 18px;
+  bottom: 22px;
+  width: 2px;
+  z-index: 1;
+  pointer-events: none;
 }
-.detail-row .k {
+.timeline-spine-track {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg,
+    rgba(201, 150, 59, 0.25) 0%,
+    rgba(201, 150, 59, 0.38) 50%,
+    rgba(201, 150, 59, 0.18) 100%
+  );
+  border-radius: 2px;
+}
+.timeline-spine-fill {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg,
+    #FFF2B2 0%,
+    var(--gold-bright) 30%,
+    var(--gold) 70%,
+    var(--crimson) 100%
+  );
+  border-radius: 2px;
+  transform-origin: top center;
+  transform: scaleY(0);
+  box-shadow: 0 0 10px rgba(201, 150, 59, 0.6);
+  will-change: transform;
+}
+.timeline-finial {
+  position: absolute;
+  left: -2px;
+  width: 6px;
+  height: 6px;
+  transform: rotate(45deg);
+  background: var(--gold);
+  border-radius: 1px;
+  box-shadow: 0 0 6px rgba(201, 150, 59, 0.6);
+}
+.finial-top    { top: -4px; }
+.finial-bottom { bottom: -4px; }
+
+/* Timeline Row */
+.detail-row {
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+  margin-bottom: 20px;
+  transition: transform 0.25s var(--ease-cinema);
+  transform: translateZ(0);
+  will-change: transform, opacity;
+}
+.detail-row:last-child {
+  margin-bottom: 0;
+}
+.detail-marker {
+  display: flex;
+  align-items: center;
+  width: 40px;
+  flex-shrink: 0;
+  margin-top: 15px;
+  position: relative;
+  z-index: 2;
+}
+.timeline-node {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #FFFDF0 0%, var(--gold-bright) 45%, var(--gold-deep) 100%);
+  border: 2px solid var(--gold);
+  box-shadow:
+    0 0 0 3px var(--ivory),
+    0 0 0 4.5px rgba(201, 150, 59, 0.35),
+    0 0 12px rgba(201, 150, 59, 0.45);
+  transition: transform 0.25s var(--ease-cinema), box-shadow 0.25s var(--ease-cinema);
+  flex-shrink: 0;
+}
+.detail-connector {
+  flex: 1;
+  height: 1.5px;
+  background: linear-gradient(90deg, rgba(201, 150, 59, 0.65), rgba(201, 150, 59, 0.2));
+  transition: background 0.25s var(--ease-cinema);
+}
+.detail-content {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.52);
+  border: 1px solid rgba(201, 150, 59, 0.22);
+  border-radius: 14px;
+  padding: 16px 22px;
+  box-shadow: 0 4px 18px -4px rgba(55, 25, 12, 0.05);
+  transition: all 0.25s var(--ease-cinema);
+}
+
+/* Hover Feedback */
+.detail-row:hover {
+  transform: translateX(4px);
+}
+.detail-row:hover .detail-content {
+  background: rgba(255, 255, 255, 0.92);
+  border-color: rgba(201, 150, 59, 0.48);
+  box-shadow: 0 10px 25px -6px rgba(56, 10, 16, 0.12);
+}
+.detail-row:hover .timeline-node {
+  transform: scale(1.22);
+  box-shadow:
+    0 0 0 3px var(--ivory),
+    0 0 0 5px var(--gold),
+    0 0 16px rgba(201, 150, 59, 0.8);
+}
+.detail-row:hover .detail-connector {
+  background: linear-gradient(90deg, var(--gold), var(--crimson));
+}
+
+/* Typography Inside Content Card */
+.detail-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 5px;
+  flex-wrap: wrap;
+}
+.detail-badge {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.detail-badge::before {
+  content: '✦';
+  font-size: 8px;
+  color: var(--gold);
+}
+.detail-tag {
   font-family: var(--font-ui);
   font-size: 11.5px;
   font-weight: 600;
-  letter-spacing: 0.16em;
-  color: var(--gold-deep);
-  margin-bottom: 4px;
+  color: var(--crimson);
+  background: rgba(107, 23, 36, 0.07);
+  padding: 2px 10px;
+  border-radius: 12px;
+  letter-spacing: 0.03em;
+  border: 1px solid rgba(107, 23, 36, 0.12);
 }
-.detail-row .v {
+.detail-value {
   font-family: var(--font-cinema-display);
-  font-size: 23px;
+  font-size: clamp(18px, 2.8vw, 22px);
+  font-weight: 600;
   color: var(--brown-deep);
+  line-height: 1.25;
 }
-.detail-row:last-child { padding-bottom: 0; }
+.detail-sub {
+  font-family: var(--font-ui);
+  font-size: 13.5px;
+  font-weight: 400;
+  color: var(--brown);
+  margin-top: 4px;
+  line-height: 1.45;
+}
 
-/* Interactive Action Buttons (Add to Calendar + Share Invite) */
+/* Interactive Action Buttons */
 .invite-actions {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   gap: 16px;
-  margin-top: 48px;
+  margin-top: 38px;
 }
 .btn-action {
   display: inline-flex;
@@ -805,13 +1137,14 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
   gap: 10px;
   font-family: var(--font-ui);
   font-size: 13.5px;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.08em;
-  padding: 14px 24px;
-  border-radius: 8px;
+  padding: 15px 26px;
+  border-radius: 10px;
   cursor: pointer;
   border: 1px solid rgba(201, 150, 59, 0.45);
   transition: all 0.25s var(--ease-cinema);
+  touch-action: manipulation;
 }
 .btn-calendar {
   background: linear-gradient(135deg, var(--crimson) 0%, var(--maroon) 100%);
@@ -821,10 +1154,13 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
 .btn-calendar:hover {
   background: linear-gradient(135deg, var(--crimson-2) 0%, var(--crimson) 100%);
   transform: translateY(-2px);
-  box-shadow: 0 12px 28px -6px rgba(107, 23, 36, 0.6);
+  box-shadow: 0 12px 28px -6px rgba(107, 23, 36, 0.65);
+}
+.btn-calendar:active {
+  transform: scale(0.98);
 }
 .btn-share {
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.9);
   color: var(--brown-deep);
   box-shadow: 0 8px 20px -8px rgba(59, 34, 17, 0.15);
 }
@@ -833,6 +1169,10 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
   border-color: var(--gold);
   transform: translateY(-2px);
   color: var(--crimson);
+  box-shadow: 0 12px 24px -8px rgba(201, 150, 59, 0.3);
+}
+.btn-share:active {
+  transform: scale(0.98);
 }
 
 /* Calendar Choice Popover */
@@ -840,9 +1180,9 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
   position: fixed;
   inset: 0;
   z-index: 600;
-  background: rgba(32, 13, 22, 0.55);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background: rgba(26, 8, 16, 0.65);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -855,14 +1195,14 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
   pointer-events: auto;
 }
 .calendar-dialog {
-  background: rgba(253, 248, 240, 0.98);
+  background: rgba(254, 251, 246, 0.98);
   border: 1.5px solid rgba(201, 150, 59, 0.45);
-  border-radius: 18px;
-  padding: 36px 32px;
-  max-width: 400px;
+  border-radius: 20px;
+  padding: 38px 32px;
+  max-width: 420px;
   width: 90vw;
   text-align: center;
-  box-shadow: 0 25px 60px -15px rgba(62, 14, 20, 0.4);
+  box-shadow: 0 30px 70px -15px rgba(56, 10, 16, 0.45);
   transform: scale(0.92);
   transition: transform 0.3s var(--ease-cinema);
 }
@@ -891,14 +1231,14 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  padding: 12px 18px;
-  border-radius: 8px;
+  padding: 13px 20px;
+  border-radius: 10px;
   border: 1px solid rgba(201, 150, 59, 0.35);
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.92);
   color: var(--brown-deep);
   font-family: var(--font-ui);
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
   text-decoration: none;
   transition: all 0.2s var(--ease-cinema);
@@ -909,7 +1249,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
   transform: translateY(-1px);
 }
 .calendar-close-btn {
-  margin-top: 18px;
+  margin-top: 20px;
   background: none;
   border: none;
   color: var(--brown);
@@ -917,21 +1257,23 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
   letter-spacing: 0.05em;
   cursor: pointer;
   text-decoration: underline;
+  padding: 6px;
 }
 
-/* Toast notification */
+/* Festive Toast notification */
 .festive-toast {
   position: fixed;
   bottom: 36px;
   left: 50%;
   transform: translateX(-50%) translateY(20px);
-  background: rgba(62, 14, 20, 0.94);
+  background: rgba(56, 10, 16, 0.95);
   color: var(--gold-bright);
-  padding: 12px 24px;
+  padding: 14px 28px;
   border-radius: 30px;
-  border: 1px solid rgba(242, 218, 155, 0.6);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(243, 220, 158, 0.7);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
   font-size: 13.5px;
+  font-weight: 500;
   letter-spacing: 0.06em;
   z-index: 700;
   opacity: 0;
@@ -944,36 +1286,36 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
 }
 
 /* ===========================================================
-   12. LOCATION SCENE
+   11. LOCATION SCENE
    =========================================================== */
 #scene-location {
-  padding: 140px 0;
+  padding: 70px 0 90px;
   text-align: center;
 }
 .location-title {
   font-family: var(--font-cinema-display);
-  font-size: clamp(30px, 5vw, 46px);
+  font-size: clamp(28px, 4.6vw, 44px);
   margin-bottom: 16px;
   color: var(--brown-deep);
 }
 .location-copy {
   color: var(--brown);
-  font-weight: 300;
+  font-weight: 400;
   max-width: 44ch;
   margin: 0 auto 36px;
   line-height: 1.75;
   font-size: 16px;
 }
 .location-card {
-  max-width: 440px;
+  max-width: 450px;
   margin: 0 auto;
   border: 1px solid rgba(201, 150, 59, 0.35);
-  padding: 32px 28px;
-  background: rgba(255, 255, 255, 0.55);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-radius: 16px;
-  box-shadow: 0 15px 35px -10px rgba(59, 34, 17, 0.1);
+  padding: 34px 30px;
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 18px;
+  box-shadow: 0 18px 40px -10px rgba(55, 25, 12, 0.12);
 }
 .location-card .venue {
   font-family: var(--font-cinema-display);
@@ -985,7 +1327,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
   color: var(--brown);
   font-size: 15px;
   line-height: 1.65;
-  font-weight: 300;
+  font-weight: 400;
   margin-bottom: 24px;
 }
 .directions-btn {
@@ -994,48 +1336,55 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
   gap: 10px;
   font-family: var(--font-ui);
   font-size: 13.5px;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.08em;
   color: var(--cream);
   background: var(--crimson);
-  padding: 14px 26px;
+  padding: 14px 28px;
   border: none;
   text-decoration: none;
-  border-radius: 6px;
-  box-shadow: 0 8px 20px -6px rgba(107, 23, 36, 0.4);
-  transition: background 0.25s var(--ease-cinema), transform 0.25s var(--ease-cinema);
+  border-radius: 8px;
+  box-shadow: 0 8px 22px -6px rgba(107, 23, 36, 0.45);
+  transition: all 0.25s var(--ease-cinema);
+  touch-action: manipulation;
 }
 .directions-btn:hover {
   background: var(--maroon);
   transform: translateY(-2px);
+  box-shadow: 0 12px 26px -6px rgba(107, 23, 36, 0.65);
+}
+.directions-btn:active {
+  transform: scale(0.98);
 }
 
 /* ===========================================================
-   13. MODAK MOMENT (SACRED PRASAD)
+   12. MODAK MOMENT (SACRED PRASAD)
    =========================================================== */
 #scene-modak {
   padding: 150px 0 160px;
   text-align: center;
 }
 .modak-wrap {
-  width: 140px;
+  width: 145px;
   margin: 0 auto 28px;
-  filter: drop-shadow(0 20px 35px rgba(91, 58, 32, 0.28));
+  filter: drop-shadow(0 20px 38px rgba(91, 58, 32, 0.3));
 }
 @keyframes modak-levitate {
   0%, 100% { transform: translateY(0) rotate(-2deg); }
   50%      { transform: translateY(-16px) rotate(2deg); }
 }
-.modak-wrap svg { animation: modak-levitate 6.5s ease-in-out infinite; }
+.modak-wrap svg {
+  animation: modak-levitate 6.5s ease-in-out infinite;
+}
 .modak-line {
-  font-size: clamp(24px, 3.8vw, 34px);
+  font-size: clamp(24px, 3.8vw, 36px);
   max-width: 24ch;
   margin: 0 auto;
   color: var(--brown-deep);
 }
 
 /* ===========================================================
-   14. FINAL BLESSING (85–100% SCROLL)
+   13. FINAL BLESSING (85–100% SCROLL)
    =========================================================== */
 #scene-final {
   min-height: 100vh;
@@ -1047,76 +1396,104 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
   position: relative;
 }
 .final-art-badge {
-  width: min(72vw, 300px);
-  height: min(72vw, 300px);
+  width: min(72vw, 310px);
+  height: min(72vw, 310px);
   margin: 0 auto 32px;
   border-radius: 50%;
   overflow: hidden;
   box-shadow:
-    0 0 55px rgba(242, 218, 155, 0.55),
-    0 0 100px rgba(201, 150, 59, 0.35);
-  border: 2.5px solid rgba(242, 218, 155, 0.65);
+    0 0 60px rgba(243, 220, 158, 0.6),
+    0 0 110px rgba(201, 150, 59, 0.4);
+  border: 3px solid rgba(243, 220, 158, 0.8);
   animation: final-badge-glow 5s ease-in-out infinite alternate;
 }
 .final-art-badge img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 38%;
+  object-position: center 36%;
   transform: scale(1.22);
 }
 @keyframes final-badge-glow {
-  0%   { box-shadow: 0 0 35px rgba(242, 218, 155, 0.4), 0 0 70px rgba(201, 150, 59, 0.2); }
-  100% { box-shadow: 0 0 65px rgba(242, 218, 155, 0.8), 0 0 120px rgba(201, 150, 59, 0.5); }
+  0%   { box-shadow: 0 0 35px rgba(243, 220, 158, 0.45), 0 0 70px rgba(201, 150, 59, 0.25); }
+  100% { box-shadow: 0 0 70px rgba(243, 220, 158, 0.85), 0 0 130px rgba(201, 150, 59, 0.55); }
 }
 .final-main {
-  font-size: clamp(34px, 6.8vw, 58px);
+  font-size: clamp(34px, 6.8vw, 60px);
   color: var(--gold-bright);
-  text-shadow: 0 0 35px rgba(242, 218, 155, 0.5);
+  text-shadow: 0 0 35px rgba(243, 220, 158, 0.55);
   margin-bottom: 16px;
 }
 .final-sub {
   font-family: var(--font-cinema-display);
   font-style: italic;
-  color: rgba(251, 245, 234, 0.9);
-  font-size: clamp(16px, 2.2vw, 20px);
+  color: rgba(252, 248, 240, 0.92);
+  font-size: clamp(16px, 2.2vw, 21px);
 }
 
 /* ===========================================================
-   15. REDUCED MOTION SUPPORT
+   14. REDUCED MOTION SUPPORT
    =========================================================== */
 @media (prefers-reduced-motion: reduce) {
   .modak-wrap svg, .final-art-badge { animation: none !important; }
-  .hero-divine-aura, .lantern-flicker-left, .lantern-flicker-right { animation: none !important; }
-  .g-wind-wrap, .g-head-nod, .diya-flicker-flame { animation: none !important; }
+  .hero-divine-aura, .hero-aura-rays, .lantern-flicker-left, .lantern-flicker-right { animation: none !important; }
+  .hero-art-float, .g-wind-wrap, .g-head-nod, .diya-flicker-flame, .ceremonial-seal { animation: none !important; }
   * { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
   #ambient-canvas { display: none; }
   .god-rays { display: none; }
 }
 
 /* ===========================================================
-   16. RESPONSIVE OPTIMIZATIONS
+   15. RESPONSIVE OPTIMIZATIONS (Mobile & Tablet)
    =========================================================== */
 @media (max-width: 768px) {
   .hero-art-img {
-    object-position: center 34%;
-    transform: scale(1.16);
+    object-position: center 28%;
+    transform: scale(1.18);
   }
   .hero-divine-aura {
-    top: 34%;
-    width: 74vw;
-    height: 74vw;
+    top: 28%;
+    width: 78vw;
+    height: 78vw;
   }
-  .lantern-flicker-left  { top: 9%; left: 3%; width: 65px; height: 100px; }
-  .lantern-flicker-right { top: 9%; right: 3%; width: 65px; height: 100px; }
-  .scene { padding: 100px 0; }
-  #scene-hero { padding: 0 0 65px; }
-  .hero-content-wrapper { padding: 26px 20px; }
-  .card { padding: 56px 24px 46px; }
-  .content-glass { padding: 36px 22px; }
-  .details-list { margin-left: 8px; }
-  .invite-actions { flex-direction: column; width: 100%; }
+  .hero-aura-rays {
+    top: 28%;
+    width: 85vw;
+    height: 85vw;
+  }
+  .lantern-flicker-left  { top: 7%; left: 3%; width: 70px; height: 110px; }
+  .lantern-flicker-right { top: 7%; right: 3%; width: 70px; height: 110px; }
+  .scene { padding: 90px 0; }
+  #scene-hero { padding: 0 0 50px; }
+  .hero-content-wrapper { padding: 24px 18px; }
+  .card {
+    padding: 50px 20px 42px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+  .content-glass {
+    padding: 34px 20px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+  .details-card { padding: 38px 16px 34px; }
+  .details-timeline { max-width: 100%; }
+  .timeline-spine { left: 14px; top: 16px; bottom: 18px; }
+  .detail-marker { width: 30px; margin-top: 13px; }
+  .timeline-node { width: 13px; height: 13px; }
+  .detail-content { padding: 13px 14px; border-radius: 12px; }
+  .detail-meta { gap: 4px; margin-bottom: 3px; }
+  .detail-badge { font-size: 10px; }
+  .detail-tag { font-size: 10.5px; padding: 1px 7px; }
+  .detail-value { font-size: 16.5px; }
+  .detail-sub { font-size: 12.5px; }
+  .invite-actions { margin-top: 26px; flex-direction: column; width: 100%; }
   .btn-action { width: 100%; justify-content: center; }
+
+  /* On narrow mobile screens, minimize side foliage to keep focus purely on Bappa & text */
+  #garden-far { display: none; }
+  #garden-near { display: none; }
+  .g-diya { display: none; }
 }
 </style>
 </head>
@@ -1139,21 +1516,29 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
   <div class="hero-art-wrapper" id="hero-art-wrapper">
     <!-- Divine Breathing Aura behind Ganpati's halo -->
     <div class="hero-divine-aura" id="hero-divine-aura"></div>
+    <div class="hero-aura-rays" id="hero-aura-rays"></div>
 
     <!-- Hanging Lanterns candlelight dynamic flickers -->
     <div class="lantern-flicker-left" id="lantern-left"></div>
     <div class="lantern-flicker-right" id="lantern-right"></div>
 
-    <!-- Original Ganpati Artwork Image preserved exactly -->
-    <img src="ganpati_hero.png" alt="Lord Ganesha with Lotus Flowers and Lanterns" class="hero-art-img" id="hero-art-img">
+    <!-- Floating Container for serene divine levitation -->
+    <div class="hero-art-float" id="hero-art-float">
+      <!-- Original Ganpati Artwork Image preserved exactly -->
+      <img src="ganpati_hero.png" alt="Lord Ganesha with Lotus Flowers and Lanterns" class="hero-art-img" id="hero-art-img">
+    </div>
+
+    <!-- Sanctuary Ground Shadow Plane -->
+    <div class="sanctuary-ground" aria-hidden="true"></div>
   </div>
 </div>
 
 <!-- =========================================================
-     PROCEDURAL BOTANICAL GARDEN LAYERS (PARALLAX + BIOLOGICAL GROWTH)
+     PROCEDURAL BOTANICAL GARDEN LAYERS (GROUNDED SANCTUARY)
      ========================================================= -->
 <div id="garden-far" class="garden-layer" aria-hidden="true"></div>
 <div id="garden-mid" class="garden-layer" aria-hidden="true"></div>
+<div id="garden-near" class="garden-layer" aria-hidden="true"></div>
 
 <!-- =========================================================
      GOD RAYS
@@ -1205,31 +1590,132 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
     </div>
   </section>
 
-  <!-- SCENE 4: EVENT DETAILS (65–85%) -->
+  <!-- SCENE 4: EVENT DETAILS (JOIN US) -->
   <section id="scene-details" class="scene" aria-label="Event details">
+    <!-- Sacred Transition Bridge between Invitation & Details -->
+    <div class="scene-transition-bridge" aria-hidden="true">
+      <div class="bridge-line"></div>
+      <div class="bridge-gem">✦</div>
+      <div class="bridge-line"></div>
+    </div>
+
     <div class="container">
-      <div class="content-glass">
-        <h2 class="details-title">Join us</h2>
-        <div class="details-list" id="details-list">
-          <div class="detail-row">
-            <div class="k">CELEBRATION</div>
-            <div class="v">Ganesh Chaturthi 2026</div>
+      <div class="content-glass details-card">
+        <span class="card-corner corner-tl"></span>
+        <span class="card-corner corner-tr"></span>
+        <span class="card-corner corner-bl"></span>
+        <span class="card-corner corner-br"></span>
+
+        <div class="details-header">
+          <div class="details-kicker dev-display">॥ सप्रेम निमंत्रण ॥</div>
+          <h2 class="details-title">Join Us</h2>
+          <div class="details-divider"></div>
+          <div class="details-subtitle">Sacred Timeline &amp; Muhurat</div>
+        </div>
+
+        <div class="details-timeline" id="details-list">
+          <!-- Continuous Golden Illuminated Spine -->
+          <div class="timeline-spine" aria-hidden="true">
+            <div class="timeline-spine-track"></div>
+            <div class="timeline-spine-fill" id="timeline-spine-fill"></div>
+            <div class="timeline-finial finial-top"></div>
+            <div class="timeline-finial finial-bottom"></div>
           </div>
+
+          <!-- 1. Celebration -->
           <div class="detail-row">
-            <div class="k">DATE</div>
-            <div class="v">Friday, 28th August 2026</div>
+            <div class="detail-marker">
+              <span class="timeline-node"></span>
+              <span class="detail-connector"></span>
+            </div>
+            <div class="detail-content">
+              <div class="detail-meta">
+                <span class="detail-badge">CELEBRATION</span>
+                <span class="detail-tag">Bhadrapada 2026</span>
+              </div>
+              <div class="detail-value">Ganesh Chaturthi 2026</div>
+              <div class="detail-sub">10 Auspicious Days of Joy, Devotion &amp; Blessings</div>
+            </div>
           </div>
+
+          <!-- 2. Date -->
           <div class="detail-row">
-            <div class="k">STHAPANA</div>
-            <div class="v">Morning Muhurat · 10:30 AM</div>
+            <div class="detail-marker">
+              <span class="timeline-node"></span>
+              <span class="detail-connector"></span>
+            </div>
+            <div class="detail-content">
+              <div class="detail-meta">
+                <span class="detail-badge">DATE</span>
+                <span class="detail-tag">Chaturthi Tithi</span>
+              </div>
+              <div class="detail-value">Monday, 14th September 2026</div>
+              <div class="detail-sub">Bhadrapada Shukla Chaturthi · Auspicious Arrival</div>
+            </div>
           </div>
+
+          <!-- 3. Sthapana & Puja -->
           <div class="detail-row">
-            <div class="k">AARTI</div>
-            <div class="v">Evening · 7:00 PM daily</div>
+            <div class="detail-marker">
+              <span class="timeline-node"></span>
+              <span class="detail-connector"></span>
+            </div>
+            <div class="detail-content">
+              <div class="detail-meta">
+                <span class="detail-badge">MUHURAT &amp; PUJA</span>
+                <span class="detail-tag">10:30 AM</span>
+              </div>
+              <div class="detail-value">Morning Murti Sthapana</div>
+              <div class="detail-sub">Prana Pratishtha &amp; Welcome Aarti with the Dubey Family</div>
+            </div>
           </div>
+
+          <!-- 4. Daily Aarti -->
           <div class="detail-row">
-            <div class="k">VISARJAN</div>
-            <div class="v">Sunday, 6th September 2026</div>
+            <div class="detail-marker">
+              <span class="timeline-node"></span>
+              <span class="detail-connector"></span>
+            </div>
+            <div class="detail-content">
+              <div class="detail-meta">
+                <span class="detail-badge">DAILY AARTI</span>
+                <span class="detail-tag">7:00 PM Daily</span>
+              </div>
+              <div class="detail-value">Evening Mahamangal Aarti</div>
+              <div class="detail-sub">Devotional Aarti followed by Sacred Modak &amp; Maha Prasad</div>
+            </div>
+          </div>
+
+          <!-- 5. Venue -->
+          <div class="detail-row">
+            <div class="detail-marker">
+              <span class="timeline-node"></span>
+              <span class="detail-connector"></span>
+            </div>
+            <div class="detail-content">
+              <div class="detail-meta">
+                <span class="detail-badge">SANCTUM VENUE</span>
+                <span class="detail-tag">Dubey Residence</span>
+              </div>
+              <div class="detail-value">Surya Shopping Sector</div>
+              <div class="detail-sub">Mira Road East, Mumbai</div>
+            </div>
+          </div>
+
+          <!-- 6. Visarjan -->
+          <div class="detail-row">
+            <div class="detail-marker">
+              <span class="timeline-node"></span>
+              <span class="detail-connector"></span>
+            </div>
+            <div class="detail-content">
+              <div class="detail-meta">
+                <span class="detail-badge">VISARJAN</span>
+                <span class="detail-tag">Anant Chaturdashi</span>
+              </div>
+              <div class="detail-value">Thursday, 24th September 2026</div>
+              <div class="detail-sub">Bappa's Farewell · Pudhchya Varshi Lavkar Ya</div>
+            </div>
           </div>
         </div>
 
@@ -1268,8 +1754,8 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
         <p class="location-copy">We can't wait to welcome you home for Bappa's darshan, aarti and prasad.</p>
         <div class="location-card">
           <div class="venue">Dubey Residence</div>
-          <div class="address">123, Ganesh Nagar<br>Near Shiv Mandir, Sector 5<br>City, State — 400001</div>
-          <a class="directions-btn" href="https://maps.google.com" target="_blank" rel="noopener">Get directions →</a>
+          <div class="address">Surya Shopping Sector<br>Mira Road East, Mumbai</div>
+          <a class="directions-btn" href="https://maps.google.com/?q=Surya+Shopping+Sector,+Mira+Road+East,+Mumbai" target="_blank" rel="noopener">Get directions →</a>
         </div>
       </div>
     </div>
@@ -1342,11 +1828,6 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
 </main>
 
 <!-- =========================================================
-     FOREGROUND GARDEN LAYER (CINEMATIC DEPTH OF FIELD)
-     ========================================================= -->
-<div id="garden-near" class="garden-layer" aria-hidden="true"></div>
-
-<!-- =========================================================
      AMBIENT PARTICLES (CANVAS 2D)
      ========================================================= -->
 <canvas id="ambient-canvas" aria-hidden="true"></canvas>
@@ -1355,17 +1836,34 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
      CEREMONIAL VELVET CURTAIN ENTRANCE
      ========================================================= -->
 <div id="curtain-scene" role="button" tabindex="0"
-     aria-label="Tap, click, or scroll to open the ceremonial curtain">
+     aria-label="Tap to open the ceremonial curtain">
   <div class="curtain-half curtain-left" id="curtain-left"></div>
   <div class="curtain-half curtain-right" id="curtain-right"></div>
   <div class="curtain-seam-glow" id="seam-glow"></div>
   <div class="curtain-dust" id="curtain-dust"></div>
   <div class="curtain-content" id="curtain-intro">
+    
+    <!-- Central Auspicious Ceremonial Seal -->
+    <div class="ceremonial-seal" id="ceremonial-seal" title="Open Sanctum">
+      <svg width="48" height="48" viewBox="0 0 64 64" fill="none">
+        <circle cx="32" cy="32" r="30" stroke="url(#seal-gold)" stroke-width="2"/>
+        <circle cx="32" cy="32" r="25" stroke="rgba(243,220,158,0.5)" stroke-dasharray="3 3"/>
+        <path d="M32 14 L34 26 L46 28 L36 36 L40 48 L32 40 L24 48 L28 36 L18 28 L30 26 Z" fill="url(#seal-gold)"/>
+        <defs>
+          <linearGradient id="seal-gold" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#FFE9A6"/>
+            <stop offset="50%" stop-color="#C9963B"/>
+            <stop offset="100%" stop-color="#8E6018"/>
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+
     <div class="line-om dev-display">॥ श्री गणेशाय नमः ॥</div>
     <div class="line-main dev-display">गणपती बाप्पा मोरया!</div>
     <div class="line-sub dev-body">गणेश चतुर्थीच्या हार्दिक शुभेच्छा!</div>
     <div class="line-en">May Lord Ganesha bless your home with happiness, prosperity, peace and new beginnings.</div>
-    <div class="tap-hint">TAP ANYWHERE TO BEGIN</div>
+    <button class="curtain-enter-btn" id="curtain-enter-btn" type="button">✦ TAP TO OPEN SANCTUM ✦</button>
   </div>
 </div>
 
@@ -1375,7 +1873,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
 <div class="calendar-popover" id="calendar-popover" role="dialog" aria-modal="true" aria-label="Add to Calendar options">
   <div class="calendar-dialog">
     <h3>Save the Date</h3>
-    <p>Ganesh Chaturthi 2026 with the Dubey Family<br>Friday, 28th August 2026 · 10:30 AM</p>
+    <p>Ganesh Chaturthi 2026 with the Dubey Family<br>Monday, 14th September 2026 · 10:30 AM<br>Surya Shopping Sector, Mira Road East, Mumbai</p>
     <div class="calendar-options">
       <a class="calendar-opt-btn" id="opt-gcal" href="#" target="_blank" rel="noopener">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -1405,7 +1903,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
 <div class="festive-toast" id="festive-toast" role="status" aria-live="polite">✦ Invitation link copied to clipboard!</div>
 
 <!-- =========================================================
-     MAIN BOTANICAL, SCROLL & INTERACTION ENGINE
+     ENGINE & INTERACTIVE LOGIC
      ========================================================= -->
 <script>
 (function() {
@@ -1415,10 +1913,10 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   const CFG = {
-    maxParticles: isMobile ? 55 : 115,
-    parallaxFar:  85,
-    parallaxMid:  50,
-    parallaxNear: 22,
+    maxParticles: isMobile ? 18 : 42,
+    parallaxFar:  60,
+    parallaxMid:  35,
+    parallaxNear: 15,
   };
 
   const clamp = (v, lo, hi) => Math.min(Math.max(v, lo), hi);
@@ -1427,7 +1925,46 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
   const pick  = arr => arr[Math.floor(Math.random() * arr.length)];
 
   // =============================================================
-  // BOTANICAL GARDEN MODULE (Conflict-Free 4-Tier Architecture)
+  // SACRED TEMPLE BELL CHIME (Auspicious harmonic sound)
+  // =============================================================
+  const Sound = {
+    ctx: null,
+
+    playBell(freq = 528, duration = 3.0) {
+      try {
+        if (!this.ctx) {
+          const AudioCtx = window.AudioContext || window.webkitAudioContext;
+          if (AudioCtx) this.ctx = new AudioCtx();
+        }
+        if (!this.ctx) return;
+        if (this.ctx.state === 'suspended') this.ctx.resume();
+
+        const now = this.ctx.currentTime;
+        const partials = [
+          { mult: 1.0,  gain: 0.45, decay: duration },
+          { mult: 2.76, gain: 0.30, decay: duration * 0.7 },
+          { mult: 5.40, gain: 0.15, decay: duration * 0.45 }
+        ];
+
+        partials.forEach(p => {
+          const osc = this.ctx.createOscillator();
+          const g = this.ctx.createGain();
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(freq * p.mult, now);
+          g.gain.setValueAtTime(0.001, now);
+          g.gain.exponentialRampToValueAtTime(p.gain, now + 0.015);
+          g.gain.exponentialRampToValueAtTime(0.0001, now + p.decay);
+          osc.connect(g);
+          g.connect(this.ctx.destination);
+          osc.start(now);
+          osc.stop(now + p.decay);
+        });
+      } catch (e) {}
+    }
+  };
+
+  // =============================================================
+  // GROUNDED BOTANICAL GARDEN MODULE (Clean Depth Layers)
   // =============================================================
   const Garden = {
     elements: [],
@@ -1450,53 +1987,37 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
     },
 
     farSpecs() {
+      // 2 elegant distant tropical palms framing the extreme screen edges
       return [
-        { type: 'tree', side: 'left',  pos: '1%',  h: 230, growStart: 0.08, growEnd: 0.32 },
-        { type: 'bud',  side: 'left',  pos: '7%',  h: 180, growStart: 0.20, growEnd: 0.44 },
-        { type: 'bush', side: 'left',  pos: '12%', h: 95,  growStart: 0.10, growEnd: 0.34 },
-
-        { type: 'tree', side: 'right', pos: '1%',  h: 240, growStart: 0.08, growEnd: 0.32 },
-        { type: 'bud',  side: 'right', pos: '7%',  h: 190, growStart: 0.21, growEnd: 0.45 },
-        { type: 'bush', side: 'right', pos: '12%', h: 100, growStart: 0.11, growEnd: 0.35 },
+        { type: 'palm', side: 'left',  pos: '-1%', h: 320, growStart: 0.00, growEnd: 0.18 },
+        { type: 'palm', side: 'right', pos: '-1%', h: 325, growStart: 0.01, growEnd: 0.19 },
       ];
     },
 
     midSpecs() {
+      // Grounded sanctum elements: 1 lotus pad, 1 blooming lotus, and 1 grounded brass diya per flank
       return [
-        // Left Flank (Harmonizing with Ganpati Artwork's left flank)
-        { type: 'pad',   side: 'left', pos: '1%',  h: 120, growStart: 0.06, growEnd: 0.28 },
-        { type: 'stem',  side: 'left', pos: '4%',  h: 210, growStart: 0.14, growEnd: 0.40 },
-        { type: 'lotus', side: 'left', pos: '7%',  h: 220, growStart: 0.30, growEnd: 0.66 },
-        { type: 'diya',  side: 'left', pos: '8%',  h: 78,  growStart: 0.48, growEnd: 0.72 },
-        { type: 'bud',   side: 'left', pos: '13%', h: 175, growStart: 0.22, growEnd: 0.50 },
-        { type: 'pad',   side: 'left', pos: '17%', h: 90,  growStart: 0.12, growEnd: 0.34 },
+        // Left Flank
+        { type: 'pad',   side: 'left', pos: '0%',  h: 125, growStart: 0.02, growEnd: 0.18 },
+        { type: 'lotus', side: 'left', pos: '5%',  h: 240, growStart: 0.04, growEnd: 0.24 },
+        { type: 'diya',  side: 'left', pos: '13%', h: 90,  growStart: 0.08, growEnd: 0.25 },
 
-        // Right Flank (Harmonizing with Ganpati Artwork's right flank)
-        { type: 'pad',   side: 'right', pos: '1%',  h: 125, growStart: 0.06, growEnd: 0.28 },
-        { type: 'stem',  side: 'right', pos: '4%',  h: 215, growStart: 0.15, growEnd: 0.41 },
-        { type: 'lotus', side: 'right', pos: '7%',  h: 225, growStart: 0.31, growEnd: 0.67 },
-        { type: 'diya',  side: 'right', pos: '8%',  h: 78,  growStart: 0.49, growEnd: 0.73 },
-        { type: 'bud',   side: 'right', pos: '13%', h: 180, growStart: 0.23, growEnd: 0.51 },
-        { type: 'pad',   side: 'right', pos: '17%', h: 95,  growStart: 0.13, growEnd: 0.35 },
-
-        // Sanctuary Bottom Flank Extensions (Clear of Ganpati's central throne!)
-        { type: 'pad',   side: 'left',  pos: '26%', h: 65,  growStart: 0.38, growEnd: 0.62 },
-        { type: 'pad',   side: 'right', pos: '26%', h: 65,  growStart: 0.39, growEnd: 0.63 },
+        // Right Flank
+        { type: 'pad',   side: 'right', pos: '0%',  h: 130, growStart: 0.02, growEnd: 0.18 },
+        { type: 'lotus', side: 'right', pos: '5%',  h: 245, growStart: 0.05, growEnd: 0.25 },
+        { type: 'diya',  side: 'right', pos: '13%', h: 90,  growStart: 0.09, growEnd: 0.26 },
       ];
     },
 
     nearSpecs() {
+      // Foreground corner framing lily pads
       return [
-        // Cinematic foreground depth-of-field elements in corners
-        { type: 'pad',   side: 'left',  pos: '-2%', h: 170, growStart: 0.24, growEnd: 0.52, blur: 1.5 },
-        { type: 'lotus', side: 'left',  pos: '2%',  h: 260, growStart: 0.44, growEnd: 0.80, blur: 0.8 },
-        { type: 'pad',   side: 'right', pos: '-2%', h: 175, growStart: 0.25, growEnd: 0.54, blur: 1.5 },
-        { type: 'lotus', side: 'right', pos: '2%',  h: 265, growStart: 0.45, growEnd: 0.81, blur: 0.8 },
+        { type: 'pad', side: 'left',  pos: '-3%', h: 160, growStart: 0.06, growEnd: 0.22, blur: 1.5 },
+        { type: 'pad', side: 'right', pos: '-3%', h: 165, growStart: 0.07, growEnd: 0.23, blur: 1.5 },
       ];
     },
 
     createPlantElement(spec) {
-      // Tier 1: Parent position layer
       const dom = document.createElement('div');
       dom.className = `g-plant g-${spec.type}`;
 
@@ -1508,28 +2029,32 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
 
       const w = spec.type === 'pad'   ? spec.h * 1.55 :
                 spec.type === 'lotus' ? spec.h * 1.25 :
-                spec.type === 'tree'  ? spec.h * 0.75 :
-                spec.type === 'bush'  ? spec.h * 1.4  :
-                spec.type === 'diya'  ? 96 :
-                spec.type === 'bud'   ? 75 : 60;
+                spec.type === 'palm'  ? spec.h * 0.95 :
+                spec.type === 'diya'  ? 110 : 70;
 
       dom.style.width  = w + 'px';
       dom.style.height = spec.h + 'px';
       if (spec.blur) dom.style.filter = `blur(${spec.blur}px)`;
 
-      // Tier 2: Dedicated Wind Wrapper
       const windWrap = document.createElement('div');
-      const windClass = spec.type === 'pad' ? 'wind-sway-pad' :
+      const windClass = spec.type === 'pad'  ? 'wind-sway-pad' :
                         spec.type === 'diya' ? '' :
-                        pick(['wind-sway-1', 'wind-sway-2', 'wind-sway-3']);
+                        (spec.side === 'left' ? 'wind-sway-1' : 'wind-sway-2');
       windWrap.className = `g-wind-wrap ${windClass}`;
       windWrap.style.animationDelay = rand(-3, 0) + 's';
-      windWrap.style.animationDuration = rand(6, 9) + 's';
 
-      // Tier 3 & 4: Biological & Festive SVG
       const uid = 'bio_' + Math.floor(Math.random() * 1000000);
       windWrap.innerHTML = this.buildSvg(spec, w, spec.h, uid);
       dom.appendChild(windWrap);
+
+      // Pre-cache DOM element references and geometry once to eliminate all querySelector / getTotalLength overhead during scroll!
+      const stem = dom.querySelector('.g-stem');
+      let stemLen = 0;
+      if (stem) {
+        try { stemLen = stem.getTotalLength(); } catch(e) { stemLen = spec.h * 0.7; }
+        stem.style.strokeDasharray = stemLen;
+        stem.style.strokeDashoffset = stemLen;
+      }
 
       return {
         dom: dom,
@@ -1539,6 +2064,23 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
         uid: uid,
         growStart: spec.growStart,
         growEnd:   spec.growEnd,
+        lastEased: -1,
+        refs: {
+          stem: stem,
+          stemLen: stemLen,
+          leaves: Array.from(dom.querySelectorAll('.g-leaf')),
+          lifter: dom.querySelector('.g-lifter'),
+          outerTier: dom.querySelector('.g-bloom-outer'),
+          midTier:   dom.querySelector('.g-bloom-mid'),
+          innerTier: dom.querySelector('.g-bloom-inner'),
+          core:      dom.querySelector('.g-bloom-core'),
+          budShield: dom.querySelector('.g-bud-shield'),
+          padShape:  dom.querySelector('.g-pad-shape'),
+          canopy:    dom.querySelector('.g-canopy'),
+          diyaBase:  dom.querySelector('.g-diya-base'),
+          flameGrp:  dom.querySelector('.g-diya-flame-group'),
+          ambientGlow: dom.querySelector('.diya-ambient-glow'),
+        }
       };
     },
 
@@ -1548,26 +2090,26 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
       switch (spec.type) {
         case 'lotus': {
           const stemEndY = h * 0.40;
-          const curveX = cx + (spec.side === 'left' ? 10 : -10);
+          const curveX = cx + (spec.side === 'left' ? 14 : -14);
 
-          return `<svg viewBox="0 0 ${w} ${h}" width="${w}" height="${h}" style="overflow:visible;">
+          return `<svg viewBox="0 0 ${w} ${h}" width="${w}" height="${h}" style="overflow:visible;" shape-rendering="geometricPrecision">
             <defs>
               <linearGradient id="${uid}_stem" x1="0" y1="1" x2="0" y2="0">
-                <stop offset="0%" stop-color="#1C331A"/>
-                <stop offset="60%" stop-color="#375730"/>
-                <stop offset="100%" stop-color="#618556"/>
+                <stop offset="0%" stop-color="#142612"/>
+                <stop offset="60%" stop-color="#284422"/>
+                <stop offset="100%" stop-color="#4F7543"/>
               </linearGradient>
               <radialGradient id="${uid}_pOuter" cx="50%" cy="85%" r="75%">
                 <stop offset="0%" stop-color="#FFF5F7"/>
-                <stop offset="50%" stop-color="#E597AB"/>
-                <stop offset="90%" stop-color="#B54B68"/>
-                <stop offset="100%" stop-color="#8C2C45"/>
+                <stop offset="45%" stop-color="#E89BB0"/>
+                <stop offset="85%" stop-color="#B24664"/>
+                <stop offset="100%" stop-color="#84243C"/>
               </radialGradient>
               <radialGradient id="${uid}_pMid" cx="50%" cy="80%" r="70%">
                 <stop offset="0%" stop-color="#FFFFFF"/>
-                <stop offset="55%" stop-color="#FCDCE5"/>
-                <stop offset="90%" stop-color="#E597AB"/>
-                <stop offset="100%" stop-color="#A63854"/>
+                <stop offset="50%" stop-color="#FCE1E8"/>
+                <stop offset="85%" stop-color="#E89BB0"/>
+                <stop offset="100%" stop-color="#A1304C"/>
               </radialGradient>
               <radialGradient id="${uid}_core" cx="50%" cy="50%" r="50%">
                 <stop offset="0%" stop-color="#FFF3C4"/>
@@ -1577,29 +2119,27 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
               </radialGradient>
             </defs>
 
-            <!-- Tier 3: Stem Path (Controlled by strokeDashoffset) -->
+            <!-- Stem Path -->
             <path class="g-stem" d="M${cx},${h} Q${curveX},${h*0.72} ${cx},${stemEndY}"
                   fill="none" stroke="url(#${uid}_stem)" stroke-width="4.5" stroke-linecap="round"/>
 
-            <!-- Stem Leaflet Left -->
+            <!-- Stem Leaflets -->
             <g class="g-leaf g-leaf-1" style="transform-origin: ${cx-3}px ${h*0.72}px;">
               <path d="M${cx-2},${h*0.72} C${cx-24},${h*0.68} ${cx-36},${h*0.58} ${cx-40},${h*0.52} C${cx-32},${h*0.58} ${cx-18},${h*0.66} ${cx-2},${h*0.72} Z"
-                    fill="#2E4B28" stroke="rgba(242,218,155,0.4)" stroke-width="0.8"/>
+                    fill="#284422" stroke="rgba(243,220,158,0.4)" stroke-width="0.8"/>
             </g>
-            <!-- Stem Leaflet Right -->
             <g class="g-leaf g-leaf-2" style="transform-origin: ${cx+3}px ${h*0.58}px;">
               <path d="M${cx+2},${h*0.58} C${cx+26},${h*0.54} ${cx+38},${h*0.44} ${cx+42},${h*0.38} C${cx+34},${h*0.44} ${cx+18},${h*0.52} ${cx+2},${h*0.58} Z"
-                    fill="#3B5A33" stroke="rgba(242,218,155,0.4)" stroke-width="0.8"/>
+                    fill="#33542B" stroke="rgba(243,220,158,0.4)" stroke-width="0.8"/>
             </g>
 
-            <!-- Tier 3: Flower Lifter (Translates upward with stem apex) -->
+            <!-- Flower Lifter -->
             <g class="g-lifter" style="transform: translateY(0px);">
-              <!-- Subtle independent head nod -->
               <g class="g-head-nod">
-                <!-- Protective Calyx -->
+                <!-- Calyx -->
                 <g class="g-calyx" style="transform-origin: ${cx}px ${stemEndY}px;">
-                  <path d="M${cx},${stemEndY} C${cx-16},${stemEndY+2} ${cx-24},${stemEndY-8} ${cx-20},${stemEndY-16} C${cx-12},${stemEndY-8} ${cx-4},${stemEndY-2} ${cx},${stemEndY} Z" fill="#2E4B28"/>
-                  <path d="M${cx},${stemEndY} C${cx+16},${stemEndY+2} ${cx+24},${stemEndY-8} ${cx+20},${stemEndY-16} C${cx+12},${stemEndY-8} ${cx+4},${stemEndY-2} ${cx},${stemEndY} Z" fill="#2E4B28"/>
+                  <path d="M${cx},${stemEndY} C${cx-16},${stemEndY+2} ${cx-24},${stemEndY-8} ${cx-20},${stemEndY-16} C${cx-12},${stemEndY-8} ${cx-4},${stemEndY-2} ${cx},${stemEndY} Z" fill="#284422"/>
+                  <path d="M${cx},${stemEndY} C${cx+16},${stemEndY+2} ${cx+24},${stemEndY-8} ${cx+20},${stemEndY-16} C${cx+12},${stemEndY-8} ${cx+4},${stemEndY-2} ${cx},${stemEndY} Z" fill="#284422"/>
                 </g>
 
                 <!-- Bud Phase Shield -->
@@ -1608,7 +2148,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
                         fill="url(#${uid}_pOuter)"/>
                 </g>
 
-                <!-- Tier 4: Bloom Outer Petals -->
+                <!-- Outer Bloom Petals -->
                 <g class="g-bloom-outer" style="transform-origin: ${cx}px ${stemEndY}px;">
                   <path d="M${cx},${stemEndY} C${cx-38},${stemEndY-8} ${cx-65},${stemEndY-28} ${cx-70},${stemEndY-48} C${cx-50},${stemEndY-44} ${cx-24},${stemEndY-25} ${cx},${stemEndY} Z" fill="url(#${uid}_pOuter)"/>
                   <path d="M${cx},${stemEndY} C${cx+38},${stemEndY-8} ${cx+65},${stemEndY-28} ${cx+70},${stemEndY-48} C${cx+50},${stemEndY-44} ${cx+24},${stemEndY-25} ${cx},${stemEndY} Z" fill="url(#${uid}_pOuter)"/>
@@ -1616,21 +2156,20 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
                   <path d="M${cx},${stemEndY} C${cx+48},${stemEndY+6} ${cx+75},${stemEndY-8} ${cx+82},${stemEndY-24} C${cx+58},${stemEndY-16} ${cx+26},${stemEndY-6} ${cx},${stemEndY} Z" fill="url(#${uid}_pOuter)"/>
                 </g>
 
-                <!-- Tier 4: Bloom Mid Petals -->
+                <!-- Mid Bloom Petals -->
                 <g class="g-bloom-mid" style="transform-origin: ${cx}px ${stemEndY}px;">
                   <path d="M${cx},${stemEndY} C${cx-28},${stemEndY-16} ${cx-46},${stemEndY-48} ${cx-44},${stemEndY-72} C${cx-25},${stemEndY-58} ${cx-12},${stemEndY-30} ${cx},${stemEndY} Z" fill="url(#${uid}_pMid)"/>
-                  <path d="M${cx},${stemEndY} C${cx+28},${stemEndY-16} ${cx+46},${stemEndY-48} ${cx+44},${stemEndY-72} C${cx+25},${stemEndY-58} ${cx+12},${stemEndY-30} ${cx},${stemEndY} Z" fill="url(#${uid}_pMid)"/>
-                  <path d="M${cx},${stemEndY} C${cx-18},${stemEndY-34} ${cx-18},${stemEndY-68} ${cx},${stemEndY-88} C${cx+18},${stemEndY-68} ${cx+18},${stemEndY-34} ${cx},${stemEndY} Z" fill="url(#${uid}_pOuter)"/>
+                  <path d="M${cx},${stemEndY} C${cx+28},${stemEndY-16} ${cx+46},${stemEndY-48} ${cx+44},${stemEndY-72} C${cx-25},${stemEndY-58} ${cx-12},${stemEndY-30} ${cx},${stemEndY} Z" fill="url(#${uid}_pMid)"/>
+                  <path d="M${cx},${stemEndY-10} C${cx-18},${stemEndY-34} ${cx-18},${stemEndY-68} ${cx},${stemEndY-88} C${cx+18},${stemEndY-68} ${cx+18},${stemEndY-34} ${cx},${stemEndY-10} Z" fill="url(#${uid}_pOuter)"/>
                 </g>
 
-                <!-- Tier 4: Bloom Inner Petals -->
+                <!-- Inner Bloom Petals -->
                 <g class="g-bloom-inner" style="transform-origin: ${cx}px ${stemEndY}px;">
                   <path d="M${cx},${stemEndY} C${cx-20},${stemEndY-16} ${cx-24},${stemEndY-46} ${cx-16},${stemEndY-66} C${cx-8},${stemEndY-48} ${cx-4},${stemEndY-26} ${cx},${stemEndY} Z" fill="url(#${uid}_pMid)"/>
                   <path d="M${cx},${stemEndY} C${cx+20},${stemEndY-16} ${cx+24},${stemEndY-46} ${cx+16},${stemEndY-66} C${cx+8},${stemEndY-48} ${cx+4},${stemEndY-26} ${cx},${stemEndY} Z" fill="url(#${uid}_pMid)"/>
-                  <path d="M${cx},${stemEndY+4} C${cx-14},${stemEndY-10} ${cx-12},${stemEndY-38} ${cx},${stemEndY-54} C${cx+12},${stemEndY-38} ${cx+14},${stemEndY-10} ${cx},${stemEndY+4} Z" fill="url(#${uid}_pMid)"/>
                 </g>
 
-                <!-- Sacred Pistil Core -->
+                <!-- Sacred Core -->
                 <g class="g-bloom-core" style="transform-origin: ${cx}px ${stemEndY-18}px;">
                   <ellipse cx="${cx}" cy="${stemEndY-18}" rx="14" ry="9" fill="url(#${uid}_core)"/>
                   <circle cx="${cx-8}" cy="${stemEndY-22}" r="1.8" fill="#FFF8E0"/>
@@ -1644,18 +2183,44 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
           </svg>`;
         }
 
+        case 'palm': {
+          const curveSide = spec.side === 'left' ? 1 : -1;
+          return `<svg viewBox="0 0 ${w} ${h}" width="${w}" height="${h}" style="overflow:visible;" shape-rendering="geometricPrecision">
+            <defs>
+              <linearGradient id="${uid}_palmStem" x1="0" y1="1" x2="0" y2="0">
+                <stop offset="0%" stop-color="#142612"/>
+                <stop offset="50%" stop-color="#284422"/>
+                <stop offset="100%" stop-color="#4F7543"/>
+              </linearGradient>
+            </defs>
+            <g class="g-canopy" style="transform-origin: ${cx}px bottom;">
+              <!-- Central Stem Rachis -->
+              <path class="g-stem" d="M${cx},${h} Q${cx + curveSide * 45},${h*0.45} ${cx + curveSide * 85},${h*0.08}"
+                    fill="none" stroke="url(#${uid}_palmStem)" stroke-width="5" stroke-linecap="round"/>
+              <!-- Graceful Leaf Pinnae -->
+              <g fill="#243C1E" stroke="rgba(243,220,158,0.2)" stroke-width="0.7">
+                <path d="M${cx+curveSide*10},${h*0.75} Q${cx+curveSide*50},${h*0.68} ${cx+curveSide*70},${h*0.72} Q${cx+curveSide*35},${h*0.75} ${cx+curveSide*10},${h*0.75} Z"/>
+                <path d="M${cx+curveSide*20},${h*0.62} Q${cx+curveSide*65},${h*0.52} ${cx+curveSide*90},${h*0.56} Q${cx+curveSide*45},${h*0.62} ${cx+curveSide*20},${h*0.62} Z" fill="#2E4D27"/>
+                <path d="M${cx+curveSide*32},${h*0.48} Q${cx+curveSide*78},${h*0.38} ${cx+curveSide*105},${h*0.42} Q${cx+curveSide*55},${h*0.48} ${cx+curveSide*32},${h*0.48} Z"/>
+                <path d="M${cx+curveSide*46},${h*0.35} Q${cx+curveSide*88},${h*0.25} ${cx+curveSide*110},${h*0.29} Q${cx+curveSide*65},${h*0.35} ${cx+curveSide*46},${h*0.35} Z" fill="#365B2F"/>
+                <path d="M${cx+curveSide*62},${h*0.22} Q${cx+curveSide*95},${h*0.14} ${cx+curveSide*108},${h*0.18} Q${cx+curveSide*75},${h*0.23} ${cx+curveSide*62},${h*0.22} Z"/>
+              </g>
+            </g>
+          </svg>`;
+        }
+
         case 'diya': {
-          return `<svg viewBox="0 0 96 78" width="96" height="78" style="overflow:visible;">
+          return `<svg viewBox="0 0 110 90" width="110" height="90" style="overflow:visible;">
             <defs>
               <linearGradient id="${uid}_brass" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stop-color="#FFE8A3"/>
+                <stop offset="0%" stop-color="#FFE9A6"/>
                 <stop offset="35%" stop-color="#C9963B"/>
                 <stop offset="80%" stop-color="#8E6018"/>
-                <stop offset="100%" stop-color="#5B3808"/>
+                <stop offset="100%" stop-color="#553408"/>
               </linearGradient>
               <radialGradient id="${uid}_flameGlow" cx="50%" cy="50%" r="50%">
                 <stop offset="0%" stop-color="#FFE082" stop-opacity="0.85"/>
-                <stop offset="40%" stop-color="#FF9800" stop-opacity="0.35"/>
+                <stop offset="45%" stop-color="#FF9800" stop-opacity="0.35"/>
                 <stop offset="100%" stop-color="#FF5722" stop-opacity="0"/>
               </radialGradient>
               <radialGradient id="${uid}_flameBody" cx="50%" cy="75%" r="65%">
@@ -1667,21 +2232,24 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
               </radialGradient>
             </defs>
 
-            <!-- Diya Base (Pedestal & Bowl) -->
-            <g class="g-diya-base" style="transform-origin: 48px 65px;">
-              <path d="M38,66 C38,72 32,74 28,75 L68,75 C64,74 58,72 58,66 Z" fill="url(#${uid}_brass)"/>
-              <path d="M12,46 C20,66 76,66 84,46 C88,40 94,34 96,30 C88,32 80,34 74,36 C56,38 40,38 22,36 C16,34 8,32 0,30 C2,34 8,40 12,46 Z" fill="url(#${uid}_brass)"/>
-              <path d="M0,30 C24,37 72,37 96,30 C72,34 24,34 0,30 Z" fill="#FFE8A3" opacity="0.6"/>
-              <ellipse cx="48" cy="38" rx="32" ry="6" fill="#6D4314"/>
-              <path d="M46,40 Q47,32 48,24" stroke="#42250F" stroke-width="2.5" stroke-linecap="round"/>
+            <!-- Ground Contact Shadow: Anchors Diya firmly to the sanctuary floor -->
+            <ellipse cx="55" cy="84" rx="42" ry="6" fill="rgba(35, 15, 8, 0.45)"/>
+
+            <!-- Brass Diya Pedestal & Oil Bowl -->
+            <g class="g-diya-base" style="transform-origin: 55px 74px;">
+              <path d="M45,74 C45,80 38,82 34,84 L76,84 C72,82 65,80 65,74 Z" fill="url(#${uid}_brass)"/>
+              <path d="M16,52 C24,74 86,74 94,52 C98,46 106,39 108,35 C100,37 92,39 84,41 C64,43 46,43 26,41 C18,39 10,37 2,35 C4,39 12,46 16,52 Z" fill="url(#${uid}_brass)"/>
+              <path d="M2,35 C28,42 82,42 108,35 C82,39 28,39 2,35 Z" fill="#FFE9A6" opacity="0.6"/>
+              <ellipse cx="55" cy="44" rx="36" ry="7" fill="#6A4012"/>
+              <path d="M53,46 Q54,36 55,28" stroke="#3D210D" stroke-width="2.5" stroke-linecap="round"/>
             </g>
 
-            <!-- Diya Flame & Ambient Spreading Light -->
-            <g class="g-diya-flame-group" style="transform-origin: 48px 24px;">
-              <circle class="diya-ambient-glow" cx="48" cy="18" r="32" fill="url(#${uid}_flameGlow)"/>
-              <g class="diya-flicker-flame" style="transform-origin: 48px 24px;">
-                <path d="M48,3 C42,13 40,19 43,25 C45,28 51,28 53,25 C56,19 54,13 48,3 Z" fill="url(#${uid}_flameBody)"/>
-                <ellipse cx="48" cy="21" rx="2.8" ry="4.5" fill="#FFFFFF" opacity="0.95"/>
+            <!-- Diya Flame & Ambient Candlelight Bloom -->
+            <g class="g-diya-flame-group" style="transform-origin: 55px 26px;">
+              <circle class="diya-ambient-glow" cx="55" cy="22" r="38" fill="url(#${uid}_flameGlow)"/>
+              <g class="diya-flicker-flame" style="transform-origin: 55px 26px;">
+                <path d="M55,6 C49,16 47,22 50,28 C52,31 58,31 60,28 C63,22 61,16 55,6 Z" fill="url(#${uid}_flameBody)"/>
+                <ellipse cx="55" cy="24" rx="3.0" ry="4.8" fill="#FFFFFF" opacity="0.95"/>
               </g>
             </g>
           </svg>`;
@@ -1692,9 +2260,9 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
           return `<svg viewBox="0 0 ${w} ${h}" width="${w}" height="${h}" style="overflow:visible;">
             <defs>
               <radialGradient id="${uid}_pad" cx="50%" cy="45%" r="52%">
-                <stop offset="0%" stop-color="#466E3C"/>
-                <stop offset="68%" stop-color="#223E1E"/>
-                <stop offset="95%" stop-color="#142612"/>
+                <stop offset="0%" stop-color="#446D3A"/>
+                <stop offset="68%" stop-color="#213D1C"/>
+                <stop offset="95%" stop-color="#122510"/>
                 <stop offset="100%" stop-color="#C9963B"/>
               </radialGradient>
             </defs>
@@ -1703,81 +2271,16 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
                        C${cx*0.3},${cy*0.95} 0,${cy*0.45} ${cx*0.12},${cy*0.15}
                        C${cx*0.28},0 ${cx*0.72},0 ${cx*0.88},${cy*0.15}
                        C${w},${cy*0.45} ${w*0.88},${cy*0.95} ${cx},${cy} Z"
-                    fill="url(#${uid}_pad)" stroke="rgba(242,218,155,0.4)" stroke-width="1.2"/>
-              <!-- Delicate Golden Veining -->
-              <g stroke="rgba(242,218,155,0.22)" stroke-width="1.2" fill="none">
+                    fill="url(#${uid}_pad)" stroke="rgba(243,220,158,0.4)" stroke-width="1.2"/>
+              <!-- Golden Veining -->
+              <g stroke="rgba(243,220,158,0.22)" stroke-width="1.2" fill="none">
                 <path d="M${cx},${cy*0.6} Q${cx*0.4},${cy*0.4} ${cx*0.25},${cy*0.25}"/>
                 <path d="M${cx},${cy*0.6} Q${cx*0.6},${cy*0.25} ${cx*0.5},${cy*0.08}"/>
                 <path d="M${cx},${cy*0.6} Q${cx*1.4},${cy*0.25} ${cx*1.5},${cy*0.08}"/>
                 <path d="M${cx},${cy*0.6} Q${cx*1.6},${cy*0.4} ${w*0.85},${cy*0.25}"/>
               </g>
               <!-- Pearl dew droplet -->
-              <circle cx="${cx+4}" cy="${cy*0.6-2}" r="3.2" fill="rgba(255,255,255,0.5)" stroke="rgba(255,255,255,0.75)" stroke-width="0.8"/>
-            </g>
-          </svg>`;
-        }
-
-        case 'bud': {
-          const stemEndY = h * 0.42;
-          return `<svg viewBox="0 0 ${w} ${h}" width="${w}" height="${h}" style="overflow:visible;">
-            <defs>
-              <linearGradient id="${uid}_bstem" x1="0" y1="1" x2="0" y2="0">
-                <stop offset="0%" stop-color="#1C331A"/>
-                <stop offset="100%" stop-color="#5F8554"/>
-              </linearGradient>
-              <radialGradient id="${uid}_bpetal" cx="45%" cy="75%" r="70%">
-                <stop offset="0%" stop-color="#FFF6F8"/>
-                <stop offset="50%" stop-color="#E597AB"/>
-                <stop offset="90%" stop-color="#B54B68"/>
-                <stop offset="100%" stop-color="#6E1B31"/>
-              </radialGradient>
-            </defs>
-            <path class="g-stem" d="M${cx},${h} Q${cx-6},${h*0.7} ${cx},${stemEndY}"
-                  fill="none" stroke="url(#${uid}_bstem)" stroke-width="3.5" stroke-linecap="round"/>
-            <g class="g-lifter" style="transform: translateY(0px);">
-              <g class="g-bud-head" style="transform-origin: ${cx}px ${stemEndY}px;">
-                <path d="M${cx},${stemEndY} C${cx-16},${stemEndY-10} ${cx-14},${stemEndY-40} ${cx},${stemEndY-54} C${cx-5},${stemEndY-35} ${cx-4},${stemEndY-12} ${cx},${stemEndY} Z" fill="#2E4B28"/>
-                <path d="M${cx},${stemEndY} C${cx-14},${stemEndY-12} ${cx-12},${stemEndY-44} ${cx},${stemEndY-60} C${cx+12},${stemEndY-44} ${cx+14},${stemEndY-12} ${cx},${stemEndY} Z" fill="url(#${uid}_bpetal)"/>
-                <path d="M${cx},${stemEndY} C${cx+16},${stemEndY-10} ${cx+14},${stemEndY-40} ${cx},${stemEndY-54} C${cx+5},${stemEndY-35} ${cx+4},${stemEndY-12} ${cx},${stemEndY} Z" fill="#3B5A33"/>
-              </g>
-            </g>
-          </svg>`;
-        }
-
-        case 'stem': {
-          return `<svg viewBox="0 0 ${w} ${h}" width="${w}" height="${h}" style="overflow:visible;">
-            <defs>
-              <linearGradient id="${uid}_st" x1="0" y1="1" x2="0" y2="0">
-                <stop offset="0%" stop-color="#1C331A"/>
-                <stop offset="100%" stop-color="#5F8554"/>
-              </linearGradient>
-            </defs>
-            <path class="g-stem" d="M${cx},${h} Q${cx+8},${h*0.6} ${cx-3},${h*0.25} T${cx},0"
-                  fill="none" stroke="url(#${uid}_st)" stroke-width="3.6" stroke-linecap="round"/>
-            <g class="g-leaf g-leaf-1" style="transform-origin: ${cx+3}px ${h*0.55}px;">
-              <path d="M${cx+3},${h*0.55} Q${cx-22},${h*0.48} ${cx-32},${h*0.38} Q${cx-16},${h*0.44} ${cx+3},${h*0.55} Z" fill="#2E4B28"/>
-            </g>
-            <g class="g-leaf g-leaf-2" style="transform-origin: ${cx-2}px ${h*0.38}px;">
-              <path d="M${cx-2},${h*0.38} Q${cx+22},${h*0.32} ${cx+30},${h*0.22} Q${cx+16},${h*0.28} ${cx-2},${h*0.38} Z" fill="#3B5A33"/>
-            </g>
-          </svg>`;
-        }
-
-        case 'tree': {
-          return `<svg viewBox="0 0 ${w} ${h}" width="${w}" height="${h}" style="overflow:visible;">
-            <rect x="${cx-3}" y="${h*0.35}" width="6" height="${h*0.65}" rx="3" fill="#3B2211" opacity="0.6"/>
-            <g class="g-canopy" style="transform-origin: ${cx}px ${h*0.35}px;">
-              <ellipse cx="${cx}" cy="${h*0.32}" rx="${w*0.45}" ry="${h*0.32}" fill="#2E4B28" opacity="0.45"/>
-              <ellipse cx="${cx-w*0.08}" cy="${h*0.24}" rx="${w*0.32}" ry="${h*0.24}" fill="#3E6135" opacity="0.4"/>
-            </g>
-          </svg>`;
-        }
-
-        case 'bush': {
-          return `<svg viewBox="0 0 ${w} ${h}" width="${w}" height="${h}" style="overflow:visible;">
-            <g class="g-canopy" style="transform-origin: ${cx}px bottom;">
-              <ellipse cx="${w*0.36}" cy="${h*0.62}" rx="${w*0.34}" ry="${h*0.36}" fill="#2E4B28" opacity="0.42"/>
-              <ellipse cx="${w*0.64}" cy="${h*0.54}" rx="${w*0.36}" ry="${h*0.42}" fill="#3A5C33" opacity="0.38"/>
+              <circle cx="${cx+4}" cy="${cy*0.6-2}" r="3.2" fill="rgba(255,255,255,0.55)" stroke="rgba(255,255,255,0.8)" stroke-width="0.8"/>
             </g>
           </svg>`;
         }
@@ -1788,34 +2291,43 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
     },
 
     update(progress) {
-      this.elements.forEach(item => {
-        const dom = item.dom;
-        const p = clamp((progress - item.growStart) / (item.growEnd - item.growStart), 0, 1);
-        const eased = p < 1 ? 1 - Math.pow(1 - p, 3) : 1; // Smooth cubic ease out
+      // Early-exit if outside active growth window and already finalized
+      if (progress > 0.32 && this._finalizedMax) return;
+      if (progress <= 0 && this._finalizedMin) return;
 
-        // If not awakened yet, keep hidden
+      let allMax = true;
+      let allMin = true;
+
+      this.elements.forEach(item => {
+        const p = clamp((progress - item.growStart) / (item.growEnd - item.growStart), 0, 1);
+        const eased = p < 1 ? 1 - Math.pow(1 - p, 3) : 1;
+
+        if (eased < 1) allMax = false;
+        if (eased > 0) allMin = false;
+
+        // Skip DOM writes if progress delta is negligible
+        if (Math.abs(eased - item.lastEased) < 0.003) return;
+        item.lastEased = eased;
+
+        const dom = item.dom;
+        const r = item.refs;
+
         if (eased <= 0.005) {
-          dom.style.opacity = '0';
+          if (dom.style.opacity !== '0') dom.style.opacity = '0';
           return;
         }
-        dom.style.opacity = '1';
+        if (dom.style.opacity !== '1') dom.style.opacity = '1';
 
-        // Stage 1: Stem Growth (Drawing along path)
-        const stem = dom.querySelector('.g-stem');
-        if (stem) {
-          if (!stem._totalLen) {
-            try { stem._totalLen = stem.getTotalLength(); } catch(e) { stem._totalLen = item.h * 0.7; }
-            stem.style.strokeDasharray = stem._totalLen;
-          }
+        // Phase 1: Stem Growth
+        if (r.stem) {
           const stemProgress = clamp(eased / 0.6, 0, 1);
-          stem.style.strokeDashoffset = (1 - stemProgress) * stem._totalLen;
+          r.stem.style.strokeDashoffset = (1 - stemProgress) * r.stemLen;
         }
 
-        // Stage 2: Foliage / Leaves unfolding along the stem
-        const leaves = dom.querySelectorAll('.g-leaf');
-        if (leaves.length > 0) {
+        // Phase 2: Leaflets unfolding
+        if (r.leaves.length > 0) {
           const leafP = clamp((eased - 0.25) / 0.5, 0, 1);
-          leaves.forEach((lf, idx) => {
+          r.leaves.forEach((lf, idx) => {
             const delayP = clamp(leafP - idx * 0.15, 0, 1);
             const lfScale = 1 - Math.pow(1 - delayP, 2.5);
             lf.style.transform = `scale(${lfScale})`;
@@ -1823,104 +2335,81 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
           });
         }
 
-        // Stage 3: Lifter translation (flower head rises synchronously as stem grows)
-        const lifter = dom.querySelector('.g-lifter');
-        if (lifter) {
+        // Phase 3: Lifter translation (using GPU translate3d)
+        if (r.lifter) {
           const liftP = clamp(eased / 0.6, 0, 1);
-          const startOffset = item.h * 0.55; // start lower near ground
+          const startOffset = item.h * 0.55;
           const currentY = (1 - liftP) * startOffset;
-          lifter.style.transform = `translateY(${currentY}px)`;
-          lifter.style.opacity = liftP > 0.1 ? '1' : '0';
+          r.lifter.style.transform = `translate3d(0, ${currentY}px, 0)`;
+          r.lifter.style.opacity = liftP > 0.1 ? '1' : '0';
         }
 
-        // Stage 4: Flower Bloom (Bud -> Petals Unfolding)
-        const outerTier = dom.querySelector('.g-bloom-outer');
-        const midTier   = dom.querySelector('.g-bloom-mid');
-        const innerTier = dom.querySelector('.g-bloom-inner');
-        const core      = dom.querySelector('.g-bloom-core');
-        const budShield = dom.querySelector('.g-bud-shield');
+        // Phase 4: Petals
+        if (r.outerTier) {
+          const bloomP = clamp((eased - 0.45) / 0.55, 0, 1);
 
-        if (outerTier) {
-          // Bloom unfolds between 50% and 100% of the plant's growth timeline
-          const bloomP = clamp((eased - 0.5) / 0.5, 0, 1);
-
-          // Bud shield shrinks as petals expand
-          if (budShield) {
-            budShield.style.opacity = String(1 - bloomP * 0.95);
-            budShield.style.transform = `scale(${1 - bloomP * 0.25})`;
+          if (r.budShield) {
+            r.budShield.style.opacity = String(1 - bloomP * 0.95);
+            r.budShield.style.transform = `scale(${1 - bloomP * 0.25})`;
           }
 
-          // Outer petals fan wide
           const outP = clamp(bloomP / 0.75, 0, 1);
-          outerTier.style.transform = `scale(${0.25 + outP * 0.75})`;
-          outerTier.style.opacity = outP > 0.08 ? '1' : '0';
+          r.outerTier.style.transform = `scale(${0.25 + outP * 0.75})`;
+          r.outerTier.style.opacity = outP > 0.08 ? '1' : '0';
 
-          // Mid petals arch up and out
-          if (midTier) {
+          if (r.midTier) {
             const midP = clamp((bloomP - 0.15) / 0.75, 0, 1);
-            midTier.style.transform = `scale(${0.2 + midP * 0.8})`;
-            midTier.style.opacity = midP > 0.08 ? '1' : '0';
+            r.midTier.style.transform = `scale(${0.2 + midP * 0.8})`;
+            r.midTier.style.opacity = midP > 0.08 ? '1' : '0';
           }
 
-          // Inner petals reveal the golden core
-          if (innerTier) {
+          if (r.innerTier) {
             const inP = clamp((bloomP - 0.3) / 0.7, 0, 1);
-            innerTier.style.transform = `scale(${0.15 + inP * 0.85})`;
-            innerTier.style.opacity = inP > 0.08 ? '1' : '0';
+            r.innerTier.style.transform = `scale(${0.15 + inP * 0.85})`;
+            r.innerTier.style.opacity = inP > 0.08 ? '1' : '0';
           }
 
-          if (core) {
+          if (r.core) {
             const coreP = clamp((bloomP - 0.35) / 0.65, 0, 1);
-            core.style.transform = `scale(${coreP})`;
-            core.style.opacity = coreP > 0.1 ? '1' : '0';
+            r.core.style.transform = `scale(${coreP})`;
+            r.core.style.opacity = coreP > 0.1 ? '1' : '0';
           }
         }
 
-        // Standalone Bud Head
-        const budHead = dom.querySelector('.g-bud-head');
-        if (budHead) {
-          const budP = clamp((eased - 0.2) / 0.7, 0, 1);
-          budHead.style.transform = `scale(${0.3 + budP * 0.7})`;
-          budHead.style.opacity = budP > 0.05 ? '1' : '0';
+        // Pad Shape
+        if (r.padShape) {
+          r.padShape.style.transform = `scale(${eased})`;
         }
 
-        // Water Lily Pads Expanding
-        const padShape = dom.querySelector('.g-pad-shape');
-        if (padShape) {
-          padShape.style.transform = `scale(${eased})`;
+        // Canopy
+        if (r.canopy) {
+          r.canopy.style.transform = `scale(${eased})`;
         }
 
-        // Canopy expanding for trees and bushes
-        const canopy = dom.querySelector('.g-canopy');
-        if (canopy) {
-          canopy.style.transform = `scale(${eased})`;
-        }
-
-        // Decorative Diya: Base scales, flame ignites, glow spreads
+        // Diya
         if (item.spec.type === 'diya') {
-          const diyaBase = dom.querySelector('.g-diya-base');
-          const flameGrp = dom.querySelector('.g-diya-flame-group');
-          const ambientGlow = dom.querySelector('.diya-ambient-glow');
-
-          if (diyaBase) {
-            diyaBase.style.transform = `scale(${clamp(eased / 0.6, 0, 1)})`;
+          if (r.diyaBase) {
+            r.diyaBase.style.transform = `scale(${clamp(eased / 0.6, 0, 1)})`;
           }
-          if (flameGrp) {
+          if (r.flameGrp) {
             const flameP = clamp((eased - 0.45) / 0.55, 0, 1);
-            flameGrp.style.transform = `scale(${flameP})`;
-            flameGrp.style.opacity = flameP > 0.05 ? '1' : '0';
+            r.flameGrp.style.transform = `scale(${flameP})`;
+            r.flameGrp.style.opacity = flameP > 0.05 ? '1' : '0';
           }
-          if (ambientGlow) {
+          if (r.ambientGlow) {
             const glowP = clamp((eased - 0.5) / 0.5, 0, 1);
-            ambientGlow.style.opacity = String(glowP * 0.9);
+            r.ambientGlow.style.opacity = String(glowP * 0.9);
           }
         }
       });
+
+      this._finalizedMax = allMax;
+      this._finalizedMin = allMin;
     }
   };
 
   // =============================================================
-  // PARTICLE SYSTEM (Canvas 2D: Sacred Pink Lotus Petals & Golden Pollen)
+  // PARTICLE SYSTEM (Lotus Petals & Golden Pollen)
   // =============================================================
   const Particles = {
     canvas: null,
@@ -1930,97 +2419,136 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
     rafId: null,
     w: 0,
     h: 0,
+    running: false,
+    pollenCanvas: null,
+    lastTime: 0,
 
     init() {
       this.canvas = document.getElementById('ambient-canvas');
       if (!this.canvas) return;
-      this.ctx = this.canvas.getContext('2d');
+      this.ctx = this.canvas.getContext('2d', { alpha: true });
       this.resize();
-      window.addEventListener('resize', () => this.resize());
+
+      // Pre-render pollen offscreen sprite once to eliminate all runtime createRadialGradient calls!
+      this.pollenCanvas = document.createElement('canvas');
+      this.pollenCanvas.width = 32;
+      this.pollenCanvas.height = 32;
+      const pCtx = this.pollenCanvas.getContext('2d');
+      const pGrad = pCtx.createRadialGradient(16, 16, 0, 16, 16, 16);
+      pGrad.addColorStop(0, 'rgba(255, 238, 150, 1)');
+      pGrad.addColorStop(0.45, 'rgba(242, 185, 80, 0.75)');
+      pGrad.addColorStop(1, 'rgba(242, 185, 80, 0)');
+      pCtx.fillStyle = pGrad;
+      pCtx.beginPath();
+      pCtx.arc(16, 16, 16, 0, Math.PI * 2);
+      pCtx.fill();
+
+      let resizeDebounce = null;
+      window.addEventListener('resize', () => {
+        clearTimeout(resizeDebounce);
+        resizeDebounce = setTimeout(() => this.resize(), 150);
+      }, { passive: true });
+
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+          this.stop();
+        } else if (this.running) {
+          this.start();
+        }
+      });
     },
 
     resize() {
-      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
       this.w = window.innerWidth;
       this.h = window.innerHeight;
-      this.canvas.width  = this.w * dpr;
-      this.canvas.height = this.h * dpr;
+      this.canvas.width  = Math.floor(this.w * dpr);
+      this.canvas.height = Math.floor(this.h * dpr);
       this.canvas.style.width  = this.w + 'px';
       this.canvas.style.height = this.h + 'px';
-      this.ctx.scale(dpr, dpr);
+      this.ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     },
 
     start() {
-      const renderFrame = () => {
-        this.update();
+      if (this.running) return;
+      this.running = true;
+      this.lastTime = performance.now();
+      const renderFrame = (now) => {
+        if (!this.running) return;
+        const dt = clamp((now - this.lastTime) / 1000, 0.008, 0.033);
+        this.lastTime = now;
+        this.update(dt);
         this.render();
         this.rafId = requestAnimationFrame(renderFrame);
       };
-      renderFrame();
+      this.rafId = requestAnimationFrame(renderFrame);
     },
 
     stop() {
-      if (this.rafId) cancelAnimationFrame(this.rafId);
+      this.running = false;
+      if (this.rafId) {
+        cancelAnimationFrame(this.rafId);
+        this.rafId = null;
+      }
     },
 
     spawn(type) {
       const p = {
         x: rand(0, this.w),
-        y: (type === 'petal' || type === 'marigold') ? rand(-50, -10) : rand(0, this.h),
+        y: (type === 'petal' || type === 'marigold') ? rand(-40, -10) : rand(0, this.h),
         vx: 0, vy: 0,
         life: 0, maxLife: 1,
         type: type,
         size: 1, opacity: 0,
         rotation: rand(0, 360),
-        rotSpeed: rand(-0.8, 0.8),
+        rotSpeed: rand(-0.6, 0.6),
       };
 
       switch (type) {
         case 'dust':
-          p.size = rand(1.2, 2.6);
-          p.maxLife = rand(7, 14);
-          p.vx = rand(-0.15, 0.15);
-          p.vy = rand(-0.35, -0.08);
-          p.color = pick(['rgba(255,235,175,', 'rgba(242,218,155,', 'rgba(255,225,140,']);
+          p.size = rand(1.2, 2.2);
+          p.maxLife = rand(7, 13);
+          p.vx = rand(-0.12, 0.12);
+          p.vy = rand(-0.28, -0.06);
+          p.color = pick(['rgba(255,235,175,', 'rgba(243,220,158,', 'rgba(255,225,140,']);
           break;
         case 'pollen':
-          p.size = rand(2.2, 4.4);
-          p.maxLife = rand(8, 16);
-          p.vx = rand(-0.25, 0.25);
-          p.vy = rand(0.12, 0.4);
+          p.size = rand(2.2, 3.8);
+          p.maxLife = rand(8, 15);
+          p.vx = rand(-0.2, 0.2);
+          p.vy = rand(0.12, 0.35);
           p.color = 'rgba(242,185,80,';
           break;
         case 'petal':
-          // Authentic rose-pink and delicate blush lotus petals matching artwork
-          p.size = rand(9, 18);
-          p.maxLife = rand(12, 24);
-          p.vx = rand(-0.5, 0.5);
-          p.vy = rand(0.35, 0.75);
+          p.size = rand(9, 15);
+          p.maxLife = rand(12, 22);
+          p.vx = rand(-0.4, 0.4);
+          p.vy = rand(0.35, 0.65);
           p.color = pick([
-            'rgba(229,151,171,', 'rgba(255,242,245,', 'rgba(181,75,104,', 'rgba(229,128,38,'
+            'rgba(232,155,176,', 'rgba(255,243,246,', 'rgba(178,70,100,', 'rgba(230,124,34,'
           ]);
-          p.swayAmp = rand(1.2, 2.2);
-          p.swayFreq = rand(0.35, 0.75);
+          p.swayAmp = rand(1.2, 2.0);
+          p.swayFreq = rand(0.35, 0.7);
           break;
         case 'marigold':
-          p.size = rand(6, 12);
-          p.maxLife = rand(10, 20);
-          p.vx = rand(-0.4, 0.4);
-          p.vy = rand(0.4, 0.8);
-          p.color = pick(['rgba(229,128,38,', 'rgba(244,180,60,', 'rgba(217,112,26,']);
-          p.swayAmp = rand(1.0, 1.8);
-          p.swayFreq = rand(0.4, 0.8);
+          p.size = rand(6, 10);
+          p.maxLife = rand(10, 18);
+          p.vx = rand(-0.3, 0.3);
+          p.vy = rand(0.38, 0.7);
+          p.color = pick(['rgba(230,124,34,', 'rgba(245,182,60,', 'rgba(217,110,20,']);
+          p.swayAmp = rand(1.0, 1.6);
+          p.swayFreq = rand(0.4, 0.75);
           break;
       }
       return p;
     },
 
-    update() {
+    update(dt = 0.016) {
       const p = this.worldProgress;
-      const dustRate     = 0.08;
-      const pollenRate   = 0.04 + p * 0.05;
-      const petalRate    = 0.03 + p * 0.06;
-      const marigoldRate = p > 0.4 ? 0.02 + p * 0.03 : 0;
+      const dustRate     = 0.05;
+      const pollenRate   = 0.02 + p * 0.03;
+      const petalRate    = 0.02 + p * 0.04;
+      const marigoldRate = p > 0.4 ? 0.02 + p * 0.025 : 0;
 
       if (this.particles.length < CFG.maxParticles) {
         if (Math.random() < dustRate)     this.particles.push(this.spawn('dust'));
@@ -2029,7 +2557,6 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
         if (Math.random() < marigoldRate) this.particles.push(this.spawn('marigold'));
       }
 
-      const dt = 1 / 60;
       for (let i = this.particles.length - 1; i >= 0; i--) {
         const pt = this.particles[i];
         pt.life += dt;
@@ -2040,7 +2567,6 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
           continue;
         }
 
-        // Fade in and out
         if (ratio < 0.15) {
           pt.opacity = (ratio / 0.15) * 0.8;
         } else if (ratio > 0.82) {
@@ -2054,9 +2580,9 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
         pt.rotation += pt.rotSpeed;
 
         if (pt.type === 'petal' || pt.type === 'marigold') {
-          pt.x += Math.sin(pt.life * pt.swayFreq) * pt.swayAmp * 0.5;
+          pt.x += Math.sin(pt.life * pt.swayFreq) * pt.swayAmp * 0.4;
         }
-        pt.x += Math.sin(pt.life * 0.2 + pt.y * 0.004) * 0.15;
+        pt.x += Math.sin(pt.life * 0.2 + pt.y * 0.004) * 0.12;
 
         if (pt.x < -30) pt.x = this.w + 30;
         if (pt.x > this.w + 30) pt.x = -30;
@@ -2070,35 +2596,38 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
       const ctx = this.ctx;
       ctx.clearRect(0, 0, this.w, this.h);
 
-      this.particles.forEach(p => {
-        ctx.save();
-        ctx.globalAlpha = p.opacity;
-        ctx.translate(p.x, p.y);
-        ctx.rotate(p.rotation * Math.PI / 180);
+      for (let i = 0; i < this.particles.length; i++) {
+        const p = this.particles[i];
 
-        if (p.type === 'petal') {
-          // Delicate organic lotus petal teardrop
-          ctx.fillStyle = p.color + p.opacity + ')';
+        if (p.type === 'dust') {
+          // Zero save/restore, zero gradient allocations for microscopic dust
+          ctx.fillStyle = p.color + (p.opacity * 0.85) + ')';
           ctx.beginPath();
-          ctx.ellipse(0, 0, p.size * 0.42, p.size, 0, 0, Math.PI * 2);
+          ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
           ctx.fill();
-        } else if (p.type === 'marigold') {
-          // Sacred marigold petal accent
-          ctx.fillStyle = p.color + p.opacity + ')';
-          ctx.beginPath();
-          ctx.ellipse(0, 0, p.size * 0.55, p.size * 0.85, 0, 0, Math.PI * 2);
-          ctx.fill();
+        } else if (p.type === 'pollen') {
+          // Draw pre-rendered cached sprite canvas
+          ctx.globalAlpha = p.opacity;
+          const s = p.size * 2;
+          ctx.drawImage(this.pollenCanvas, p.x - p.size, p.y - p.size, s, s);
         } else {
-          const grad = ctx.createRadialGradient(0, 0, 0, 0, 0, p.size);
-          grad.addColorStop(0, p.color + p.opacity + ')');
-          grad.addColorStop(1, p.color + '0)');
-          ctx.fillStyle = grad;
+          // Petal / Marigold with rotation
+          ctx.save();
+          ctx.globalAlpha = p.opacity;
+          ctx.translate(p.x, p.y);
+          ctx.rotate(p.rotation * Math.PI / 180);
+          ctx.fillStyle = p.color + p.opacity + ')';
           ctx.beginPath();
-          ctx.arc(0, 0, p.size, 0, Math.PI * 2);
+          if (p.type === 'petal') {
+            ctx.ellipse(0, 0, p.size * 0.42, p.size, 0, 0, Math.PI * 2);
+          } else {
+            ctx.ellipse(0, 0, p.size * 0.55, p.size * 0.85, 0, 0, Math.PI * 2);
+          }
           ctx.fill();
+          ctx.restore();
         }
-        ctx.restore();
-      });
+      }
+      ctx.globalAlpha = 1;
     }
   };
 
@@ -2110,6 +2639,9 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
     glow: null,
     dusk: null,
     rays: null,
+    _lastGlow: -1,
+    _lastDusk: -1,
+    _lastRays: -1,
 
     init() {
       this.sky  = document.getElementById('atmo-sky');
@@ -2121,22 +2653,28 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
     update(progress) {
       const p = progress;
 
-      // Glow peaks around middle of celebration (0.4 - 0.75)
-      const glowOpacity = p < 0.2 ? 0.65 :
-                          p < 0.7 ? lerp(0.65, 0.95, (p - 0.2) / 0.5) :
+      const glowOpacity = p < 0.2 ? 0.7 :
+                          p < 0.7 ? lerp(0.7, 0.95, (p - 0.2) / 0.5) :
                           lerp(0.95, 0.45, (p - 0.7) / 0.3);
-      if (this.glow) this.glow.style.opacity = glowOpacity;
+      if (Math.abs(glowOpacity - this._lastGlow) > 0.005) {
+        if (this.glow) this.glow.style.opacity = glowOpacity;
+        this._lastGlow = glowOpacity;
+      }
 
-      // Dusk gently blends towards final blessing (evening atmosphere)
       const duskOpacity = p > 0.72 ? (p - 0.72) / 0.28 : 0;
-      if (this.dusk) this.dusk.style.opacity = duskOpacity;
+      if (Math.abs(duskOpacity - this._lastDusk) > 0.005) {
+        if (this.dusk) this.dusk.style.opacity = duskOpacity;
+        this._lastDusk = duskOpacity;
+      }
 
-      // God rays catch the divine crown
       if (this.rays) {
         const rayOpacity = p < 0.2 ? 0.35 :
-                           p < 0.7 ? 0.58 :
-                           lerp(0.58, 0.2, (p - 0.7) / 0.3);
-        this.rays.style.opacity = rayOpacity;
+                           p < 0.7 ? 0.60 :
+                           lerp(0.60, 0.2, (p - 0.7) / 0.3);
+        if (Math.abs(rayOpacity - this._lastRays) > 0.005) {
+          this.rays.style.opacity = rayOpacity;
+          this._lastRays = rayOpacity;
+        }
       }
     }
   };
@@ -2168,20 +2706,31 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
         }
       }
 
-      const openTrigger = () => this.open();
-      scene.addEventListener('click', openTrigger);
-      scene.addEventListener('keydown', e => {
-        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openTrigger(); }
-      });
+      const triggerOpen = (e) => {
+        if (e) e.stopPropagation();
+        this.open();
+      };
 
-      // Also auto-open smoothly if user attempts to scroll or swipe
-      window.addEventListener('wheel', openTrigger, { once: true, passive: true });
-      window.addEventListener('touchmove', openTrigger, { once: true, passive: true });
+      const seal = document.getElementById('ceremonial-seal');
+      const enterBtn = document.getElementById('curtain-enter-btn');
+
+      if (seal) seal.addEventListener('click', triggerOpen);
+      if (enterBtn) enterBtn.addEventListener('click', triggerOpen);
+      scene.addEventListener('click', triggerOpen);
+
+      scene.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          triggerOpen();
+        }
+      });
     },
 
     open() {
       if (this.opened) return;
       this.opened = true;
+
+      Sound.playBell(528, 3.2);
 
       const scene     = document.getElementById('curtain-scene');
       const left      = document.getElementById('curtain-left');
@@ -2198,200 +2747,330 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
         }
       });
 
-      tl.to(intro, { opacity: 0, duration: 0.45, ease: 'power2.in' }, 0);
-      tl.to(seamGlow, { opacity: 1, scaleX: 2.2, duration: 0.65, ease: 'power2.out' }, 0.2);
+      // 1. Text & Seal dissolve as seam light swells
+      tl.to(intro, { opacity: 0, scale: 0.96, duration: 0.5, ease: 'power2.in' }, 0);
+      tl.to(seamGlow, { opacity: 1, scaleX: 2.4, duration: 0.7, ease: 'power2.out' }, 0.2);
 
-      tl.to(left,  { xPercent: -100, duration: 2, ease: 'power4.inOut' }, 0.5);
-      tl.to(right, { xPercent: 100,  duration: 2, ease: 'power4.inOut' }, 0.5);
-      tl.to(scene, { opacity: 0, duration: 0.8, ease: 'power2.out' }, 1.7);
+      // 2. Curtains part with realistic velvet fabric gather
+      tl.to(left,  { xPercent: -100, scaleX: 0.88, duration: 2.0, ease: 'power3.inOut' }, 0.35);
+      tl.to(right, { xPercent: 100,  scaleX: 0.88, duration: 2.0, ease: 'power3.inOut' }, 0.35);
 
-      // Hero content reveals gently over living artwork
-      tl.to('#hero-kicker',        { opacity: 1, y: 0, duration: 1, ease: 'power2.out' }, 1.7);
-      tl.to('#hero-title',         { opacity: 1, y: 0, duration: 1, ease: 'power2.out' }, 2.0);
-      tl.to('#hero-devanagari',    { opacity: 1, y: 0, duration: 1, ease: 'power2.out' }, 2.3);
-      tl.to('#hero-scroll-prompt', { opacity: 0.9, y: 0, duration: 1, ease: 'power2.out' }, 2.6);
+      // 3. Scene fade out
+      tl.to(scene, { opacity: 0, duration: 0.7, ease: 'power2.out' }, 1.7);
+
+      // 4. Hero content reveals cleanly over living artwork
+      tl.to('#hero-kicker',        { opacity: 1, y: 0, duration: 1.0, ease: 'power2.out' }, 1.7);
+      tl.to('#hero-title',         { opacity: 1, y: 0, duration: 1.0, ease: 'power2.out' }, 2.0);
+      tl.to('#hero-devanagari',    { opacity: 1, y: 0, duration: 1.0, ease: 'power2.out' }, 2.3);
+      tl.to('#hero-scroll-prompt', { opacity: 0.9, y: 0, duration: 1.0, ease: 'power2.out' }, 2.6);
     }
   };
 
   // =============================================================
-  // MASTER SCROLL ENGINE (Continuous World Evolution)
+  // MASTER SCROLL ENGINE (Hardware-Accelerated 60fps Pipeline)
   // =============================================================
   const ScrollEngine = {
+    rafId: null,
+    scheduledProgress: -1,
+    lastAppliedProgress: -1,
+    triggers: [],
+    heroArtImg: null,
+    heroAura: null,
+    heroBackdrop: null,
+    gardenFar: null,
+    gardenMid: null,
+    gardenNear: null,
+
     init() {
       gsap.registerPlugin(ScrollTrigger);
 
       const world = document.getElementById('world');
       if (!world) return;
 
-      const heroArtImg   = document.getElementById('hero-art-img');
-      const heroAura     = document.getElementById('hero-divine-aura');
-      const heroBackdrop = document.getElementById('hero-world-backdrop');
+      this.heroArtImg   = document.getElementById('hero-art-img');
+      this.heroAura     = document.getElementById('hero-divine-aura');
+      this.heroBackdrop = document.getElementById('hero-world-backdrop');
+      this.gardenFar    = document.getElementById('garden-far');
+      this.gardenMid    = document.getElementById('garden-mid');
+      this.gardenNear   = document.getElementById('garden-near');
 
-      // Master Scroll Progress Listener
-      ScrollTrigger.create({
+      // Promote to hardware composited layers
+      [this.heroArtImg, this.heroAura, this.heroBackdrop, this.gardenFar, this.gardenMid, this.gardenNear].forEach(el => {
+        if (el) {
+          el.style.willChange = 'transform, opacity';
+        }
+      });
+
+      // Master Scroll Progress Listener with RAF decoupling
+      const masterST = ScrollTrigger.create({
         trigger: world,
         start: 'top top',
         end: 'bottom bottom',
-        scrub: 0.5,
         onUpdate: (self) => {
-          const p = self.progress;
-
-          // Evolve Garden & Atmosphere continuously
-          Garden.update(p);
-          Atmosphere.update(p);
-          Particles.worldProgress = p;
-          this.updateParallax(p);
-
-          // Subtle, dignified camera push into Lord Ganesha (from 1.0 to 1.14 scale)
-          if (heroArtImg) {
-            const baseScale = isMobile ? 1.16 : 1.0;
-            const targetScale = baseScale + p * 0.14;
-            const driftY = -p * 55; // gentle perspective drift
-            heroArtImg.style.transform = `scale(${targetScale}) translateY(${driftY}px)`;
-          }
-
-          if (heroAura) {
-            const auraScale = 1 + p * 0.24;
-            heroAura.style.transform = `translate(-50%, -50%) scale(${auraScale})`;
-          }
-
-          if (heroBackdrop) {
-            const opacity = p > 0.88 ? lerp(1, 0.45, (p - 0.88) / 0.12) : 1;
-            heroBackdrop.style.opacity = opacity;
-          }
+          this.scheduleFrame(self.progress);
         }
       });
+      this.triggers.push(masterST);
 
       this.setupContentReveals();
       ScrollTrigger.refresh();
     },
 
-    updateParallax(progress) {
-      const gardenFar  = document.getElementById('garden-far');
-      const gardenMid  = document.getElementById('garden-mid');
-      const gardenNear = document.getElementById('garden-near');
+    scheduleFrame(progress) {
+      this.scheduledProgress = progress;
+      if (!this.rafId) {
+        this.rafId = requestAnimationFrame(() => this.renderFrame());
+      }
+    },
 
-      if (gardenFar)  gardenFar.style.transform  = `translateY(${-progress * CFG.parallaxFar}px)`;
-      if (gardenMid)  gardenMid.style.transform  = `translateY(${-progress * CFG.parallaxMid}px)`;
-      if (gardenNear) gardenNear.style.transform  = `translateY(${-progress * CFG.parallaxNear}px)`;
+    renderFrame() {
+      this.rafId = null;
+      const p = this.scheduledProgress;
+      if (p < 0 || Math.abs(p - this.lastAppliedProgress) < 0.0004) return;
+      this.lastAppliedProgress = p;
+
+      // 1. Garden growth (active only during Hero awakening 0 -> 0.32)
+      if (p < 0.35 || !Garden._finalizedMax) {
+        Garden.update(p);
+      }
+
+      // 2. Progressive atmosphere lighting
+      Atmosphere.update(p);
+
+      // 3. Ambient particles progression
+      Particles.worldProgress = p;
+
+      // 4. Parallax & Camera Zoom
+      this.applyTransforms(p);
+    },
+
+    applyTransforms(p) {
+      // Foliage visibility and GPU workload management:
+      // Once foliage completely fades (p > 0.32), set display 'none' so GPU stops computing wind sway keyframes!
+      const gardenOpacity = p < 0.16 ? 1 : clamp(1 - (p - 0.16) / 0.14, 0, 1);
+      const isFoliageVisible = gardenOpacity > 0.005;
+
+      const setGardenLayer = (layer, translateY) => {
+        if (!layer) return;
+        if (!isFoliageVisible) {
+          if (layer.style.display !== 'none') {
+            layer.style.display = 'none';
+          }
+        } else {
+          if (layer.style.display === 'none') {
+            layer.style.display = 'block';
+          }
+          layer.style.opacity = gardenOpacity;
+          layer.style.transform = `translate3d(0, ${translateY}px, 0)`;
+        }
+      };
+
+      setGardenLayer(this.gardenFar,  -p * CFG.parallaxFar);
+      setGardenLayer(this.gardenMid,  -p * CFG.parallaxMid);
+      setGardenLayer(this.gardenNear, -p * CFG.parallaxNear);
+
+      // Smooth camera zoom into Lord Ganesha (1.0 to 1.12 scale)
+      if (this.heroArtImg) {
+        const baseScale = isMobile ? 1.18 : 1.0;
+        const targetScale = baseScale + p * 0.12;
+        const driftY = -p * 45;
+        this.heroArtImg.style.transform = `translate3d(0, ${driftY}px, 0) scale(${targetScale})`;
+      }
+
+      if (this.heroAura) {
+        const auraScale = 1 + p * 0.22;
+        this.heroAura.style.transform = `translate3d(-50%, -50%, 0) scale(${auraScale})`;
+      }
+
+      if (this.heroBackdrop) {
+        const opacity = p > 0.85 ? lerp(1, 0.4, (p - 0.85) / 0.15) : 1;
+        this.heroBackdrop.style.opacity = opacity;
+      }
     },
 
     setupContentReveals() {
+      const defaultScrub = 0.75;
+
       // Hero content fades as you journey into celebration
-      gsap.to('.hero-content-wrapper', {
-        opacity: 0, y: -45,
+      const tHero = gsap.to('.hero-content-wrapper', {
+        opacity: 0, y: -40,
         scrollTrigger: {
           trigger: '#scene-hero',
           start: 'top top',
           end: 'bottom 60%',
-          scrub: 1,
+          scrub: defaultScrub,
+          fastScrollEnd: true,
         }
       });
+      if (tHero.scrollTrigger) this.triggers.push(tHero.scrollTrigger);
 
       // Celebration
-      gsap.from('#scene-celebration .content-glass', {
-        opacity: 0, y: 65,
+      const tCel = gsap.from('#scene-celebration .content-glass', {
+        opacity: 0, y: 55,
         scrollTrigger: {
           trigger: '#scene-celebration',
           start: 'top 82%',
-          end: 'top 42%',
-          scrub: 1,
+          end: 'top 45%',
+          scrub: defaultScrub,
+          fastScrollEnd: true,
         }
       });
+      if (tCel.scrollTrigger) this.triggers.push(tCel.scrollTrigger);
 
       // Invitation card
-      gsap.from('#invitation-card', {
-        opacity: 0, y: 80, scale: 0.96,
+      const tInv = gsap.from('#invitation-card', {
+        opacity: 0, y: 50, scale: 0.97,
         scrollTrigger: {
           trigger: '#scene-invitation',
-          start: 'top 78%',
-          end: 'top 38%',
-          scrub: 1,
+          start: 'top 80%',
+          end: 'top 45%',
+          scrub: defaultScrub,
+          fastScrollEnd: true,
         }
       });
+      if (tInv.scrollTrigger) this.triggers.push(tInv.scrollTrigger);
 
-      // Details
-      gsap.from('#scene-details .content-glass', {
-        opacity: 0, y: 60,
+      // Sacred Transition Bridge
+      const tBridge = gsap.from('.scene-transition-bridge', {
+        opacity: 0, scaleY: 0.5,
         scrollTrigger: {
           trigger: '#scene-details',
-          start: 'top 82%',
-          end: 'top 46%',
-          scrub: 1,
+          start: 'top 92%',
+          end: 'top 72%',
+          scrub: defaultScrub,
+          fastScrollEnd: true,
         }
       });
+      if (tBridge.scrollTrigger) this.triggers.push(tBridge.scrollTrigger);
 
-      // Detail rows staggered
-      gsap.from('#scene-details .detail-row', {
-        opacity: 0, x: -30,
+      // Details Card Reveal
+      const tDetails = gsap.from('#scene-details .details-card', {
+        opacity: 0, y: 45,
+        scrollTrigger: {
+          trigger: '#scene-details',
+          start: 'top 84%',
+          end: 'top 50%',
+          scrub: defaultScrub,
+          fastScrollEnd: true,
+        }
+      });
+      if (tDetails.scrollTrigger) this.triggers.push(tDetails.scrollTrigger);
+
+      // Timeline Spine Golden Fill Drawing
+      const spineFill = document.getElementById('timeline-spine-fill');
+      if (spineFill) {
+        const tSpine = gsap.to(spineFill, {
+          scaleY: 1,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: '#details-list',
+            start: 'top 75%',
+            end: 'bottom 60%',
+            scrub: defaultScrub,
+            fastScrollEnd: true,
+          }
+        });
+        if (tSpine.scrollTrigger) this.triggers.push(tSpine.scrollTrigger);
+      }
+
+      // Detail rows staggered vertical reveal
+      const tRows = gsap.from('#scene-details .detail-row', {
+        opacity: 0,
+        y: 18,
         stagger: 0.08,
         scrollTrigger: {
           trigger: '#details-list',
-          start: 'top 75%',
-          end: 'top 40%',
-          scrub: 1,
+          start: 'top 76%',
+          end: 'top 36%',
+          scrub: defaultScrub,
+          fastScrollEnd: true,
         }
       });
+      if (tRows.scrollTrigger) this.triggers.push(tRows.scrollTrigger);
 
       // Location
-      gsap.from('#scene-location .content-glass', {
-        opacity: 0, y: 60,
+      const tLoc = gsap.from('#scene-location .content-glass', {
+        opacity: 0, y: 50,
         scrollTrigger: {
           trigger: '#scene-location',
           start: 'top 80%',
           end: 'top 45%',
-          scrub: 1,
+          scrub: defaultScrub,
+          fastScrollEnd: true,
         }
       });
+      if (tLoc.scrollTrigger) this.triggers.push(tLoc.scrollTrigger);
 
       // Modak
-      gsap.from('.modak-wrap', {
-        opacity: 0, y: 40, scale: 0.8,
+      const tModak = gsap.from('.modak-wrap', {
+        opacity: 0, y: 35, scale: 0.85,
         scrollTrigger: {
           trigger: '#scene-modak',
           start: 'top 80%',
           end: 'top 50%',
-          scrub: 1,
+          scrub: defaultScrub,
+          fastScrollEnd: true,
         }
       });
-      gsap.from('.modak-line', {
-        opacity: 0, y: 30,
+      if (tModak.scrollTrigger) this.triggers.push(tModak.scrollTrigger);
+
+      const tModakLine = gsap.from('.modak-line', {
+        opacity: 0, y: 25,
         scrollTrigger: {
           trigger: '#scene-modak',
           start: 'top 72%',
           end: 'top 42%',
-          scrub: 1,
+          scrub: defaultScrub,
+          fastScrollEnd: true,
         }
       });
+      if (tModakLine.scrollTrigger) this.triggers.push(tModakLine.scrollTrigger);
 
       // Final scene
-      gsap.from('#scene-final .final-art-badge', {
-        opacity: 0, scale: 0.72,
+      const tFinalBadge = gsap.from('#scene-final .final-art-badge', {
+        opacity: 0, scale: 0.75,
         scrollTrigger: {
           trigger: '#scene-final',
           start: 'top 80%',
           end: 'top 50%',
-          scrub: 1,
+          scrub: defaultScrub,
+          fastScrollEnd: true,
         }
       });
-      gsap.from('#scene-final .final-main', {
-        opacity: 0, y: 30,
+      if (tFinalBadge.scrollTrigger) this.triggers.push(tFinalBadge.scrollTrigger);
+
+      const tFinalMain = gsap.from('#scene-final .final-main', {
+        opacity: 0, y: 25,
         scrollTrigger: {
           trigger: '#scene-final',
           start: 'top 65%',
           end: 'top 35%',
-          scrub: 1,
+          scrub: defaultScrub,
+          fastScrollEnd: true,
         }
       });
-      gsap.from('#scene-final .final-sub', {
+      if (tFinalMain.scrollTrigger) this.triggers.push(tFinalMain.scrollTrigger);
+
+      const tFinalSub = gsap.from('#scene-final .final-sub', {
         opacity: 0,
         scrollTrigger: {
           trigger: '#scene-final',
           start: 'top 55%',
           end: 'top 30%',
-          scrub: 1,
+          scrub: defaultScrub,
+          fastScrollEnd: true,
         }
       });
+      if (tFinalSub.scrollTrigger) this.triggers.push(tFinalSub.scrollTrigger);
+    },
+
+    destroy() {
+      if (this.rafId) {
+        cancelAnimationFrame(this.rafId);
+        this.rafId = null;
+      }
+      this.triggers.forEach(t => t && t.kill && t.kill());
+      this.triggers = [];
     }
   };
 
@@ -2402,20 +3081,18 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
     eventData: {
       title: 'Ganesh Chaturthi 2026 — Dubey Family',
       description: 'Join the Dubey Family in welcoming Lord Ganesha this Ganesh Chaturthi for Bappa\'s Sthapana, Aarti, and Prasad.\nMorning Muhurat: 10:30 AM\nEvening Aarti: 7:00 PM daily.',
-      location: 'Dubey Residence, 123 Ganesh Nagar, Near Shiv Mandir, Sector 5, 400001',
-      startISO: '20260828T050000Z', // 10:30 AM IST (UTC+5:30 -> 05:00 UTC)
-      endISO:   '20260828T143000Z', // 8:00 PM IST
+      location: 'Surya Shopping Sector, Mira Road East, Mumbai',
+      startISO: '20260914T050000Z', // 10:30 AM IST (UTC+5:30 -> 05:00 UTC)
+      endISO:   '20260914T143000Z', // 8:00 PM IST
     },
 
     init() {
-      // Bind Calendar buttons
-      const calBtns = document.querySelectorAll('.btn-calendar, .btn-cal-alt');
+      const calBtns = document.querySelectorAll('.btn-calendar');
       const calPopover = document.getElementById('calendar-popover');
       const closeCal = document.getElementById('close-calendar');
       const optGCal = document.getElementById('opt-gcal');
       const optICS  = document.getElementById('opt-ics');
 
-      // Google Calendar Link
       if (optGCal) {
         const gcalUrl = 'https://calendar.google.com/calendar/render?action=TEMPLATE' +
           '&text=' + encodeURIComponent(this.eventData.title) +
@@ -2425,7 +3102,6 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
         optGCal.href = gcalUrl;
       }
 
-      // Apple / Outlook iCal Download
       if (optICS) {
         optICS.addEventListener('click', () => {
           this.downloadICS();
@@ -2449,8 +3125,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
         });
       }
 
-      // Bind Share buttons
-      const shareBtns = document.querySelectorAll('.btn-share, .btn-share-alt');
+      const shareBtns = document.querySelectorAll('.btn-share');
       shareBtns.forEach(btn => {
         btn.addEventListener('click', () => this.handleShare());
       });
@@ -2503,7 +3178,6 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
       if (navigator.share) {
         navigator.share(shareData).catch(() => {});
       } else {
-        // Graceful clipboard fallback
         if (navigator.clipboard && navigator.clipboard.writeText) {
           navigator.clipboard.writeText(window.location.href).then(() => {
             this.showToast('✦ Invitation link copied to clipboard!');
@@ -2552,9 +3226,10 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
     gsap.set(['#hero-kicker', '#hero-title', '#hero-devanagari', '#hero-scroll-prompt'], {
       opacity: 1, scale: 1, y: 0
     });
-    gsap.set(['.content-glass', '#invitation-card', '.detail-row', '.modak-wrap', '.modak-line', '#scene-final .final-art-badge', '#scene-final .final-main', '#scene-final .final-sub'], {
+    gsap.set(['.content-glass', '#invitation-card', '.detail-row', '.scene-transition-bridge', '.modak-wrap', '.modak-line', '#scene-final .final-art-badge', '#scene-final .final-main', '#scene-final .final-sub'], {
       opacity: 1, scale: 1, x: 0, y: 0
     });
+    gsap.set('#timeline-spine-fill', { scaleY: 1 });
 
     Garden.init();
     Garden.update(0.85);
@@ -2572,7 +3247,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
     Particles.init();
     Actions.init();
 
-    gsap.set(['#hero-kicker', '#hero-title', '#hero-devanagari', '#hero-scroll-prompt'], { y: 22 });
+    gsap.set(['#hero-kicker', '#hero-title', '#hero-devanagari', '#hero-scroll-prompt'], { y: 24 });
 
     if (reducedMotion) {
       initReducedMotion();
